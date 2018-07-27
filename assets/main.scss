@@ -3,3 +3,74 @@
 ---
 
 @import "minima";
+@import "fonts";
+
+/* variables */
+// $device: 1920px;
+
+/* Globals */
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Header */
+.site-title {
+    line-height: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: .75rem;
+    small {
+        color: $grey-color;
+        font-size: .75em;
+        font-style: italic;
+    }
+}
+
+/* Icon */
+
+.svg-icon {
+    width: 24px;
+}
+
+/* Media queries */
+
+@include media-query($on-laptop) {
+    .float-left {
+        float: left;
+    }
+
+    .float-right {
+        float: right;
+    }
+}
+
+@include media-query($on-palm) {
+
+    .float-left,
+    .float-right {
+        float: none;
+
+        .text-right {
+            text-align: left;
+        }
+    }
+}

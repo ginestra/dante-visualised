@@ -1,0 +1,15 @@
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+
+# Local
+.bundle
+.DS_Store
+.jekyll-metadata
+.sass-cache
+*.log
+/bundle
+_site
+/vendor

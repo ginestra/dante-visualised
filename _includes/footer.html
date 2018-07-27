@@ -12,7 +12,7 @@
             {%- if site.author -%}
               {{ site.author | escape }}
             {%- else -%}
-              {{ site.title | escape }}
+              {{- site.description | escape -}}
             {%- endif -%}
             </li>
             {%- if site.email -%}
@@ -22,11 +22,11 @@
       </div>
 
       <div class="footer-col footer-col-2">
-        {%- include social.html -%}
       </div>
 
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
+      <div class="footer-col footer-col-3 float-right">
+        <p class="text-right">{{ site.author_name | escape }}</p>
+        <span class="text-right">{%- include social.html -%}</span>
       </div>
     </div>
 

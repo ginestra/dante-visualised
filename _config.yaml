@@ -1,6 +1,6 @@
 # baseurl: /dante-visualised
 
-exclude: ['*.log', Gemfile*, README.md, vendor]
+exclude: ['*.log', Gemfile*, README.md, bundle]
 
 include: [_pages]
 
@@ -11,6 +11,7 @@ sass:
 title: Dante Visualised
 description: Visualising Dante's Divine Comedy
 
+author_name: Ginestra Ferraro
 github_username: ginestra
 twitter_username: ginez_17
 

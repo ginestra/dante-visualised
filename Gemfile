@@ -9,3 +9,5 @@ gem "github-pages", group: :jekyll_plugins
 
 # gem "jekyll", "~> 3.8"
 gem "minima"
+
+gem "jekyll", "~> 3.7"
