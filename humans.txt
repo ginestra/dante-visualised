@@ -1,0 +1,20 @@
+---
+---
+
+/* TEAM */
+Organisation: That's Mood
+Site: https://thatsmood.com
+Email: gi [at] thatsmood.com
+Twitter: @{{ site.twitter_username }}
+GitHub: https://github.com/{{ site.github_username }}
+Location: London
+
+UI/UX Developer: Ginestra Ferraro
+Site: https://thatsmood.com
+
+/* SITE */
+Last update: {{ site.time }}
+Standards: HTML5, CSS3
+Components: HTML5, SASS, JS, Jekyll, jQuery, D3JS, Python, SVG, JSON
+Software: Sublime Text, Jupyter
+GitHub: https://github.com/gferra02/dante-visualised
