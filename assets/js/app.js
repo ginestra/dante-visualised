@@ -181,7 +181,7 @@ $(document).ready(function() {
                 tooltip.transition().duration(200)
                   .style('opacity', .9)
                 tooltip.html(
-                  '<div>chars: ' + d + '<br>line: ' + line_numbers[i] + '<br>verse: ' + text_lines[i] + '</div>'
+                  '<div>chars: ' + d + '<br>line: ' + line_numbers[i] + '<br>text: ' + text_lines[i] + '</div>'
                 )
                   .style('left', (d3.event.pageX) + 'px')
                   .style('top', (d3.event.pageY) + 'px')
