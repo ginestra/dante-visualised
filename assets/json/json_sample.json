@@ -1,0 +1,1248 @@
+{
+    "title": "La Divina Commedia",
+    "author": "Dante Alighier",
+    "year": "1308-1320",
+    "lang": "IT",
+    "cantica": [
+        {
+            "title": "Inferno",
+            "canto": [
+                {
+                    "number": 1,
+                    "title": "Canto I",
+                    "tercet": [
+                        {
+                            "number": 1,
+                            "lines": [
+                                {
+                                    "line_number": 1,
+                                    "text": "Nel mezzo del cammin di nostra vita\n",
+                                    "chars": 36,
+                                    "last_word": "vita",
+                                    "rhyme_length": 0,
+                                    "rhyme": "ita",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 2,
+                                    "text": "mi ritrovai per una selva oscura\n",
+                                    "chars": 33,
+                                    "last_word": "oscura",
+                                    "rhyme_length": 0,
+                                    "rhyme": "ura",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 3,
+                                    "text": "ch\u00e9 la diritta via era smarrita.\n",
+                                    "chars": 33,
+                                    "last_word": "smarrita",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ita",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 4,
+                                    "text": "Ahi quanto a dir qual era \u00e8 cosa dura\n",
+                                    "chars": 38,
+                                    "last_word": "dura",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ura",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 5,
+                                    "text": "esta selva selvaggia e aspra e forte\n",
+                                    "chars": 37,
+                                    "last_word": "forte",
+                                    "rhyme_length": 3,
+                                    "rhyme": "rte",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 6,
+                                    "text": "che nel pensier rinova la paura!\n",
+                                    "chars": 33,
+                                    "last_word": "paura",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ura",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 7,
+                                    "text": "Tant\u2019 \u00e8 amara che poco \u00e8 pi\u00f9 morte;\n",
+                                    "chars": 36,
+                                    "last_word": "morte",
+                                    "rhyme_length": 4,
+                                    "rhyme": "rte",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 8,
+                                    "text": "ma per trattar del ben ch\u2019i\u2019 vi trovai,\n",
+                                    "chars": 40,
+                                    "last_word": "trovai",
+                                    "rhyme_length": 3,
+                                    "rhyme": "vai",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 9,
+                                    "text": "dir\u00f2 de l\u2019altre cose ch\u2019i\u2019 v\u2019ho scorte.\n",
+                                    "chars": 40,
+                                    "last_word": "scorte",
+                                    "rhyme_length": 4,
+                                    "rhyme": "rte",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 10,
+                                    "text": "Io non so ben ridir com\u2019 i\u2019 v\u2019intrai,\n",
+                                    "chars": 38,
+                                    "last_word": "v\u2019intrai",
+                                    "rhyme_length": 2,
+                                    "rhyme": "rai",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 11,
+                                    "text": "tant\u2019 era pien di sonno a quel punto\n",
+                                    "chars": 37,
+                                    "last_word": "punto",
+                                    "rhyme_length": 2,
+                                    "rhyme": "nto",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 12,
+                                    "text": "che la verace via abbandonai.\n",
+                                    "chars": 30,
+                                    "last_word": "abbandonai",
+                                    "rhyme_length": 2,
+                                    "rhyme": "nai",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 13,
+                                    "text": "Ma poi ch\u2019i\u2019 fui al pi\u00e8 d\u2019un colle giunto,\n",
+                                    "chars": 43,
+                                    "last_word": "giunto",
+                                    "rhyme_length": 2,
+                                    "rhyme": "nto",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 14,
+                                    "text": "l\u00e0 dove terminava quella valle\n",
+                                    "chars": 31,
+                                    "last_word": "valle",
+                                    "rhyme_length": 2,
+                                    "rhyme": "lle",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 15,
+                                    "text": "che m\u2019avea di paura il cor compunto,\n",
+                                    "chars": 37,
+                                    "last_word": "compunto",
+                                    "rhyme_length": 2,
+                                    "rhyme": "nto",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 16,
+                                    "text": "guardai in alto, e vidi le sue spalle\n",
+                                    "chars": 38,
+                                    "last_word": "spalle",
+                                    "rhyme_length": 3,
+                                    "rhyme": "lle",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 17,
+                                    "text": "vestite gi\u00e0 de\u2019 raggi del pianeta\n",
+                                    "chars": 34,
+                                    "last_word": "pianeta",
+                                    "rhyme_length": 2,
+                                    "rhyme": "eta",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 18,
+                                    "text": "che mena dritto altrui per ogne calle.\n",
+                                    "chars": 39,
+                                    "last_word": "calle",
+                                    "rhyme_length": 3,
+                                    "rhyme": "lle",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 19,
+                                    "text": "Allor fu la paura un poco queta\n",
+                                    "chars": 32,
+                                    "last_word": "queta",
+                                    "rhyme_length": 2,
+                                    "rhyme": "eta",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 20,
+                                    "text": "che nel lago del cor m\u2019era durata\n",
+                                    "chars": 34,
+                                    "last_word": "durata",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ata",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 21,
+                                    "text": "la notte ch\u2019i\u2019 passai con tanta pieta.\n",
+                                    "chars": 39,
+                                    "last_word": "pieta",
+                                    "rhyme_length": 2,
+                                    "rhyme": "eta",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 22,
+                                    "text": "E come quei che con lena affannata\n",
+                                    "chars": 35,
+                                    "last_word": "affannata",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ata",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 23,
+                                    "text": "uscito fuor del pelago a la riva\n",
+                                    "chars": 33,
+                                    "last_word": "riva",
+                                    "rhyme_length": 2,
+                                    "rhyme": "iva",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 24,
+                                    "text": "si volge a l\u2019acqua perigliosa e guata,\n",
+                                    "chars": 39,
+                                    "last_word": "guata",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ata",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 25,
+                                    "text": "cos\u00ec l\u2019animo mio, ch\u2019ancor fuggiva,\n",
+                                    "chars": 36,
+                                    "last_word": "fuggiva",
+                                    "rhyme_length": 3,
+                                    "rhyme": "iva",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 26,
+                                    "text": "si volse a retro a rimirar lo passo\n",
+                                    "chars": 36,
+                                    "last_word": "passo",
+                                    "rhyme_length": 3,
+                                    "rhyme": "sso",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 27,
+                                    "text": "che non lasci\u00f2 gi\u00e0 mai persona viva.\n",
+                                    "chars": 37,
+                                    "last_word": "viva",
+                                    "rhyme_length": 3,
+                                    "rhyme": "iva",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 28,
+                                    "text": "Poi ch\u2019\u00e8i posato un poco il corpo lasso,\n",
+                                    "chars": 41,
+                                    "last_word": "lasso",
+                                    "rhyme_length": 3,
+                                    "rhyme": "sso",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 29,
+                                    "text": "ripresi via per la piaggia diserta,\n",
+                                    "chars": 36,
+                                    "last_word": "diserta",
+                                    "rhyme_length": 3,
+                                    "rhyme": "rta",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 30,
+                                    "text": "s\u00ec che \u2019l pi\u00e8 fermo sempre era \u2019l pi\u00f9 basso.\n",
+                                    "chars": 45,
+                                    "last_word": "basso",
+                                    "rhyme_length": 3,
+                                    "rhyme": "sso",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 31,
+                                    "text": "Ed ecco, quasi al cominciar de l\u2019erta,\n",
+                                    "chars": 39,
+                                    "last_word": "l\u2019erta",
+                                    "rhyme_length": 2,
+                                    "rhyme": "rta",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 32,
+                                    "text": "una lonza leggera e presta molto,\n",
+                                    "chars": 34,
+                                    "last_word": "molto",
+                                    "rhyme_length": 2,
+                                    "rhyme": "lto",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 33,
+                                    "text": "che di pel macolato era coverta;\n",
+                                    "chars": 33,
+                                    "last_word": "coverta",
+                                    "rhyme_length": 3,
+                                    "rhyme": "rta",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 34,
+                                    "text": "e non mi si partia dinanzi al volto,\n",
+                                    "chars": 37,
+                                    "last_word": "volto",
+                                    "rhyme_length": 3,
+                                    "rhyme": "lto",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 35,
+                                    "text": "anzi \u2019mpediva tanto il mio cammino,\n",
+                                    "chars": 36,
+                                    "last_word": "cammino",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ino",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 36,
+                                    "text": "ch\u2019i\u2019 fui per ritornar pi\u00f9 volte v\u00f2lto.\n",
+                                    "chars": 40,
+                                    "last_word": "v\u00f2lto",
+                                    "rhyme_length": 3,
+                                    "rhyme": "lto",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 37,
+                                    "text": "Temp\u2019 era dal principio del mattino,\n",
+                                    "chars": 37,
+                                    "last_word": "mattino",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ino",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 38,
+                                    "text": "e \u2019l sol montava \u2019n s\u00f9 con quelle stelle\n",
+                                    "chars": 41,
+                                    "last_word": "stelle",
+                                    "rhyme_length": 2,
+                                    "rhyme": "lle",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 39,
+                                    "text": "ch\u2019eran con lui quando l\u2019amor divino\n",
+                                    "chars": 37,
+                                    "last_word": "divino",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ino",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 40,
+                                    "text": "mosse di prima quelle cose belle;\n",
+                                    "chars": 34,
+                                    "last_word": "belle",
+                                    "rhyme_length": 2,
+                                    "rhyme": "lle",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 41,
+                                    "text": "s\u00ec ch\u2019a bene sperar m\u2019era cagione\n",
+                                    "chars": 34,
+                                    "last_word": "cagione",
+                                    "rhyme_length": 2,
+                                    "rhyme": "one",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 42,
+                                    "text": "di quella fiera a la gaetta pelle\n",
+                                    "chars": 34,
+                                    "last_word": "pelle",
+                                    "rhyme_length": 2,
+                                    "rhyme": "lle",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 43,
+                                    "text": "l\u2019ora del tempo e la dolce stagione;\n",
+                                    "chars": 37,
+                                    "last_word": "stagione",
+                                    "rhyme_length": 2,
+                                    "rhyme": "one",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 44,
+                                    "text": "ma non s\u00ec che paura non mi desse\n",
+                                    "chars": 33,
+                                    "last_word": "desse",
+                                    "rhyme_length": 2,
+                                    "rhyme": "sse",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 45,
+                                    "text": "la vista che m\u2019apparve d\u2019un leone.\n",
+                                    "chars": 35,
+                                    "last_word": "leone",
+                                    "rhyme_length": 2,
+                                    "rhyme": "one",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 46,
+                                    "text": "Questi parea che contra me venisse\n",
+                                    "chars": 35,
+                                    "last_word": "venisse",
+                                    "rhyme_length": 2,
+                                    "rhyme": "sse",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 47,
+                                    "text": "con la test\u2019 alta e con rabbiosa fame,\n",
+                                    "chars": 39,
+                                    "last_word": "fame",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ame",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 48,
+                                    "text": "s\u00ec che parea che l\u2019aere ne tremesse.\n",
+                                    "chars": 37,
+                                    "last_word": "tremesse",
+                                    "rhyme_length": 2,
+                                    "rhyme": "sse",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 49,
+                                    "text": "Ed una lupa, che di tutte brame\n",
+                                    "chars": 32,
+                                    "last_word": "brame",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ame",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 50,
+                                    "text": "sembiava carca ne la sua magrezza,\n",
+                                    "chars": 35,
+                                    "last_word": "magrezza",
+                                    "rhyme_length": 3,
+                                    "rhyme": "zza",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 51,
+                                    "text": "e molte genti f\u00e9 gi\u00e0 viver grame,\n",
+                                    "chars": 34,
+                                    "last_word": "grame",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ame",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 52,
+                                    "text": "questa mi porse tanto di gravezza\n",
+                                    "chars": 34,
+                                    "last_word": "gravezza",
+                                    "rhyme_length": 5,
+                                    "rhyme": "zza",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 53,
+                                    "text": "con la paura ch\u2019uscia di sua vista,\n",
+                                    "chars": 36,
+                                    "last_word": "vista",
+                                    "rhyme_length": 5,
+                                    "rhyme": "sta",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 54,
+                                    "text": "ch\u2019io perdei la speranza de l\u2019altezza.\n",
+                                    "chars": 39,
+                                    "last_word": "l\u2019altezza",
+                                    "rhyme_length": 3,
+                                    "rhyme": "zza",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 55,
+                                    "text": "E qual \u00e8 quei che volontieri acquista,\n",
+                                    "chars": 39,
+                                    "last_word": "acquista",
+                                    "rhyme_length": 4,
+                                    "rhyme": "sta",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 56,
+                                    "text": "e giugne \u2019l tempo che perder lo face,\n",
+                                    "chars": 38,
+                                    "last_word": "face",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ace",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 57,
+                                    "text": "che \u2019n tutti suoi pensier piange e s\u2019attrista;\n",
+                                    "chars": 47,
+                                    "last_word": "s\u2019attrista",
+                                    "rhyme_length": 4,
+                                    "rhyme": "sta",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 58,
+                                    "text": "tal mi fece la bestia sanza pace,\n",
+                                    "chars": 34,
+                                    "last_word": "pace",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ace",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 59,
+                                    "text": "che, venendomi \u2019ncontro, a poco a poco\n",
+                                    "chars": 39,
+                                    "last_word": "poco",
+                                    "rhyme_length": 2,
+                                    "rhyme": "oco",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 60,
+                                    "text": "mi ripigneva l\u00e0 dove \u2019l sol tace.\n",
+                                    "chars": 34,
+                                    "last_word": "tace",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ace",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 61,
+                                    "text": "Mentre ch\u2019i\u2019 rovinava in basso loco,\n",
+                                    "chars": 37,
+                                    "last_word": "loco",
+                                    "rhyme_length": 2,
+                                    "rhyme": "oco",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 62,
+                                    "text": "dinanzi a li occhi mi si fu offerto\n",
+                                    "chars": 36,
+                                    "last_word": "offerto",
+                                    "rhyme_length": 2,
+                                    "rhyme": "rto",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 63,
+                                    "text": "chi per lungo silenzio parea fioco.\n",
+                                    "chars": 36,
+                                    "last_word": "fioco",
+                                    "rhyme_length": 2,
+                                    "rhyme": "oco",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 64,
+                                    "text": "Quando vidi costui nel gran diserto,\n",
+                                    "chars": 37,
+                                    "last_word": "diserto",
+                                    "rhyme_length": 2,
+                                    "rhyme": "rto",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 65,
+                                    "text": "\u00abMiserere di me\u00bb, gridai a lui,\n",
+                                    "chars": 32,
+                                    "last_word": "lui",
+                                    "rhyme_length": 2,
+                                    "rhyme": "lui",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 66,
+                                    "text": "\u00abqual che tu sii, od ombra od omo certo!\u00bb.\n",
+                                    "chars": 43,
+                                    "last_word": "certo",
+                                    "rhyme_length": 2,
+                                    "rhyme": "rto",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 67,
+                                    "text": "Rispuosemi: \u00abNon omo, omo gi\u00e0 fui,\n",
+                                    "chars": 35,
+                                    "last_word": "fui",
+                                    "rhyme_length": 2,
+                                    "rhyme": "fui",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 68,
+                                    "text": "e li parenti miei furon lombardi,\n",
+                                    "chars": 34,
+                                    "last_word": "lombardi",
+                                    "rhyme_length": 3,
+                                    "rhyme": "rdi",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 69,
+                                    "text": "mantoani per patr\u00efa ambedui.\n",
+                                    "chars": 29,
+                                    "last_word": "ambedui",
+                                    "rhyme_length": 2,
+                                    "rhyme": "dui",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 70,
+                                    "text": "Nacqui sub Iulio, ancor che fosse tardi,\n",
+                                    "chars": 41,
+                                    "last_word": "tardi",
+                                    "rhyme_length": 2,
+                                    "rhyme": "rdi",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 71,
+                                    "text": "e vissi a Roma sotto \u2019l buono Augusto\n",
+                                    "chars": 38,
+                                    "last_word": "augusto",
+                                    "rhyme_length": 2,
+                                    "rhyme": "sto",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 72,
+                                    "text": "nel tempo de li d\u00e8i falsi e bugiardi.\n",
+                                    "chars": 38,
+                                    "last_word": "bugiardi",
+                                    "rhyme_length": 3,
+                                    "rhyme": "rdi",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 73,
+                                    "text": "Poeta fui, e cantai di quel giusto\n",
+                                    "chars": 35,
+                                    "last_word": "giusto",
+                                    "rhyme_length": 5,
+                                    "rhyme": "sto",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 74,
+                                    "text": "figliuol d\u2019Anchise che venne di Troia,\n",
+                                    "chars": 39,
+                                    "last_word": "troia",
+                                    "rhyme_length": 2,
+                                    "rhyme": "oia",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 75,
+                                    "text": "poi che \u2019l superbo Ili\u00f3n fu combusto.\n",
+                                    "chars": 38,
+                                    "last_word": "combusto",
+                                    "rhyme_length": 4,
+                                    "rhyme": "sto",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 76,
+                                    "text": "Ma tu perch\u00e9 ritorni a tanta noia?\n",
+                                    "chars": 35,
+                                    "last_word": "noia",
+                                    "rhyme_length": 4,
+                                    "rhyme": "oia",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 77,
+                                    "text": "perch\u00e9 non sali il dilettoso monte\n",
+                                    "chars": 35,
+                                    "last_word": "monte",
+                                    "rhyme_length": 2,
+                                    "rhyme": "nte",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 78,
+                                    "text": "ch\u2019\u00e8 principio e cagion di tutta gioia?\u00bb.\n",
+                                    "chars": 42,
+                                    "last_word": "gioia",
+                                    "rhyme_length": 3,
+                                    "rhyme": "oia",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 79,
+                                    "text": "\u00abOr se\u2019 tu quel Virgilio e quella fonte\n",
+                                    "chars": 40,
+                                    "last_word": "fonte",
+                                    "rhyme_length": 2,
+                                    "rhyme": "nte",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 80,
+                                    "text": "che spandi di parlar s\u00ec largo fiume?\u00bb,\n",
+                                    "chars": 39,
+                                    "last_word": "fiume",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ume",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 81,
+                                    "text": "rispuos\u2019 io lui con vergognosa fronte.\n",
+                                    "chars": 39,
+                                    "last_word": "fronte",
+                                    "rhyme_length": 2,
+                                    "rhyme": "nte",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 82,
+                                    "text": "\u00abO de li altri poeti onore e lume\n",
+                                    "chars": 34,
+                                    "last_word": "lume",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ume",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 83,
+                                    "text": "vagliami \u2019l lungo studio e \u2019l grande amore\n",
+                                    "chars": 43,
+                                    "last_word": "amore",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ore",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 84,
+                                    "text": "che m\u2019ha fatto cercar lo tuo volume.\n",
+                                    "chars": 37,
+                                    "last_word": "volume",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ume",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 85,
+                                    "text": "Tu se\u2019 lo mio maestro e \u2019l mio autore;\n",
+                                    "chars": 39,
+                                    "last_word": "autore",
+                                    "rhyme_length": 4,
+                                    "rhyme": "ore",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 86,
+                                    "text": "tu se\u2019 solo colui da cu\u2019 io tolsi\n",
+                                    "chars": 34,
+                                    "last_word": "tolsi",
+                                    "rhyme_length": 4,
+                                    "rhyme": "lsi",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 87,
+                                    "text": "lo bello stilo che m\u2019ha fatto onore.\n",
+                                    "chars": 37,
+                                    "last_word": "onore",
+                                    "rhyme_length": 4,
+                                    "rhyme": "ore",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 88,
+                                    "text": "Vedi la bestia per cu\u2019 io mi volsi:\n",
+                                    "chars": 36,
+                                    "last_word": "volsi",
+                                    "rhyme_length": 4,
+                                    "rhyme": "lsi",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 89,
+                                    "text": "aiutami da lei, famoso saggio,\n",
+                                    "chars": 31,
+                                    "last_word": "saggio",
+                                    "rhyme_length": 4,
+                                    "rhyme": "gio",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 90,
+                                    "text": "ch\u2019ella mi fa tremar le vene e i polsi\u00bb.\n",
+                                    "chars": 41,
+                                    "last_word": "polsi",
+                                    "rhyme_length": 4,
+                                    "rhyme": "lsi",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 91,
+                                    "text": "\u00abA te convien tenere altro v\u00efaggio\u00bb,\n",
+                                    "chars": 37,
+                                    "last_word": "v\u00efaggio",
+                                    "rhyme_length": 4,
+                                    "rhyme": "gio",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 92,
+                                    "text": "rispuose poi che lagrimar mi vide,\n",
+                                    "chars": 35,
+                                    "last_word": "vide",
+                                    "rhyme_length": 4,
+                                    "rhyme": "ide",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 93,
+                                    "text": "\u00abse vuo\u2019 campar d\u2019esto loco selvaggio;\n",
+                                    "chars": 39,
+                                    "last_word": "selvaggio",
+                                    "rhyme_length": 5,
+                                    "rhyme": "gio",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 94,
+                                    "text": "ch\u00e9 questa bestia, per la qual tu gride,\n",
+                                    "chars": 41,
+                                    "last_word": "gride",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ide",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 95,
+                                    "text": "non lascia altrui passar per la sua via,\n",
+                                    "chars": 41,
+                                    "last_word": "via",
+                                    "rhyme_length": 2,
+                                    "rhyme": "via",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 96,
+                                    "text": "ma tanto lo \u2019mpedisce che l\u2019uccide;\n",
+                                    "chars": 36,
+                                    "last_word": "l\u2019uccide",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ide",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 97,
+                                    "text": "e ha natura s\u00ec malvagia e ria,\n",
+                                    "chars": 31,
+                                    "last_word": "ria",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ria",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 98,
+                                    "text": "che mai non empie la bramosa voglia,\n",
+                                    "chars": 37,
+                                    "last_word": "voglia",
+                                    "rhyme_length": 2,
+                                    "rhyme": "lia",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 99,
+                                    "text": "e dopo \u2019l pasto ha pi\u00f9 fame che pria.\n",
+                                    "chars": 38,
+                                    "last_word": "pria",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ria",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 100,
+                                    "text": "Molti son li animali a cui s\u2019ammoglia,\n",
+                                    "chars": 39,
+                                    "last_word": "s\u2019ammoglia",
+                                    "rhyme_length": 2,
+                                    "rhyme": "lia",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 101,
+                                    "text": "e pi\u00f9 saranno ancora, infin che \u2019l veltro\n",
+                                    "chars": 42,
+                                    "last_word": "veltro",
+                                    "rhyme_length": 2,
+                                    "rhyme": "tro",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 102,
+                                    "text": "verr\u00e0, che la far\u00e0 morir con doglia.\n",
+                                    "chars": 37,
+                                    "last_word": "doglia",
+                                    "rhyme_length": 5,
+                                    "rhyme": "lia",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 103,
+                                    "text": "Questi non ciber\u00e0 terra n\u00e9 peltro,\n",
+                                    "chars": 35,
+                                    "last_word": "peltro",
+                                    "rhyme_length": 5,
+                                    "rhyme": "tro",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 104,
+                                    "text": "ma sap\u00efenza, amore e virtute,\n",
+                                    "chars": 30,
+                                    "last_word": "virtute",
+                                    "rhyme_length": 5,
+                                    "rhyme": "ute",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 105,
+                                    "text": "e sua nazion sar\u00e0 tra feltro e feltro.\n",
+                                    "chars": 39,
+                                    "last_word": "feltro",
+                                    "rhyme_length": 5,
+                                    "rhyme": "tro",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 106,
+                                    "text": "Di quella umile Italia fia salute\n",
+                                    "chars": 34,
+                                    "last_word": "salute",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ute",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 107,
+                                    "text": "per cui mor\u00ec la vergine Cammilla,\n",
+                                    "chars": 34,
+                                    "last_word": "cammilla",
+                                    "rhyme_length": 3,
+                                    "rhyme": "lla",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 108,
+                                    "text": "Eurialo e Turno e Niso di ferute.\n",
+                                    "chars": 34,
+                                    "last_word": "ferute",
+                                    "rhyme_length": 4,
+                                    "rhyme": "ute",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 109,
+                                    "text": "Questi la caccer\u00e0 per ogne villa,\n",
+                                    "chars": 34,
+                                    "last_word": "villa",
+                                    "rhyme_length": 3,
+                                    "rhyme": "lla",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 110,
+                                    "text": "fin che l\u2019avr\u00e0 rimessa ne lo \u2019nferno,\n",
+                                    "chars": 38,
+                                    "last_word": "\u2019nferno",
+                                    "rhyme_length": 2,
+                                    "rhyme": "rno",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 111,
+                                    "text": "l\u00e0 onde \u2019nvidia prima dipartilla.\n",
+                                    "chars": 34,
+                                    "last_word": "dipartilla",
+                                    "rhyme_length": 3,
+                                    "rhyme": "lla",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 112,
+                                    "text": "Ond\u2019 io per lo tuo me\u2019 penso e discerno\n",
+                                    "chars": 40,
+                                    "last_word": "discerno",
+                                    "rhyme_length": 3,
+                                    "rhyme": "rno",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 113,
+                                    "text": "che tu mi segui, e io sar\u00f2 tua guida,\n",
+                                    "chars": 38,
+                                    "last_word": "guida",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ida",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 114,
+                                    "text": "e trarrotti di qui per loco etterno,\n",
+                                    "chars": 37,
+                                    "last_word": "etterno",
+                                    "rhyme_length": 3,
+                                    "rhyme": "rno",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 115,
+                                    "text": "ove udirai le disperate strida,\n",
+                                    "chars": 32,
+                                    "last_word": "strida",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ida",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 116,
+                                    "text": "vedrai li antichi spiriti dolenti,\n",
+                                    "chars": 35,
+                                    "last_word": "dolenti",
+                                    "rhyme_length": 3,
+                                    "rhyme": "nti",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 117,
+                                    "text": "ch\u2019a la seconda morte ciascun grida;\n",
+                                    "chars": 37,
+                                    "last_word": "grida",
+                                    "rhyme_length": 2,
+                                    "rhyme": "ida",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 118,
+                                    "text": "e vederai color che son contenti\n",
+                                    "chars": 33,
+                                    "last_word": "contenti",
+                                    "rhyme_length": 3,
+                                    "rhyme": "nti",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 119,
+                                    "text": "nel foco, perch\u00e9 speran di venire\n",
+                                    "chars": 34,
+                                    "last_word": "venire",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ire",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 120,
+                                    "text": "quando che sia a le beate genti.\n",
+                                    "chars": 33,
+                                    "last_word": "genti",
+                                    "rhyme_length": 3,
+                                    "rhyme": "nti",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 121,
+                                    "text": "A le quai poi se tu vorrai salire,\n",
+                                    "chars": 35,
+                                    "last_word": "salire",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ire",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 122,
+                                    "text": "anima fia a ci\u00f2 pi\u00f9 di me degna:\n",
+                                    "chars": 33,
+                                    "last_word": "degna",
+                                    "rhyme_length": 3,
+                                    "rhyme": "gna",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 123,
+                                    "text": "con lei ti lascer\u00f2 nel mio partire;\n",
+                                    "chars": 36,
+                                    "last_word": "partire",
+                                    "rhyme_length": 3,
+                                    "rhyme": "ire",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 124,
+                                    "text": "ch\u00e9 quello imperador che l\u00e0 s\u00f9 regna,\n",
+                                    "chars": 38,
+                                    "last_word": "regna",
+                                    "rhyme_length": 4,
+                                    "rhyme": "gna",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 125,
+                                    "text": "perch\u2019 i\u2019 fu\u2019 ribellante a la sua legge,\n",
+                                    "chars": 41,
+                                    "last_word": "legge",
+                                    "rhyme_length": 4,
+                                    "rhyme": "gge",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 126,
+                                    "text": "non vuol che \u2019n sua citt\u00e0 per me si vegna.\n",
+                                    "chars": 43,
+                                    "last_word": "vegna",
+                                    "rhyme_length": 4,
+                                    "rhyme": "gna",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 127,
+                                    "text": "In tutte parti impera e quivi regge;\n",
+                                    "chars": 37,
+                                    "last_word": "regge",
+                                    "rhyme_length": 2,
+                                    "rhyme": "gge",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 128,
+                                    "text": "quivi \u00e8 la sua citt\u00e0 e l\u2019alto seggio:\n",
+                                    "chars": 38,
+                                    "last_word": "seggio",
+                                    "rhyme_length": 2,
+                                    "rhyme": "gio",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 129,
+                                    "text": "oh felice colui cu\u2019 ivi elegge!\u00bb.\n",
+                                    "chars": 34,
+                                    "last_word": "elegge",
+                                    "rhyme_length": 3,
+                                    "rhyme": "gge",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 130,
+                                    "text": "E io a lui: \u00abPoeta, io ti richeggio\n",
+                                    "chars": 36,
+                                    "last_word": "richeggio",
+                                    "rhyme_length": 2,
+                                    "rhyme": "gio",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 131,
+                                    "text": "per quello Dio che tu non conoscesti,\n",
+                                    "chars": 38,
+                                    "last_word": "conoscesti",
+                                    "rhyme_length": 2,
+                                    "rhyme": "sti",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 132,
+                                    "text": "acci\u00f2 ch\u2019io fugga questo male e peggio,\n",
+                                    "chars": 40,
+                                    "last_word": "peggio",
+                                    "rhyme_length": 2,
+                                    "rhyme": "gio",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 133,
+                                    "text": "che tu mi meni l\u00e0 dov\u2019or dicesti,\n",
+                                    "chars": 34,
+                                    "last_word": "dicesti",
+                                    "rhyme_length": 5,
+                                    "rhyme": "sti",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 134,
+                                    "text": "s\u00ec ch\u2019io veggia la porta di san Pietro\n",
+                                    "chars": 39,
+                                    "last_word": "pietro",
+                                    "rhyme_length": 5,
+                                    "rhyme": "tro",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 135,
+                                    "text": "e color cui tu fai cotanto mesti\u00bb.\n",
+                                    "chars": 35,
+                                    "last_word": "mesti",
+                                    "rhyme_length": 4,
+                                    "rhyme": "sti",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                },
+                                {
+                                    "line_number": 136,
+                                    "text": "Allor si mosse, e io li tenni dietro.",
+                                    "chars": 37,
+                                    "last_word": "dietro",
+                                    "rhyme_length": 5,
+                                    "rhyme": "tro",
+                                    "color": "rgba(162, 63, 234, 1)"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

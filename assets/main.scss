@@ -51,6 +51,14 @@ html {
     width: 24px;
 }
 
+/* Visualisation */
+
+#viz {
+    display: block;
+    height: 400px;
+    width: 600px;
+}
+
 /* Media queries */
 
 @include media-query($on-laptop) {
