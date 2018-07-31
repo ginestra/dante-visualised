@@ -119,7 +119,7 @@ $(document).ready(function() {
             testViz;
 
         for (i = 0; i < d.cantica[0].canto[0].tercet[0].lines.length; i++) {
-            char_lines.push(d.cantica[0].canto[0].tercet[0].lines[i].chars);
+            char_lines.push(d.cantica[0].canto[0].tercet[0].lines[i].chars - 1); // -1 to count for the new line char at the end of every line
             text_lines.push(d.cantica[0].canto[0].tercet[0].lines[i].text);
             line_numbers.push(d.cantica[0].canto[0].tercet[0].lines[i].line_number);
         }
@@ -181,7 +181,7 @@ $(document).ready(function() {
                 tooltip.transition().duration(200)
                   .style('opacity', .9)
                 tooltip.html(
-                  '<div>chars: ' + d + '<br>line: ' + i + '<br>verse: ' + text_lines[i] + '</div>'
+                  '<div>chars: ' + d + '<br>line: ' + line_numbers[i] + '<br>verse: ' + text_lines[i] + '</div>'
                 )
                   .style('left', (d3.event.pageX) + 'px')
                   .style('top', (d3.event.pageY) + 'px')
