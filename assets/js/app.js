@@ -1,10 +1,7 @@
 /* Using D3JS to render the data I saved in json format */
-console.log('hello outside document ready');
 
 $(document).ready(function() {
         d3.json('/assets/json/json_sample.json').then(function(d) {
-
-        console.log(d.cantica[0].canto[0].tercet[0].lines[0].text);
 
         var char_lines = [],
             text_lines = [],
@@ -28,10 +25,9 @@ $(document).ready(function() {
             testViz;
 
         for (i = 0; i < d.cantica[0].canto[0].tercet[0].lines.length; i++) {
-            char_lines.push(d.cantica[0].canto[0].tercet[0].lines[i].chars - 1); // -1 to count for the new line char at the end of every line
+            char_lines.push(d.cantica[0].canto[0].tercet[0].lines[i].chars);
             text_lines.push(d.cantica[0].canto[0].tercet[0].lines[i].text);
             line_numbers.push(d.cantica[0].canto[0].tercet[0].lines[i].line_number);
-            rhymes.push(d.cantica[0].canto[0].tercet[0].lines[i].rhyme)
         }
 
         yScale = d3.scaleLinear()
