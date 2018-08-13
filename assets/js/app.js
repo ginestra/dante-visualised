@@ -1,7 +1,7 @@
 /* Using D3JS to render the data I saved in json format */
 
 $(document).ready(function() {
-  d3.json('/assets/json/json_sample.json').then(function(d) {
+  d3.json('/assets/json/json_purgatorio.json').then(function(d) {
 
     var char_lines = [],
         text_lines = [],
@@ -43,6 +43,8 @@ $(document).ready(function() {
         });
       });     
     });
+
+    console.log(total_lines);
 
     // for (i = 0; i < d.cantica[0].canto[33].tercet[0].lines.length; i++) {
     //     char_lines.push(d.cantica[0].canto[33].tercet[0].lines[i].chars);
