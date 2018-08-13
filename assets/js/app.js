@@ -9,7 +9,9 @@ $(document).ready(function() {
         rhymes = [],
         margin = { top: 0, right: 0, bottom: 30, left: 20 }
         height = 400 - margin.top - margin.bottom,
-        width = 1080 - margin.left - margin.right;
+        width = 1080 - margin.left - margin.right,
+
+        total_lines = 0;
 
     var tempColor,
         yScale,
@@ -24,20 +26,29 @@ $(document).ready(function() {
         tooltip,
         testViz;
 
-
-    $.each(d.cantica[0].canto, function(k, v) {
-      for (var k in v) 
-      console.log(v[k]);
-      // $.each(v, function(k, y) {
-      //   console.log(y);
-      // });
+    // TODO: improve to automise field name (eg. cantica, canto, etc.)
+    $.each(d.cantica, function(k, v) {
+      $.each(v.canto, function(k, v) {
+        $.each(v.tercet, function(k, v) {
+          $.each(v.lines, function(k, v) {
+            char_lines.push(v.chars);
+            text_lines.push(v.text);
+            line_numbers.push(v.line_number);
+            rhymes.push(v.rhyme);
+            // console.log('v.chars: ' + v.chars + '\n' +
+            //             'v.text: ' + v.text + '\n' +
+            //             'v.line_number: ' + v.line_number);
+            total_lines++;
+          });
+        });
+      });     
     });
 
-    for (i = 0; i < d.cantica[0].canto[33].tercet[0].lines.length; i++) {
-        char_lines.push(d.cantica[0].canto[33].tercet[0].lines[i].chars);
-        text_lines.push(d.cantica[0].canto[33].tercet[0].lines[i].text);
-        line_numbers.push(d.cantica[0].canto[33].tercet[0].lines[i].line_number);
-    }
+    // for (i = 0; i < d.cantica[0].canto[33].tercet[0].lines.length; i++) {
+    //     char_lines.push(d.cantica[0].canto[33].tercet[0].lines[i].chars);
+    //     text_lines.push(d.cantica[0].canto[33].tercet[0].lines[i].text);
+    //     line_numbers.push(d.cantica[0].canto[33].tercet[0].lines[i].line_number);
+    // }
 
     yScale = d3.scaleLinear()
         .domain([0, d3.max(char_lines)])
@@ -52,11 +63,13 @@ $(document).ready(function() {
         .ticks(10)
 
     xScale = d3.scaleLinear()
-        .domain([0, d3.max(line_numbers)])
+        // .domain([0, d3.max(line_numbers)])
+        .domain([0, total_lines])
         .range([0, width])
 
     xAxisValues = d3.scaleLinear()
-        .domain([line_numbers[0], line_numbers[(line_numbers.length - 1)]])
+        // .domain([line_numbers[0], line_numbers[(line_numbers.length - 1)]])
+        .domain([0, total_lines])
         .range([0, width])
 
     xAxisTicks = d3.axisBottom(xAxisValues)
@@ -70,7 +83,7 @@ $(document).ready(function() {
     tooltip = d3.select('body')
         .append('div')
         .style('position', 'absolute')
-        .style('padding', '0 1px')
+        .style('padding', '0 0')
         .style('background', 'white')
         .style('opacity', 0);
 
@@ -86,7 +99,7 @@ $(document).ready(function() {
           // .attr('width', function(d, i) {
           //   return xScale(i);
           // })
-          .attr('width','5px')
+          .attr('width','1px')
           .attr('height', 0)
           .attr('x', function(d, i) {
             return xScale(i);
