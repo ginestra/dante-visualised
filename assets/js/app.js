@@ -7,8 +7,8 @@ $(document).ready(function() {
         text_lines = [],
         line_numbers = [],
         rhymes = [],
-        margin = { top: 0, right: 0, bottom: 30, left: 20 }
-        height = 400 - margin.top - margin.bottom,
+        margin = { top: 30, right: 0, bottom: 0, left: 40 }
+        height = 60000 - margin.top - margin.bottom,
         width = 1080 - margin.left - margin.right,
 
         total_lines = 0;
@@ -53,25 +53,25 @@ $(document).ready(function() {
     // }
 
     yScale = d3.scaleLinear()
-        .domain([0, d3.max(char_lines)])
+        .domain([0, total_lines])
         .range([0, height]);
 
     yAxisValues = d3.scaleLinear()
-        .domain([0, d3.max(char_lines)])
-        .range([height, 0]);
-
+        .domain([0, total_lines])
+        .range([0, height]);
 
     yAxisTicks = d3.axisLeft(yAxisValues)
-        .ticks(10)
+        .ticks(total_lines)
+
 
     xScale = d3.scaleLinear()
         // .domain([0, d3.max(line_numbers)])
-        .domain([0, total_lines])
+        .domain([0, d3.max(char_lines)])
         .range([0, width])
 
     xAxisValues = d3.scaleLinear()
         // .domain([line_numbers[0], line_numbers[(line_numbers.length - 1)]])
-        .domain([0, total_lines])
+        .domain([0, d3.max(char_lines)])
         .range([0, width])
 
     xAxisTicks = d3.axisBottom(xAxisValues)
@@ -85,7 +85,7 @@ $(document).ready(function() {
     tooltip = d3.select('body')
         .append('div')
         .style('position', 'absolute')
-        .style('padding', '0 0')
+        .style('padding', '2px 0')
         .style('background', 'white')
         .style('opacity', 0);
 
@@ -101,12 +101,12 @@ $(document).ready(function() {
           // .attr('width', function(d, i) {
           //   return xScale(i);
           // })
-          .attr('width','1px')
-          .attr('height', 0)
-          .attr('x', function(d, i) {
-            return xScale(i);
+          .attr('width', 0)
+          .attr('height', '5px')
+          .attr('y', function(d, i) {
+            return yScale(i);
           })
-          .attr('y', height)
+          .attr('x', width)
           .on('mouseover', function(d, i) {
             tooltip.transition().duration(200)
               .style('opacity', .9)
@@ -131,22 +131,21 @@ $(document).ready(function() {
 
 
     yGuide = d3.select('#viz svg').append('g')
-            .attr('transform', 'translate(20,0)')
+            .attr('transform', 'translate(40, 0)')
             .call(yAxisTicks)
 
     xGuide = d3.select('#viz svg').append('g')
-            .attr('transform', 'translate(20,'+ height + ')')
+            // .attr('transform', 'translate(50,'+ height + ')')
+            .attr('transform', 'translate(40, 0)')
             .call(xAxisTicks)
 
     testViz.transition()
-        .attr('height', function(d) {
-          return yScale(d);
+        .attr('width', function(d) {
+          return xScale(d);
         })
-        .attr('y', function(d) {
-          return height - yScale(d);
-        })
+        .attr('x', 0)
         .delay(function(d, i) {
-          return i * 20;
+          return i * 2;
         })
         .duration(1000)
         .ease(d3.easeBounceOut)

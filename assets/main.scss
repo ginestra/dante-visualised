@@ -55,9 +55,14 @@ html {
 
 #viz {
     display: block;
-    height: 400px;
+    // height: 8000px;
+    height: 100%;
     width: 600px;
 }
+
+// svg {
+//     transform: rotate(90deg);
+// }
 
 /* Media queries */
 
