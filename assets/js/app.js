@@ -1,13 +1,13 @@
 /* Using D3JS to render the data I saved in json format */
 
 $(document).ready(function() {
-  d3.json('/assets/json/json_purgatorio.json').then(function(d) {
+  d3.json('/assets/json/json_inferno.json').then(function(d) {
 
     var char_lines = [],
         text_lines = [],
         line_numbers = [],
         rhymes = [],
-        margin = { top: 30, right: 0, bottom: 0, left: 40 }
+        margin = { top: 20, right: 0, bottom: 0, left: 40 }
         height = 60000 - margin.top - margin.bottom,
         width = 1080 - margin.left - margin.right,
 
@@ -74,18 +74,23 @@ $(document).ready(function() {
         .domain([0, d3.max(char_lines)])
         .range([0, width])
 
-    xAxisTicks = d3.axisBottom(xAxisValues)
+    xAxisTicks = d3.axisTop(xAxisValues)
         // .ticks(d3.line_numbers.every(1))
         .ticks(20)
 
-    colors = d3.scaleLinear()
-        .domain([0, 20, d3.max(char_lines)])
-        .range(['#fff', '#2D8BCF', '#ffbb00'])
+    // colors = d3.scaleLinear()
+    //     .domain([0, d3.max(char_lines)/2, d3.max(char_lines)])
+    //     .range(['#fff', '#2D8BCF', '#ffbb00'])
+
+    // Trying ordinal scale
+    colors = d3.scaleOrdinal()
+        .domain([d3.max(char_lines)-3, d3.max(char_lines)])
+        .range(['#666', '#ffbb00'])
 
     tooltip = d3.select('body')
         .append('div')
         .style('position', 'absolute')
-        .style('padding', '2px 0')
+        .style('padding', '1px 0')
         .style('background', 'white')
         .style('opacity', 0);
 
@@ -94,7 +99,7 @@ $(document).ready(function() {
         .attr('height', height + margin.top + margin.bottom)
         .append('g')
         .attr('transform',
-          'translate(' + margin.left + ',' + margin.right + ')')
+          'translate(' + margin.left + ',' + margin.top + ')')
         .selectAll('rect').data(char_lines)
         .enter().append('rect')
           .attr('fill', colors)
@@ -102,7 +107,7 @@ $(document).ready(function() {
           //   return xScale(i);
           // })
           .attr('width', 0)
-          .attr('height', '5px')
+          .attr('height', '10px')
           .attr('y', function(d, i) {
             return yScale(i);
           })
@@ -131,12 +136,11 @@ $(document).ready(function() {
 
 
     yGuide = d3.select('#viz svg').append('g')
-            .attr('transform', 'translate(40, 0)')
+            .attr('transform', 'translate(40, 20)')
             .call(yAxisTicks)
 
     xGuide = d3.select('#viz svg').append('g')
-            // .attr('transform', 'translate(50,'+ height + ')')
-            .attr('transform', 'translate(40, 0)')
+            .attr('transform', 'translate(40, 20)')
             .call(xAxisTicks)
 
     testViz.transition()
