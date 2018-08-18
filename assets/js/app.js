@@ -182,146 +182,44 @@ $(document).ready(function() {
   var z = d3.scaleOrdinal()
     .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
-  var data = [
-    {
-        "line_number": 1,
-        "chars": 36,
-        "rhyme_length": 0
-    },
-    {
-        "line_number": 2,
-        "chars": 33,
-        "rhyme_length": 0
-    },
-    {
-        "line_number": 3,
-        "chars": 33,
-        "rhyme_length": 3
-    },
-    {
-        "line_number": 4,
-        "chars": 38,
-        "rhyme_length": 3
-    },
-    {
-        "line_number": 5,
-        "chars": 37,
-        "rhyme_length": 3
-    },
-    {
-        "line_number": 6,
-        "chars": 33,
-        "rhyme_length": 3
-    },
-    {
-        "line_number": 7,
-        "chars": 36,
-        "rhyme_length": 4
-    },
-    {
-        "line_number": 8,
-        "chars": 40,
-        "rhyme_length": 3
-    },
-    {
-        "line_number": 9,
-        "chars": 40,
-        "rhyme_length": 4
-    },
-    {
-        "line_number": 10,
-        "chars": 38,
-        "rhyme_length": 2
-    },
-    {
-        "line_number": 11,
-        "chars": 37,
-        "rhyme_length": 2
-    },
-    {
-        "line_number": 12,
-        "chars": 30,
-        "rhyme_length": 2
-    },
-    {
-        "line_number": 13,
-        "chars": 43,
-        "rhyme_length": 2
-    },
-    {
-        "line_number": 14,
-        "chars": 31,
-        "rhyme_length": 2
-    },
-    {
-        "line_number": 15,
-        "chars": 37,
-        "rhyme_length": 2
-    },
-    {
-        "line_number": 16,
-        "chars": 38,
-        "rhyme_length": 3
-    },
-    {
-        "line_number": 17,
-        "chars": 34,
-        "rhyme_length": 2
-    },
-    {
-        "line_number": 18,
-        "chars": 39,
-        "rhyme_length": 3
-    },
-    {
-        "line_number": 19,
-        "chars": 32,
-        "rhyme_length": 2
-    },
-    {
-        "line_number": 20,
-        "chars": 34,
-        "rhyme_length": 2
-    },
-    {
-        "line_number": 21,
-        "chars": 39,
-        "rhyme_length": 2
-    },
-    {
-        "line_number": 22,
-        "chars": 35,
-        "rhyme_length": 2
-    },
-    {
-        "line_number": 23,
-        "chars": 33,
-        "rhyme_length": 2
-    },
-    {
-        "line_number": 24,
-        "chars": 39,
-        "rhyme_length": 3
-    }
-  ];
 
-  // fix pre-processing
-  var keys = [];
-  for (key in data[0]){
-    if (key != "line_number")
-      keys.push(key);
-  }
-  data.forEach(function(d){
-    d.total = 0;
-    keys.forEach(function(k){
-      d.total += d[k];
-    })
-  });
+  d3.json('/assets/json/json_inferno.json').then(function(data) {
+    // fix pre-processing
+    // for (key in d.cantica[0].canto.tercet.lines){
+    //   if (key != "line_number")
+    //     keys.push(key);
+    // }
+    // data.forEach(function(d){
+    //   d.total = 0;
+    //   keys.forEach(function(k){
+    //     d.total += d[k];
+    //   })
+    // });
+
+    var keys = ["chars", "rhyme_length"];
+
+    // $.each(data.cantica, function(k, v) {
+    //   $.each(v.canto, function(k, v) {
+    //     $.each(v.tercet, function(k, v) {
+    //       $.each(v.lines, function(k, v) {
+    //           keys.push(v.chars);
+    //           keys.push(v.rhyme_length);
+    //         // char_lines.push(v.chars);
+    //         // text_lines.push(v.text);
+    //         // line_numbers.push(v.line_number);
+    //         // rhymes.push(v.rhyme);
+    //       });
+    //     });
+    //   });     
+    // });
+
+    console.log(keys);
 
   // data.sort(function(a, b) {
   //   return b.total - a.total;
   // });
-  x.domain(data.map(function(d) {
+
+  x.domain(d3.map(function(d) {
     return d.line_number;
   }));
   y.domain([0, d3.max(data, function(d) {
@@ -393,4 +291,247 @@ $(document).ready(function() {
     .text(function(d) {
       return d;
     });
+  });
+
+
+
+  //// Static
+
+  // var svg = d3.select("svg#stacked"),
+  //   margin = {
+  //     top: 20,
+  //     right: 20,
+  //     bottom: 30,
+  //     left: 40
+  //   },
+  //   width = +svg.attr("width") - margin.left - margin.right,
+  //   height = +svg.attr("height") - margin.top - margin.bottom,
+  //   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  // var x = d3.scaleBand()
+  //   .rangeRound([0, width])
+  //   .paddingInner(0.05)
+  //   .align(0.1);
+
+  // var y = d3.scaleLinear()
+  //   .rangeRound([height, 0]);
+
+  // var z = d3.scaleOrdinal()
+  //   .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+  // var data = [
+  //   {
+  //       "line_number": 1,
+  //       "chars": 36,
+  //       "rhyme_length": 0
+  //   },
+  //   {
+  //       "line_number": 2,
+  //       "chars": 33,
+  //       "rhyme_length": 0
+  //   },
+  //   {
+  //       "line_number": 3,
+  //       "chars": 33,
+  //       "rhyme_length": 3
+  //   },
+  //   {
+  //       "line_number": 4,
+  //       "chars": 38,
+  //       "rhyme_length": 3
+  //   },
+  //   {
+  //       "line_number": 5,
+  //       "chars": 37,
+  //       "rhyme_length": 3
+  //   },
+  //   {
+  //       "line_number": 6,
+  //       "chars": 33,
+  //       "rhyme_length": 3
+  //   },
+  //   {
+  //       "line_number": 7,
+  //       "chars": 36,
+  //       "rhyme_length": 4
+  //   },
+  //   {
+  //       "line_number": 8,
+  //       "chars": 40,
+  //       "rhyme_length": 3
+  //   },
+  //   {
+  //       "line_number": 9,
+  //       "chars": 40,
+  //       "rhyme_length": 4
+  //   },
+  //   {
+  //       "line_number": 10,
+  //       "chars": 38,
+  //       "rhyme_length": 2
+  //   },
+  //   {
+  //       "line_number": 11,
+  //       "chars": 37,
+  //       "rhyme_length": 2
+  //   },
+  //   {
+  //       "line_number": 12,
+  //       "chars": 30,
+  //       "rhyme_length": 2
+  //   },
+  //   {
+  //       "line_number": 13,
+  //       "chars": 43,
+  //       "rhyme_length": 2
+  //   },
+  //   {
+  //       "line_number": 14,
+  //       "chars": 31,
+  //       "rhyme_length": 2
+  //   },
+  //   {
+  //       "line_number": 15,
+  //       "chars": 37,
+  //       "rhyme_length": 2
+  //   },
+  //   {
+  //       "line_number": 16,
+  //       "chars": 38,
+  //       "rhyme_length": 3
+  //   },
+  //   {
+  //       "line_number": 17,
+  //       "chars": 34,
+  //       "rhyme_length": 2
+  //   },
+  //   {
+  //       "line_number": 18,
+  //       "chars": 39,
+  //       "rhyme_length": 3
+  //   },
+  //   {
+  //       "line_number": 19,
+  //       "chars": 32,
+  //       "rhyme_length": 2
+  //   },
+  //   {
+  //       "line_number": 20,
+  //       "chars": 34,
+  //       "rhyme_length": 2
+  //   },
+  //   {
+  //       "line_number": 21,
+  //       "chars": 39,
+  //       "rhyme_length": 2
+  //   },
+  //   {
+  //       "line_number": 22,
+  //       "chars": 35,
+  //       "rhyme_length": 2
+  //   },
+  //   {
+  //       "line_number": 23,
+  //       "chars": 33,
+  //       "rhyme_length": 2
+  //   },
+  //   {
+  //       "line_number": 24,
+  //       "chars": 39,
+  //       "rhyme_length": 3
+  //   }
+  // ];
+
+  // // fix pre-processing
+  // var keys = [];
+  // for (key in data[0]){
+  //   if (key != "line_number")
+  //     keys.push(key);
+  // }
+  // data.forEach(function(d){
+  //   d.total = 0;
+  //   keys.forEach(function(k){
+  //     d.total += d[k];
+  //   })
+  // });
+
+  // console.log("Static: " + keys);
+
+  // // data.sort(function(a, b) {
+  // //   return b.total - a.total;
+  // // });
+  // x.domain(data.map(function(d) {
+  //   return d.line_number;
+  // }));
+  // y.domain([0, d3.max(data, function(d) {
+  //   return d.total;
+  // })]).nice();
+  // z.domain(keys);
+
+  // g.append("g")
+  //   .selectAll("g")
+  //   .data(d3.stack().keys(keys)(data))
+  //   .enter().append("g")
+  //   .attr("fill", function(d) {
+  //     return z(d.key);
+  //   })
+  //   .selectAll("rect")
+  //   .data(function(d) {
+  //     return d;
+  //   })
+  //   .enter().append("rect")
+  //   .attr("x", function(d) {
+  //     return x(d.data.line_number);
+  //   })
+  //   .attr("y", function(d) {
+  //     return y(d[1]);
+  //   })
+  //   .attr("height", function(d) {
+  //     return y(d[0]) - y(d[1]);
+  //   })
+  //   .attr("width", x.bandwidth());
+
+  // g.append("g")
+  //   .attr("class", "axis")
+  //   .attr("transform", "translate(0," + height + ")")
+  //   .call(d3.axisBottom(x));
+
+  // g.append("g")
+  //   .attr("class", "axis")
+  //   .call(d3.axisLeft(y).ticks(null, "s"))
+  //   .append("text")
+  //   .attr("x", 2)
+  //   .attr("y", y(y.ticks().pop()) + 0.5)
+  //   .attr("dy", "0.32em");
+  //   // .attr("fill", "#000")
+  //   // .attr("font-weight", "bold")
+  //   // .attr("text-anchor", "start")
+  //   // .text("Population");
+
+  // var legend = g.append("g")
+  //   .attr("font-family", "sans-serif")
+  //   .attr("font-size", 10)
+  //   .attr("text-anchor", "end")
+  //   .selectAll("g")
+  //   .data(keys.slice().reverse())
+  //   .enter().append("g")
+  //   .attr("transform", function(d, i) {
+  //     return "translate(0," + i * 20 + ")";
+  //   });
+
+  // legend.append("rect")
+  //   .attr("y", - 15)
+  //   .attr("x", width - 19)
+  //   .attr("width", 19)
+  //   .attr("height", 19)
+  //   .attr("fill", z);
+
+  // legend.append("text")
+  //   .attr("y", - 5)
+  //   .attr("x", width - 24)
+  //   // .attr("y", 9.5)
+  //   .attr("dy", "0.32em")
+  //   .text(function(d) {
+  //     return d;
+  //   });
 });
