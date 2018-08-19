@@ -184,54 +184,45 @@ $(document).ready(function() {
 
 
   d3.json('/assets/json/json_inferno.json').then(function(data) {
-    // fix pre-processing
-    // for (key in d.cantica[0].canto.tercet.lines){
-    //   if (key != "line_number")
-    //     keys.push(key);
-    // }
-    // data.forEach(function(d){
-    //   d.total = 0;
-    //   keys.forEach(function(k){
-    //     d.total += d[k];
-    //   })
-    // });
 
-    var keys = ["chars", "rhyme_length"];
+    var keys = ["line_number", "chars", "rhyme_length"];
 
-    // $.each(data.cantica, function(k, v) {
-    //   $.each(v.canto, function(k, v) {
-    //     $.each(v.tercet, function(k, v) {
-    //       $.each(v.lines, function(k, v) {
-    //           keys.push(v.chars);
-    //           keys.push(v.rhyme_length);
-    //         // char_lines.push(v.chars);
-    //         // text_lines.push(v.text);
-    //         // line_numbers.push(v.line_number);
-    //         // rhymes.push(v.rhyme);
-    //       });
-    //     });
-    //   });     
-    // });
+    var newdata = [];
 
-    console.log(keys);
+    $.each(data.cantica, function(k, v) {
+      $.each(v.canto, function(k, v) {
+        $.each(v.tercet, function(k, v) {
+          $.each(v.lines, function(k, v) {
+            var obj = {};
+            obj["line_number"] = v.line_number;
+            obj["chars"] = v.chars;
+            obj["rhyme_length"] = v.rhyme_length;
+            newdata.push(obj);
+          });
+        });
+      });     
+    });
 
   // data.sort(function(a, b) {
   //   return b.total - a.total;
   // });
 
-  x.domain(d3.map(function(d) {
-    return d.line_number;
-  }));
-  y.domain([0, d3.max(data, function(d) {
-    return d.total;
+
+  // x.domain(newdata.map(function(d) {
+  //   return d.line_numbers;
+  // }));
+  x.domain([0, total_lines]);
+  y.domain([0, d3.max(newdata, function(d) {
+    return d.chars;
   })]).nice();
   z.domain(keys);
 
   g.append("g")
     .selectAll("g")
-    .data(d3.stack().keys(keys)(data))
+    .data(d3.stack().keys(keys)(newdata))
     .enter().append("g")
     .attr("fill", function(d) {
+      console.log("d.key: " + d.key);
       return z(d.key);
     })
     .selectAll("rect")
@@ -240,15 +231,33 @@ $(document).ready(function() {
     })
     .enter().append("rect")
     .attr("x", function(d) {
-      return x(d.data.line_number);
+      return 200;
     })
     .attr("y", function(d) {
-      return y(d[1]);
+      return y(newdata[1].chars);
+      // return y(d[1]);
     })
     .attr("height", function(d) {
       return y(d[0]) - y(d[1]);
     })
-    .attr("width", x.bandwidth());
+    // .attr("width", x.bandwidth());
+    .attr("width", "10px");
+    // .attr("height", function(d) {
+    //   return y(d[0]) - y(d[1]);
+    // })
+    // .attr("width", x.bandwidth());
+
+  //   .enter().append("rect")
+  //   .attr("x", function(d) {
+  //     return x(d.data.line_number);
+  //   })
+  //   .attr("y", function(d) {
+  //     return y(d[1]);
+  //   })
+  //   .attr("height", function(d) {
+  //     return y(d[0]) - y(d[1]);
+  //   })
+  //   .attr("width", x.bandwidth());
 
   g.append("g")
     .attr("class", "axis")
@@ -279,14 +288,15 @@ $(document).ready(function() {
     });
 
   legend.append("rect")
+    .attr("y", - 15)
     .attr("x", width - 19)
     .attr("width", 19)
     .attr("height", 19)
     .attr("fill", z);
 
   legend.append("text")
+    .attr("y", - 5)
     .attr("x", width - 24)
-    .attr("y", 9.5)
     .attr("dy", "0.32em")
     .text(function(d) {
       return d;
