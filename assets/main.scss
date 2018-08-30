@@ -33,6 +33,51 @@ html {
     text-align: right;
 }
 
+// Forms
+
+button {
+    &:hover {
+        background: $grey-color;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+input,
+textarea,
+select,
+button {
+    background: white;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 10px;
+    width: 250px;
+
+    -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+    -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+    box-sizing: border-box;
+}
+
+input[type=text] {
+    border-radius: 0;
+
+    -webkit-appearance: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: white;
+    border: none;
+    padding: 8px;
+
+    &::-ms-expand {
+        display: none;
+    }
+}
+
 /* Header */
 .site-title {
     line-height: 1.5rem;

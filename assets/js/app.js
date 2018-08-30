@@ -231,7 +231,8 @@ $(document).ready(function() {
     })
     .enter().append("rect")
     .attr("x", function(d) {
-      return 200;
+      return y(newdata[1].chars);
+      // return y(d[1]);
     })
     .attr("y", function(d) {
       return y(newdata[1].chars);
