@@ -3,7 +3,9 @@
 $(document).ready(function() {
   d3.json('/assets/json/json_inferno.json').then(function(d) {
 
-    var char_lines = [],
+    var cantos = [],
+        lines = [],
+        char_lines = [],
         text_lines = [],
         line_numbers = [],
         rhymes = [],
@@ -29,28 +31,18 @@ $(document).ready(function() {
     // TODO: improve to automise field name (eg. cantica, canto, etc.)
     $.each(d.cantica, function(k, v) {
       $.each(v.canto, function(k, v) {
-        $.each(v.tercet, function(k, v) {
-          $.each(v.lines, function(k, v) {
-            char_lines.push(v.chars);
-            text_lines.push(v.text);
-            line_numbers.push(v.line_number);
-            rhymes.push(v.rhyme);
-            // console.log('v.chars: ' + v.chars + '\n' +
-            //             'v.text: ' + v.text + '\n' +
-            //             'v.line_number: ' + v.line_number);
-            total_lines++;
-          });
+        cantos.push(v.title);
+        $.each(v.lines, function(k, v) {
+          char_lines.push(v.chars);
+          text_lines.push(v.text);
+          line_numbers.push(v.line_number);
+          rhymes.push(v.rhyme);
+          total_lines++;
         });
       });     
     });
 
     console.log(total_lines);
-
-    // for (i = 0; i < d.cantica[0].canto[33].tercet[0].lines.length; i++) {
-    //     char_lines.push(d.cantica[0].canto[33].tercet[0].lines[i].chars);
-    //     text_lines.push(d.cantica[0].canto[33].tercet[0].lines[i].text);
-    //     line_numbers.push(d.cantica[0].canto[33].tercet[0].lines[i].line_number);
-    // }
 
     yScale = d3.scaleLinear()
         .domain([0, total_lines])
@@ -116,10 +108,13 @@ $(document).ready(function() {
             tooltip.transition().duration(200)
               .style('opacity', .9)
             tooltip.html(
-              '<div><strong>chars:</strong> ' + d +
-              '<br><strong>line:</strong> ' + line_numbers[i] + 
-              '<br><strong>text:</strong> ' + text_lines[i] + 
-              '<br><strong>rhyme:</strong> ' + rhymes[i] + '</div>'
+              '<div>' +
+              '<strong>Canto: </strong>' + d3.data(cantos).title +
+              '<br><strong>chars: </strong>' + d +
+              '<br><strong>line: </strong>' + line_numbers[i] + 
+              '<br><strong>text: </strong>' + text_lines[i] + 
+              '<br><strong>rhyme: </strong>' + rhymes[i] +
+              '</div>'
             )
               .style('left', (d3.event.pageX) + 'px')
               .style('top', (d3.event.pageY) + 'px')
@@ -158,151 +153,151 @@ $(document).ready(function() {
 
 
 
+  // // Stacked
+
+  // var svg = d3.select("svg#stacked"),
+  //   margin = {
+  //     top: 20,
+  //     right: 20,
+  //     bottom: 30,
+  //     left: 40
+  //   },
+  //   width = +svg.attr("width") - margin.left - margin.right,
+  //   height = +svg.attr("height") - margin.top - margin.bottom,
+  //   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  // var x = d3.scaleBand()
+  //   .rangeRound([0, width])
+  //   .paddingInner(0.05)
+  //   .align(0.1);
+
+  // var y = d3.scaleLinear()
+  //   .rangeRound([height, 0]);
+
+  // var z = d3.scaleOrdinal()
+  //   .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
 
-  var svg = d3.select("svg#stacked"),
-    margin = {
-      top: 20,
-      right: 20,
-      bottom: 30,
-      left: 40
-    },
-    width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom,
-    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  // d3.json('/assets/json/json_inferno.json').then(function(data) {
 
-  var x = d3.scaleBand()
-    .rangeRound([0, width])
-    .paddingInner(0.05)
-    .align(0.1);
+  //   var keys = ["line_number", "chars", "rhyme_length"];
 
-  var y = d3.scaleLinear()
-    .rangeRound([height, 0]);
+  //   var newdata = [];
 
-  var z = d3.scaleOrdinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+  //   $.each(data.cantica, function(k, v) {
+  //     $.each(v.canto, function(k, v) {
+  //       $.each(v.tercet, function(k, v) {
+  //         $.each(v.lines, function(k, v) {
+  //           var obj = {};
+  //           obj["line_number"] = v.line_number;
+  //           obj["chars"] = v.chars;
+  //           obj["rhyme_length"] = v.rhyme_length;
+  //           newdata.push(obj);
+  //         });
+  //       });
+  //     });     
+  //   });
 
-
-  d3.json('/assets/json/json_inferno.json').then(function(data) {
-
-    var keys = ["line_number", "chars", "rhyme_length"];
-
-    var newdata = [];
-
-    $.each(data.cantica, function(k, v) {
-      $.each(v.canto, function(k, v) {
-        $.each(v.tercet, function(k, v) {
-          $.each(v.lines, function(k, v) {
-            var obj = {};
-            obj["line_number"] = v.line_number;
-            obj["chars"] = v.chars;
-            obj["rhyme_length"] = v.rhyme_length;
-            newdata.push(obj);
-          });
-        });
-      });     
-    });
-
-  // data.sort(function(a, b) {
-  //   return b.total - a.total;
-  // });
+  // // data.sort(function(a, b) {
+  // //   return b.total - a.total;
+  // // });
 
 
-  // x.domain(newdata.map(function(d) {
-  //   return d.line_numbers;
-  // }));
-  x.domain([0, total_lines]);
-  y.domain([0, d3.max(newdata, function(d) {
-    return d.chars;
-  })]).nice();
-  z.domain(keys);
+  // // x.domain(newdata.map(function(d) {
+  // //   return d.line_numbers;
+  // // }));
+  // x.domain([0, total_lines]);
+  // y.domain([0, d3.max(newdata, function(d) {
+  //   return d.chars;
+  // })]).nice();
+  // z.domain(keys);
 
-  g.append("g")
-    .selectAll("g")
-    .data(d3.stack().keys(keys)(newdata))
-    .enter().append("g")
-    .attr("fill", function(d) {
-      console.log("d.key: " + d.key);
-      return z(d.key);
-    })
-    .selectAll("rect")
-    .data(function(d) {
-      return d;
-    })
-    .enter().append("rect")
-    .attr("x", function(d) {
-      return y(newdata[1].chars);
-      // return y(d[1]);
-    })
-    .attr("y", function(d) {
-      return y(newdata[1].chars);
-      // return y(d[1]);
-    })
-    .attr("height", function(d) {
-      return y(d[0]) - y(d[1]);
-    })
-    // .attr("width", x.bandwidth());
-    .attr("width", "10px");
-    // .attr("height", function(d) {
-    //   return y(d[0]) - y(d[1]);
-    // })
-    // .attr("width", x.bandwidth());
-
+  // g.append("g")
+  //   .selectAll("g")
+  //   .data(d3.stack().keys(keys)(newdata))
+  //   .enter().append("g")
+  //   .attr("fill", function(d) {
+  //     console.log("d.key: " + d.key);
+  //     return z(d.key);
+  //   })
+  //   .selectAll("rect")
+  //   .data(function(d) {
+  //     return d;
+  //   })
   //   .enter().append("rect")
   //   .attr("x", function(d) {
-  //     return x(d.data.line_number);
+  //     return y(newdata[1].chars);
+  //     // return y(d[1]);
   //   })
   //   .attr("y", function(d) {
-  //     return y(d[1]);
+  //     return y(newdata[1].chars);
+  //     // return y(d[1]);
   //   })
   //   .attr("height", function(d) {
   //     return y(d[0]) - y(d[1]);
   //   })
-  //   .attr("width", x.bandwidth());
+  //   // .attr("width", x.bandwidth());
+  //   .attr("width", "10px");
+  //   // .attr("height", function(d) {
+  //   //   return y(d[0]) - y(d[1]);
+  //   // })
+  //   // .attr("width", x.bandwidth());
 
-  g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x));
+  // //   .enter().append("rect")
+  // //   .attr("x", function(d) {
+  // //     return x(d.data.line_number);
+  // //   })
+  // //   .attr("y", function(d) {
+  // //     return y(d[1]);
+  // //   })
+  // //   .attr("height", function(d) {
+  // //     return y(d[0]) - y(d[1]);
+  // //   })
+  // //   .attr("width", x.bandwidth());
 
-  g.append("g")
-    .attr("class", "axis")
-    .call(d3.axisLeft(y).ticks(null, "s"))
-    .append("text")
-    .attr("x", 2)
-    .attr("y", y(y.ticks().pop()) + 0.5)
-    .attr("dy", "0.32em");
-    // .attr("fill", "#000")
-    // .attr("font-weight", "bold")
-    // .attr("text-anchor", "start")
-    // .text("Population");
+  // g.append("g")
+  //   .attr("class", "axis")
+  //   .attr("transform", "translate(0," + height + ")")
+  //   .call(d3.axisBottom(x));
 
-  var legend = g.append("g")
-    .attr("font-family", "sans-serif")
-    .attr("font-size", 10)
-    .attr("text-anchor", "end")
-    .selectAll("g")
-    .data(keys.slice().reverse())
-    .enter().append("g")
-    .attr("transform", function(d, i) {
-      return "translate(0," + i * 20 + ")";
-    });
+  // g.append("g")
+  //   .attr("class", "axis")
+  //   .call(d3.axisLeft(y).ticks(null, "s"))
+  //   .append("text")
+  //   .attr("x", 2)
+  //   .attr("y", y(y.ticks().pop()) + 0.5)
+  //   .attr("dy", "0.32em");
+  //   // .attr("fill", "#000")
+  //   // .attr("font-weight", "bold")
+  //   // .attr("text-anchor", "start")
+  //   // .text("Population");
 
-  legend.append("rect")
-    .attr("y", - 15)
-    .attr("x", width - 19)
-    .attr("width", 19)
-    .attr("height", 19)
-    .attr("fill", z);
+  // var legend = g.append("g")
+  //   .attr("font-family", "sans-serif")
+  //   .attr("font-size", 10)
+  //   .attr("text-anchor", "end")
+  //   .selectAll("g")
+  //   .data(keys.slice().reverse())
+  //   .enter().append("g")
+  //   .attr("transform", function(d, i) {
+  //     return "translate(0," + i * 20 + ")";
+  //   });
 
-  legend.append("text")
-    .attr("y", - 5)
-    .attr("x", width - 24)
-    .attr("dy", "0.32em")
-    .text(function(d) {
-      return d;
-    });
-  });
+  // legend.append("rect")
+  //   .attr("y", - 15)
+  //   .attr("x", width - 19)
+  //   .attr("width", 19)
+  //   .attr("height", 19)
+  //   .attr("fill", z);
+
+  // legend.append("text")
+  //   .attr("y", - 5)
+  //   .attr("x", width - 24)
+  //   .attr("dy", "0.32em")
+  //   .text(function(d) {
+  //     return d;
+  //   });
+  // });
 
 
 

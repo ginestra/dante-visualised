@@ -1,0 +1,216 @@
+{
+  "definitions": {}, 
+  "$schema": "http://json-schema.org/draft-07/schema#", 
+  "$id": "/divine_comedy/shema.json", 
+  "type": "object", 
+  "title": "The Divine Comedy Schema", 
+  "required": [
+    "title", 
+    "author", 
+    "year", 
+    "lang", 
+    "cantica"
+  ],
+  "properties": {
+    "title": {
+      "$id": "#/properties/title", 
+      "type": "string", 
+      "title": "The Title Schema", 
+      "default": "", 
+      "examples": [
+        "La Divina Commedia"
+      ], 
+      "pattern": "^(.*)$"
+    }, 
+    "author": {
+      "$id": "#/properties/author", 
+      "type": "string", 
+      "title": "The Author Schema", 
+      "default": "", 
+      "examples": [
+        "Dante Alighier"
+      ], 
+      "pattern": "^(.*)$"
+    }, 
+    "year": {
+      "$id": "#/properties/year", 
+      "type": "string", 
+      "title": "The Year Schema", 
+      "default": "", 
+      "examples": [
+        "1308-1320"
+      ], 
+      "pattern": "^(.*)$"
+    }, 
+    "lang": {
+      "$id": "#/properties/lang", 
+      "type": "string", 
+      "title": "The Lang Schema", 
+      "default": "", 
+      "examples": [
+        "IT"
+      ], 
+      "pattern": "^(.*)$"
+    }, 
+    "cantica": {
+      "$id": "#/properties/cantica", 
+      "type": "array", 
+      "title": "The Cantica Schema", 
+      "items": {
+        "$id": "#/properties/cantica/items", 
+        "type": "object", 
+        "title": "The Items Schema", 
+        "required": [
+          "title", 
+          "canto"
+        ], 
+        "properties": {
+          "title": {
+            "$id": "#/properties/cantica/items/properties/title", 
+            "type": "string", 
+            "title": "The Title Schema", 
+            "default": "", 
+            "examples": [
+              "Inferno"
+            ], 
+            "pattern": "^(.*)$"
+          }, 
+          "canto": {
+            "$id": "#/properties/cantica/items/properties/canto", 
+            "type": "array", 
+            "title": "The Canto Schema", 
+            "items": {
+              "$id": "#/properties/cantica/items/properties/canto/items", 
+              "type": "object", 
+              "title": "The Items Schema", 
+              "required": [
+                "number", 
+                "title", 
+                "lines"
+              ], 
+              "properties": {
+                "number": {
+                  "$id": "#/properties/cantica/items/properties/canto/items/properties/number", 
+                  "type": "integer", 
+                  "title": "The Number Schema", 
+                  "default": 0, 
+                  "examples": [
+                    1
+                  ]
+                }, 
+                "title": {
+                  "$id": "#/properties/cantica/items/properties/canto/items/properties/title", 
+                  "type": "string", 
+                  "title": "The Title Schema", 
+                  "default": "", 
+                  "examples": [
+                    "Canto I"
+                  ], 
+                  "pattern": "^(.*)$"
+                }, 
+                "lines": {
+                  "$id": "#/properties/cantica/items/properties/canto/items/properties/lines", 
+                  "type": "array", 
+                  "title": "The Lines Schema", 
+                  "items": {
+                    "$id": "#/properties/cantica/items/properties/canto/items/properties/lines/items", 
+                    "type": "object", 
+                    "title": "The Items Schema", 
+                    "required": [
+                      "tercet_number", 
+                      "line_number", 
+                      "text", 
+                      "chars", 
+                      "last_word", 
+                      "rhyme_length", 
+                      "rhyme", 
+                      "color"
+                    ], 
+                    "properties": {
+                      "tercet_number": {
+                        "$id": "#/properties/cantica/items/properties/canto/items/properties/lines/items/properties/tercet_number", 
+                        "type": "integer", 
+                        "title": "The Tercet_number Schema", 
+                        "default": 0, 
+                        "examples": [
+                          1
+                        ]
+                      }, 
+                      "line_number": {
+                        "$id": "#/properties/cantica/items/properties/canto/items/properties/lines/items/properties/line_number", 
+                        "type": "integer", 
+                        "title": "The Line_number Schema", 
+                        "default": 0, 
+                        "examples": [
+                          1
+                        ]
+                      }, 
+                      "text": {
+                        "$id": "#/properties/cantica/items/properties/canto/items/properties/lines/items/properties/text", 
+                        "type": "string", 
+                        "title": "The Text Schema", 
+                        "default": "", 
+                        "examples": [
+                          "Nel mezzo del cammin di nostra vita"
+                        ], 
+                        "pattern": "^(.*)$"
+                      }, 
+                      "chars": {
+                        "$id": "#/properties/cantica/items/properties/canto/items/properties/lines/items/properties/chars", 
+                        "type": "integer", 
+                        "title": "The Chars Schema", 
+                        "default": 0, 
+                        "examples": [
+                          36
+                        ]
+                      }, 
+                      "last_word": {
+                        "$id": "#/properties/cantica/items/properties/canto/items/properties/lines/items/properties/last_word", 
+                        "type": "string", 
+                        "title": "The Last_word Schema", 
+                        "default": "", 
+                        "examples": [
+                          "vita"
+                        ], 
+                        "pattern": "^(.*)$"
+                      }, 
+                      "rhyme_length": {
+                        "$id": "#/properties/cantica/items/properties/canto/items/properties/lines/items/properties/rhyme_length", 
+                        "type": "integer", 
+                        "title": "The Rhyme_length Schema", 
+                        "default": 0, 
+                        "examples": [
+                          0
+                        ]
+                      }, 
+                      "rhyme": {
+                        "$id": "#/properties/cantica/items/properties/canto/items/properties/lines/items/properties/rhyme", 
+                        "type": "string", 
+                        "title": "The Rhyme Schema", 
+                        "default": "", 
+                        "examples": [
+                          "ita"
+                        ], 
+                        "pattern": "^(.*)$"
+                      }, 
+                      "color": {
+                        "$id": "#/properties/cantica/items/properties/canto/items/properties/lines/items/properties/color", 
+                        "type": "string", 
+                        "title": "The Color Schema", 
+                        "default": "", 
+                        "examples": [
+                          "rgba(162, 63, 234, 1)"
+                        ], 
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
