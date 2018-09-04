@@ -1,7 +1,7 @@
 /* Using D3JS to render the data I saved in json format */
 
 $(document).ready(function() {
-  d3.json('/assets/json/json_inferno.json').then(function(d) {
+  d3.json('/assets/json/json_inferno_it.json').then(function(d) {
 
     var cantos = [],
         lines = [],
@@ -28,10 +28,10 @@ $(document).ready(function() {
         tooltip,
         testViz;
 
-    // TODO: improve to automise field name (eg. cantica, canto, etc.)
     $.each(d.cantica, function(k, v) {
       $.each(v.canto, function(k, v) {
         cantos.push(v.title);
+        console.log(v.title);
         $.each(v.lines, function(k, v) {
           char_lines.push(v.chars);
           text_lines.push(v.text);
@@ -70,14 +70,14 @@ $(document).ready(function() {
         // .ticks(d3.line_numbers.every(1))
         .ticks(20)
 
-    // colors = d3.scaleLinear()
-    //     .domain([0, d3.max(char_lines)/2, d3.max(char_lines)])
-    //     .range(['#fff', '#2D8BCF', '#ffbb00'])
+    colors = d3.scaleLinear()
+        .domain([0, d3.max(char_lines)/2, d3.max(char_lines)])
+        .range(['#fff', '#2D8BCF', '#ffbb00'])
 
     // Trying ordinal scale
-    colors = d3.scaleOrdinal()
-        .domain([d3.max(char_lines)-3, d3.max(char_lines)])
-        .range(['#666', '#ffbb00'])
+    // colors = d3.scaleOrdinal()
+    //     .domain([d3.max(char_lines)-3, d3.max(char_lines)])
+    //     .range(['#666', '#ffbb00'])
 
     tooltip = d3.select('body')
         .append('div')
@@ -108,8 +108,8 @@ $(document).ready(function() {
             tooltip.transition().duration(200)
               .style('opacity', .9)
             tooltip.html(
-              '<div>' +
-              '<strong>Canto: </strong>' + d3.data(cantos).title +
+              '<div class="tooltip">' +
+              // '<strong>Canto: </strong>' + d3.data(cantos).title +
               '<br><strong>chars: </strong>' + d +
               '<br><strong>line: </strong>' + line_numbers[i] + 
               '<br><strong>text: </strong>' + text_lines[i] + 

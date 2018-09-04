@@ -1,33 +1,42 @@
-import json
-import os
-# import re
-import string
+import json, nltk, os, re, string
+from nltk import RegexpTokenizer
 
-# https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+# Settings
+title = "La Divina Commedia"
+author = "Dante Alighier"
+year = "1308-1320"
+lang = "it"
+cantica = "Inferno"
 
-pathToFile = "../texts/Inferno/Petrocchi/"
-line_number = 0
+pathToFile = "texts/" + lang + "/" + cantica + "/"
 tercet_number = 1
 last_word_odd = ""
 last_word_even = ""
 rhyme_length = 0
+canto_num = 0
 
 # Helper to remove punctuation
-translator = str.maketrans('', '', string.punctuation)
+tokenizer = RegexpTokenizer(r'\w+')
 
-# Loop over files in texts directory
+'''
+Loop over files in texts directory
+Docs: https://docs.python.org/3/tutorial/inputoutput.html\
+#reading-and-writing-files
+'''
 for root, dirs, files in os.walk(pathToFile):
-    for file in files:
+    cantos = []
+    for file in sorted(files):
+
+        # Reset line and tercet number at the beginning of each canto
+        line_number = 0
+        tercet_number = 1
+
         if file.endswith(".txt"):
 
-            with open(pathToFile + file) as cantoI:
+            with open(pathToFile + file) as canto:
                 lines = []
 
-                # Array for tercets
-                tercets = []
-
-                # print("Tercet #", tercet_number)
-                for line in cantoI:
+                for line in canto:
                     '''
                     If the line is not blank, assign a line number,
                     otherwise print an empty line to separate tercets
@@ -35,21 +44,13 @@ for root, dirs, files in os.walk(pathToFile):
                     if line.strip():
                         line_number += 1
 
-                        # Store the last word in the line
+                        '''
+                        Split words and store the last one with no punctuation
+                        '''
                         words = line.split()
-                        last_word = words[-1]
-
-                        '''
-                        Replacing special characters that are not included
-                        in string.punctuation (TODO: Needs improvement)
-                        Convert to lowercase for good measure
-                        and removed punctuation at the end of the line
-                        last_word = last_word.replace('»', '')
-                        '''
-                        last_word = last_word.lower().translate(translator)
-
-                        # Matching last part of the line / Needs improvement
-                        # rhyme = "".join(re.findall(r"\w", last_word[-3:], re.U))
+                        last_word = tokenizer.tokenize(words[-1])
+                        if last_word:
+                            last_word = last_word[-1]
 
                         '''
                         Storing alternate rhymes for odd and even lines
@@ -67,22 +68,20 @@ for root, dirs, files in os.walk(pathToFile):
                                 '''
                                 if (len(set(last_word[::-1]) &
                                         set(last_word_odd[::-1])) >= 2):
-                                    # print(last_word[::-1])
                                     rhyme_length = len(
                                         set(last_word[::-1]) &
                                         set(last_word_odd[::-1]))
                                 else:
                                     # It's a new rhyme, store it
                                     last_word_odd = last_word
-                                    # print(last_word[::-1])
 
                             # It must be the first line and there is no word
                             # stored yet
                             else:
                                 last_word_odd = last_word
-                                print(last_word[::-1])
 
                             current_line = {
+                                "tercet_number": tercet_number,
                                 "line_number": line_number,
                                 "text": line,
                                 "chars": len(line),
@@ -111,22 +110,20 @@ for root, dirs, files in os.walk(pathToFile):
                                 '''
                                 if (len(set(last_word[::-1]) &
                                         set(last_word_even[::-1])) >= 2):
-                                    # print(last_word[::-1])
                                     rhyme_length = len(
                                         set(last_word[::-1]) &
                                         set(last_word_even[::-1]))
                                 else:
                                     # It's a new rhyme, store it
                                     last_word_even = last_word
-                                    # print(last_word[::-1])
 
                             # It must be the first line and there is no word
-                            #vstored yet
+                            # stored yet
                             else:
                                 last_word_even = last_word
-                                # print(last_word[::-1])
 
                             current_line = {
+                                "tercet_number": tercet_number,
                                 "line_number": line_number,
                                 "text": line,
                                 "chars": len(line),
@@ -143,47 +140,40 @@ for root, dirs, files in os.walk(pathToFile):
                                 "color": "rgba(162, 63, 234, 1)"
                             }
 
-                        # TODO: clean what gets added to the tercets
-                        # TODO: create array for tercets
-            #             if (line_number % 3 == 0):
-            #                 tercets.append(lines)
-            #                 lines.clear()
-            #                 lines.append(current_line)
-            #             else:
-                        tercets.append(current_line)
+                        lines.append(current_line)
 
                     else:
                         tercet_number += 1
-                        # print("")
-                        # print("Tercet #", tercet_number)
 
-                # print("\nNumber of lines: ", line_number)
-                steps = line_number
+                title_num = convert_to_roman(canto_num)
 
-            json_obj = {
-                "title": "La Divina Commedia",
-                "author": "Dante Alighier",
-                "year": "1308-1320",
-                "lang": "IT",
-                "cantica": [
-                    {
-                        "title": "Inferno",
-                        "canto": [
-                            {
-                                "number": 1,
-                                "title": "Canto I",
-                                "tercet": [
-                                    {
-                                        "number": 1,
-                                        "lines": tercets
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
+                current_canto = {
+                    "number": canto_num,
+                    "title": "Canto " + title_num,
+                    "lines": lines
+                }
+
+                cantos.append(current_canto)
+
+        # Array for cantos
+        canto_num += 1
+
+
+# Initiate the file structure out of any loop
+json_obj = {
+    "title": title,
+    "author": author,
+    "year": year,
+    "lang": lang,
+    "cantica": [
+        {
+            "title": cantica,
+            "canto": cantos
+        }
+    ]
+}
 
 # Generate JSON file
-with open("json_sample.json", "a+") as json_sample:
-    json.dump(json_obj, json_sample, indent=4)
+with open("json_" + cantica.lower() + "_/" +
+          lang + ".json", "w") as json_cantica:
+    json.dump(json_obj, json_cantica, indent=4)

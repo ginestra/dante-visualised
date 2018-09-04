@@ -103,6 +103,17 @@ select {
     // height: 8000px;
     height: 100%;
     width: 600px;
+
+    rect {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.tooltip {
+    border: 5px solid lighten($grey-color, 50%);
+    padding: 10px;
 }
 
 // svg {
