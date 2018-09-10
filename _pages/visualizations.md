@@ -4,4 +4,4 @@ title: Visualizations
 permalink: /visualizations/
 ---
 
-Some content here
+Inferno

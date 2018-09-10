@@ -3,7 +3,7 @@ from nltk import RegexpTokenizer
 
 # Settings
 title = "La Divina Commedia"
-author = "Dante Alighier"
+author = "Dante Alighieri"
 year = "1308-1320"
 lang = "it"
 cantica = "Inferno"
