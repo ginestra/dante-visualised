@@ -155,8 +155,6 @@ $(document).ready(function() {
 
   var svg = d3.select("svg#stacked"),
     margin = { top: 20, right: 20, bottom: 30, left: 40 },
-    // width = +svg.attr("width") - margin.left - margin.right,
-    // height = +svg.attr("height") - margin.top - margin.bottom,
     width = +svg.attr("width") - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + 
@@ -195,11 +193,11 @@ $(document).ready(function() {
     });
 
   x.domain(newdata.map(function(d) {
-    return d.line_numbers;
+    return d.line_number;
   }));
-  x.domain([0, d3.max(newdata, function(d) {
-    return d.line_numbers;
-  })]);
+  // x.domain([0, d3.max(newdata, function(d) {
+  //   return d.line_number;
+  // })]);
   y.domain([0, d3.max(newdata, function(d) {
     return d.chars;
   })]);
@@ -222,42 +220,13 @@ $(document).ready(function() {
     })
     .attr("y", function(d) {
       // return y(d[0]);
-      return d.data.chars;
+      return y(d.data.chars);
     })
     .attr("height", function(d) {
       return y(d[0]) - y(d[1]);
+      // return y(d[0]) + y(d[1]);
     })
     .attr("width", "8px");
-
-    // .attr("x", function(d) {
-    //   return y(newdata[1].chars);
-    //   // return y(d[1]);
-    // })
-    // .attr("y", function(d) {
-    //   return y(newdata[1].chars);
-    //   // return y(d[1]);
-    // })
-    // .attr("height", function(d) {
-    //   return y(d[0]) - y(d[1]);
-    // })
-    // // .attr("width", x.bandwidth());
-    // .attr("width", "10px");
-    // .attr("height", function(d) {
-    //   return y(d[0]) - y(d[1]);
-    // })
-    // .attr("width", x.bandwidth());
-
-  //   .enter().append("rect")
-  //   .attr("x", function(d) {
-  //     return x(d.data.line_number);
-  //   })
-  //   .attr("y", function(d) {
-  //     return y(d[1]);
-  //   })
-  //   .attr("height", function(d) {
-  //     return y(d[0]) - y(d[1]);
-  //   })
-  //   .attr("width", x.bandwidth());
 
   g.append("g")
     .attr("class", "axis")
@@ -271,10 +240,6 @@ $(document).ready(function() {
     .attr("x", 2)
     .attr("y", y(y.ticks().pop()) + 0.5)
     .attr("dy", "0.32em");
-    // .attr("fill", "#000")
-    // .attr("font-weight", "bold")
-    // .attr("text-anchor", "start")
-    // .text("Population");
 
   var legend = g.append("g")
     .attr("font-family", "sans-serif")
@@ -297,12 +262,11 @@ $(document).ready(function() {
   legend.append("text")
     .attr("y", - 5)
     .attr("x", width - 24)
-    .attr("dy", "0.32em")
+    .attr("dy", 0)
     .text(function(d) {
       return d;
     });
   });
-
 
 
   //// Static
@@ -461,11 +425,6 @@ $(document).ready(function() {
   //   })
   // });
 
-  // console.log("Static: " + keys);
-
-  // // data.sort(function(a, b) {
-  // //   return b.total - a.total;
-  // // });
   // x.domain(data.map(function(d) {
   //   return d.line_number;
   // }));
@@ -509,10 +468,6 @@ $(document).ready(function() {
   //   .attr("x", 2)
   //   .attr("y", y(y.ticks().pop()) + 0.5)
   //   .attr("dy", "0.32em");
-  //   // .attr("fill", "#000")
-  //   // .attr("font-weight", "bold")
-  //   // .attr("text-anchor", "start")
-  //   // .text("Population");
 
   // var legend = g.append("g")
   //   .attr("font-family", "sans-serif")
@@ -535,7 +490,6 @@ $(document).ready(function() {
   // legend.append("text")
   //   .attr("y", - 5)
   //   .attr("x", width - 24)
-  //   // .attr("y", 9.5)
   //   .attr("dy", "0.32em")
   //   .text(function(d) {
   //     return d;
