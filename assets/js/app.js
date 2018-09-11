@@ -156,7 +156,7 @@ $(document).ready(function() {
   var svg = d3.select("svg#stacked"),
     margin = { top: 20, right: 20, bottom: 30, left: 40 },
     width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom,
+    mHeight = +svg.attr("height") - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + 
       margin.top + ")");
 
@@ -166,14 +166,13 @@ $(document).ready(function() {
     .align(0.1);
 
   var y = d3.scaleLinear()
-    .rangeRound([height, 0]);
+    .rangeRound([mHeight, 0]);
 
   var z = d3.scaleOrdinal()
     .range(["#6b486b", "#ff8c00"]);
 
 
   d3.json('/assets/json/json_inferno_it.json').then(function(d) {
-    console.log(d);
 
     var keys = ["chars", "rhyme_length"],
         newdata = [],
@@ -182,26 +181,35 @@ $(document).ready(function() {
     $.each(d.cantica, function(k, v) {
       $.each(v.canto, function(k, v) {
         $.each(v.lines, function(k, v) {
-          var obj = {};
-          obj["line_number"] = v.line_number;
-          obj["chars"] = v.chars;
-          obj["rhyme_length"] = v.rhyme_length;
-          newdata.push(obj);
+          var attr = {};
+          attr["line_number"] = v.line_number;
+          attr["chars"] = v.chars;
+          attr["rhyme_length"] = v.rhyme_length;
+          newdata.push(attr);
           total_lines++;
         });
       });     
     });
 
-  x.domain(newdata.map(function(d) {
-    return d.line_number;
-  }));
-  // x.domain([0, d3.max(newdata, function(d) {
-  //   return d.line_number;
-  // })]);
+  // x.domain(newdata.map(function(d) {
+  //   return d.total_lines;
+  // }));
+  x.domain([0, total_lines]);
+
   y.domain([0, d3.max(newdata, function(d) {
     return d.chars;
   })]);
   z.domain(keys);
+
+  xAxisVal = d3.scaleLinear()
+      // .domain([0, d3.max(newdata, function(d) {
+      //   return d.line_number;
+      // })])
+      .domain([0, total_lines])
+      .range([0, total_lines]);
+
+  xTicks = d3.axisBottom(xAxisVal)
+      .ticks(100)
 
   g.append("g")
     .selectAll("g")
@@ -216,22 +224,27 @@ $(document).ready(function() {
     })
     .enter().append("rect")
     .attr("x", function(d) {
-      return d.data.line_number * 10 - 10;
+      return d.data.line_number * 5 - 5;
     })
     .attr("y", function(d) {
       // return y(d[0]);
       return y(d.data.chars);
     })
     .attr("height", function(d) {
+      // console.log(d.data.chars + " " + d.data.rhyme_length);
+      // console.log(d, d[0], d[1]);
+      // console.log(d.data);
+      // return y(d.data.chars - d.data.rhyme_length);
+      // return d.data.chars;
+      // return y(d.data.chars) + y(d.data.rhyme_length);
       return y(d[0]) - y(d[1]);
-      // return y(d[0]) + y(d[1]);
     })
-    .attr("width", "8px");
+    .attr("width", "4px");
 
   g.append("g")
     .attr("class", "axis")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x));
+    .attr("transform", "translate(0," + mHeight + ")")
+    .call(xTicks);
 
   g.append("g")
     .attr("class", "axis")
@@ -269,7 +282,7 @@ $(document).ready(function() {
   });
 
 
-  //// Static
+  // // Static
 
   // var svg = d3.select("svg#stackedtwo"),
   //   margin = { top: 20, right: 20, bottom: 30, left: 40 },

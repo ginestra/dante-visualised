@@ -15,7 +15,9 @@
 <script type="application/ld+json">
 {"name":"Dante Visualised","description":"Visualising Dante’s Divine Comedy","@type":"WebSite","url":"http://localhost:4000/about/","headline":"About","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href='/assets/main.css'><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Dante Visualised" /></head>
+<link rel="stylesheet" href='/assets/main.css'><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Dante Visualised" />{# FontAwesome js to svg #}
+  <script defer src="/assets/vendor/fontawesome/js/all.min.js"></script>
+</head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper">
@@ -48,7 +50,6 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        
         <article class="post">
 
   <header class="post-header">
@@ -56,7 +57,19 @@
   </header>
 
   <div class="post-content">
-    <p>Some content here</p>
+    <!-- The text below will populate the  tag in the layout -->
+<p>This MSc Computer Science project was born out of the desire to explore the opportunities in which literature can offer interesting datasets to be computationally analysed.</p>
+
+<p>The project aims to investigate the possibility of representing the poem visually, with a particular interest in using colours, in such a way that the final patchwork for each cantica can give some insights into the similarities as well as the differences between the three parts of the work.</p>
+
+<p>The final output is rendered in a web browser and the user interface (UI) allows for interaction with the data: it’s possible to filter by cantica and canto, by equal length of / number of characters in a rhyme, a line or a tercet.</p>
+
+<p>In an attempt to solve the problem described, this study applies computational methods and calculations to the material selected. The goal is to add information and understand the choices made by the original author, discover patterns that would otherwise be very difficult to see if no automated work were involved.</p>
+
+<p>From a computational point of view the analysis of a body of text such as the Divine Comedy elicits particular interest for its multiple aspects referable to mathematics, like poetry and music often do because of their rules and rhythmic features.</p>
+
+<p>The structure of the poem is quite strict. The number of cantos is known and the scheme for the rhymes has conventions allowing for some automation in extracting the data. Word frequency and repetitions can be counted and sentiment analysis is the key to some level of semantic comprehension.</p>
+
 
   </div>
 
@@ -74,7 +87,7 @@
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li class="p-name">Visualising Dante&#39;s Divine Comedy</li><li>
-            <p>&copy; 2018<br>
+            <p><i class="fab fa-creative-commons"></i> 2018<br>
               Birkbeck University, London<br>
               MSc Computer Science</p>
           </li>
