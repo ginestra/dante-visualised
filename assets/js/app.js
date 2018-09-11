@@ -201,7 +201,7 @@ $(document).ready(function() {
 
   yAxisVal = d3.scaleLinear()
       .domain([0, total])
-      .range([0, mHeight]);
+      .range([0, mHeight + 24]);
 
   yTicks = d3.axisLeft(yAxisVal)
       .ticks(total)
@@ -222,14 +222,12 @@ $(document).ready(function() {
       return x(d[0]);
     })
     .attr("y", function(d) {
-      // return y(d[0]);
-      // return y(d.data.chars);
       return d.data.absolute_line * 10;
     })
     .attr("width", function(d) {
       return x(d[1]) - x(d[0]) - d.data.rhyme_length;
     })
-    .attr("height", "8px");
+    .attr("height", ((mHeight / total) - 2) + "px");
 
   g.append("g")
     .attr("class", "axis")
