@@ -31,7 +31,7 @@ $(document).ready(function() {
     $.each(d.cantica, function(k, v) {
       $.each(v.canto, function(k, v) {
         cantos.push(v.title);
-        console.log(v.title);
+        // console.log(v.title);
         $.each(v.lines, function(k, v) {
           char_lines.push(v.chars);
           text_lines.push(v.text);
@@ -151,8 +151,7 @@ $(document).ready(function() {
   }); // json import
 
 
-  // Stacked
-
+  // Stacked horizontal
   var svg = d3.select("svg#stacked"),
     margin = { top: 20, right: 20, bottom: 30, left: 40 },
     width = +svg.attr("width") - margin.left - margin.right,
@@ -160,23 +159,13 @@ $(document).ready(function() {
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + 
       margin.top + ")");
 
-  var x = d3.scaleBand()
-    .rangeRound([0, width])
-    .paddingInner(0.05)
-    .align(0.1);
-
-  var y = d3.scaleLinear()
-    .rangeRound([mHeight, 0]);
-
-  var z = d3.scaleOrdinal()
-    .range(["#6b486b", "#ff8c00"]);
-
 
   d3.json('/assets/json/json_inferno_it.json').then(function(d) {
 
     var keys = ["chars", "rhyme_length"],
         newdata = [],
-        total_lines = 0;
+        total = 0,
+        absolute_lines = [];
 
     $.each(d.cantica, function(k, v) {
       $.each(v.canto, function(k, v) {
@@ -185,31 +174,37 @@ $(document).ready(function() {
           attr["line_number"] = v.line_number;
           attr["chars"] = v.chars;
           attr["rhyme_length"] = v.rhyme_length;
+          attr["absolute_line"] = total++;
           newdata.push(attr);
-          total_lines++;
+          absolute_lines.push(total);
         });
       });     
     });
 
-  // x.domain(newdata.map(function(d) {
-  //   return d.total_lines;
-  // }));
-  x.domain([0, total_lines]);
+    var y = d3.scaleBand()
+      .rangeRound([0, absolute_lines])
+      .paddingInner(0.05)
+      .align(0.1);
 
-  y.domain([0, d3.max(newdata, function(d) {
-    return d.chars;
-  })]);
-  z.domain(keys);
+    var x = d3.scaleLinear()
+      .rangeRound([0, (width - 200)]);
 
-  xAxisVal = d3.scaleLinear()
-      // .domain([0, d3.max(newdata, function(d) {
-      //   return d.line_number;
-      // })])
-      .domain([0, total_lines])
-      .range([0, total_lines]);
+    var z = d3.scaleOrdinal()
+      .range(["#6b486b", "#ff8c00"]);
 
-  xTicks = d3.axisBottom(xAxisVal)
-      .ticks(100)
+    x.domain([0, d3.max(newdata, function(d) {
+      return d.chars;
+    })]);
+    y.domain([0, total]);
+    z.domain(keys);
+
+
+  yAxisVal = d3.scaleLinear()
+      .domain([0, total])
+      .range([0, mHeight]);
+
+  yTicks = d3.axisLeft(yAxisVal)
+      .ticks(total)
 
   g.append("g")
     .selectAll("g")
@@ -224,35 +219,25 @@ $(document).ready(function() {
     })
     .enter().append("rect")
     .attr("x", function(d) {
-      return d.data.line_number * 5 - 5;
+      return x(d[0]);
     })
     .attr("y", function(d) {
       // return y(d[0]);
-      return y(d.data.chars);
+      // return y(d.data.chars);
+      return d.data.absolute_line * 10;
     })
-    .attr("height", function(d) {
-      // console.log(d.data.chars + " " + d.data.rhyme_length);
-      // console.log(d, d[0], d[1]);
-      // console.log(d.data);
-      // return y(d.data.chars - d.data.rhyme_length);
-      // return d.data.chars;
-      // return y(d.data.chars) + y(d.data.rhyme_length);
-      return y(d[0]) - y(d[1]);
+    .attr("width", function(d) {
+      return x(d[1]) - x(d[0]) - d.data.rhyme_length;
     })
-    .attr("width", "4px");
+    .attr("height", "8px");
 
   g.append("g")
     .attr("class", "axis")
-    .attr("transform", "translate(0," + mHeight + ")")
-    .call(xTicks);
+    .call(d3.axisTop(x));
 
   g.append("g")
     .attr("class", "axis")
-    .call(d3.axisLeft(y).ticks(null, "s"))
-    .append("text")
-    .attr("x", 2)
-    .attr("y", y(y.ticks().pop()) + 0.5)
-    .attr("dy", "0.32em");
+    .call(yTicks)
 
   var legend = g.append("g")
     .attr("font-family", "sans-serif")
@@ -280,6 +265,136 @@ $(document).ready(function() {
       return d;
     });
   });
+
+  // // Stacked
+
+  // var svg = d3.select("svg#stacked"),
+  //   margin = { top: 20, right: 20, bottom: 30, left: 40 },
+  //   width = +svg.attr("width") - margin.left - margin.right,
+  //   mHeight = +svg.attr("height") - margin.top - margin.bottom,
+  //   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + 
+  //     margin.top + ")");
+
+  // var x = d3.scaleBand()
+  //   .rangeRound([0, width])
+  //   .paddingInner(0.05)
+  //   .align(0.1);
+
+  // var y = d3.scaleLinear()
+  //   .rangeRound([mHeight, 0]);
+
+  // var z = d3.scaleOrdinal()
+  //   .range(["#6b486b", "#ff8c00"]);
+
+
+  // d3.json('/assets/json/json_inferno_it.json').then(function(d) {
+
+  //   var keys = ["chars", "rhyme_length"],
+  //       newdata = [],
+  //       total_lines = 0;
+
+  //   $.each(d.cantica, function(k, v) {
+  //     $.each(v.canto, function(k, v) {
+  //       $.each(v.lines, function(k, v) {
+  //         var attr = {};
+  //         attr["line_number"] = v.line_number;
+  //         attr["chars"] = v.chars;
+  //         attr["rhyme_length"] = v.rhyme_length;
+  //         newdata.push(attr);
+  //         total_lines++;
+  //       });
+  //     });     
+  //   });
+
+  // // x.domain(newdata.map(function(d) {
+  // //   return d.total_lines;
+  // // }));
+  // x.domain([0, total_lines]);
+
+  // y.domain([0, d3.max(newdata, function(d) {
+  //   return d.chars;
+  // })]);
+  // z.domain(keys);
+
+  // xAxisVal = d3.scaleLinear()
+  //     // .domain([0, d3.max(newdata, function(d) {
+  //     //   return d.line_number;
+  //     // })])
+  //     .domain([0, total_lines])
+  //     .range([0, total_lines]);
+
+  // xTicks = d3.axisBottom(xAxisVal)
+  //     .ticks(100)
+
+  // g.append("g")
+  //   .selectAll("g")
+  //   .data(d3.stack().keys(keys)(newdata))
+  //   .enter().append("g")
+  //   .attr("fill", function(d) {
+  //     return z(d.key);
+  //   })
+  //   .selectAll("rect")
+  //   .data(function(d) {
+  //     return d;
+  //   })
+  //   .enter().append("rect")
+  //   .attr("x", function(d) {
+  //     return d.data.line_number * 5 - 5;
+  //   })
+  //   .attr("y", function(d) {
+  //     // return y(d[0]);
+  //     return y(d.data.chars);
+  //   })
+  //   .attr("height", function(d) {
+  //     // console.log(d.data.chars + " " + d.data.rhyme_length);
+  //     // console.log(d, d[0], d[1]);
+  //     // console.log(d.data);
+  //     // return y(d.data.chars - d.data.rhyme_length);
+  //     // return d.data.chars;
+  //     // return y(d.data.chars) + y(d.data.rhyme_length);
+  //     return y(d[0]) - y(d[1]);
+  //   })
+  //   .attr("width", "4px");
+
+  // g.append("g")
+  //   .attr("class", "axis")
+  //   .attr("transform", "translate(0," + mHeight + ")")
+  //   .call(xTicks);
+
+  // g.append("g")
+  //   .attr("class", "axis")
+  //   .call(d3.axisLeft(y).ticks(null, "s"))
+  //   .append("text")
+  //   .attr("x", 2)
+  //   .attr("y", y(y.ticks().pop()) + 0.5)
+  //   .attr("dy", "0.32em");
+
+  // var legend = g.append("g")
+  //   .attr("font-family", "sans-serif")
+  //   .attr("font-size", 10)
+  //   .attr("text-anchor", "end")
+  //   .selectAll("g")
+  //   .data(keys.slice().reverse())
+  //   .enter().append("g")
+  //   .attr("transform", function(d, i) {
+  //     return "translate(0," + i * 20 + ")";
+  //   });
+
+  // legend.append("rect")
+  //   .attr("y", - 15)
+  //   .attr("x", width - 19)
+  //   .attr("width", 19)
+  //   .attr("height", 19)
+  //   .attr("fill", z);
+
+  // legend.append("text")
+  //   .attr("y", - 5)
+  //   .attr("x", width - 24)
+  //   .attr("dy", 0)
+  //   .text(function(d) {
+  //     return d;
+  //   });
+  // });
 
 
   // // Static
