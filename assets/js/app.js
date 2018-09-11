@@ -225,7 +225,7 @@ $(document).ready(function() {
       return d.data.absolute_line * 10;
     })
     .attr("width", function(d) {
-      return x(d[1]) - x(d[0]) - d.data.rhyme_length;
+      return x(d[1] - d.data.rhyme_length) - x(d[0] - d.data.rhyme_length);
     })
     .attr("height", ((mHeight / total) - 2) + "px");
 
