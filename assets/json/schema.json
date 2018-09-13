@@ -1,7 +1,7 @@
 {
   "definitions": {}, 
   "$schema": "http://json-schema.org/draft-07/schema#", 
-  "$id": "/divine_comedy/shema.json", 
+  "$id": "/divine_comedy/schema.json", 
   "type": "object", 
   "title": "The Divine Comedy Schema", 
   "required": [
