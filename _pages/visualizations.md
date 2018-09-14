@@ -4,19 +4,10 @@ title: Visualizations
 permalink: /visualizations/
 ---
 
-## Inferno
-<div id="inferno">
-</div>
+## List of visualisations produced
 
-## Purgatorio
-<div id="purgatorio">
-</div>
+* <a href="/sentiment-pattern/">Sentiment pattern</a>
+* <a href="/rhymes/">Rhymes</a>
+* <a href="/lines/">Lines</a>
 
-## Paradiso
-<div id="paradiso">
-</div>
 
-<svg width="1080" height="47200" id="stacked"></svg>
-
-<div id="viz">
-</div>

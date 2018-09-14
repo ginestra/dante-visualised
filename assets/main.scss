@@ -21,6 +21,14 @@ html {
     box-sizing: inherit;
 }
 
+.clearfix,
+.clearfix::after,
+.clearfix::before {
+    clear: both;
+    display: block;
+    width: 100%;
+}
+
 .text-center {
     text-align: center;
 }
@@ -97,6 +105,23 @@ select {
 }
 
 /* Visualisation */
+
+.visualisation {
+    clear: both;
+    display: block;
+    width: 100%;
+}
+
+#inferno,
+#purgatorio,
+#paradiso,
+#inferno2,
+#purgatorio2,
+#paradiso2 {
+    display: inline-block;
+    float: left;
+    margin: 20px;
+}
 
 #viz {
     display: block;
