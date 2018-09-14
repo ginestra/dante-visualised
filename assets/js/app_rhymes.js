@@ -19,6 +19,15 @@ $(document).ready(function() {
         absolute_lines = [],
         colors = [];
 
+    var tooltip;
+
+    tooltip = d3.select('body')
+        .append('div')
+        .style('position', 'absolute')
+        .style('padding', '1px 0')
+        .style('background', 'white')
+        .style('opacity', 0);
+
     $.each(d.cantica, function(k, v) {
       $.each(v.canto, function(k, v) {
         $.each(v.lines, function(k, v) {
@@ -26,6 +35,7 @@ $(document).ready(function() {
           attr["line_number"] = v.line_number;
           attr["chars"] = v.chars;
           attr["rhyme_length"] = v.rhyme_length;
+          attr["rhyme"] = v.rhyme;
           attr["absolute_line"] = total++;
           attr["color"] = v.color;
           newdata.push(attr);
@@ -88,6 +98,27 @@ $(document).ready(function() {
         return "rgba" + d.data.color;
       }
       return "#6b486b";
+    })
+    .on('mouseover', function(d, i) {
+      tooltip.transition().duration(200)
+        .style('opacity', .9)
+      tooltip.html(
+        '<div class="tooltip">' +
+        '<strong>line: </strong>' + d.data.line_number + 
+        '<br><strong>rhyme: </strong>' + d.data.rhyme +
+        '<br><strong>rhyme_length: </strong>' + d.data.rhyme_length +
+        '</div>'
+      )
+        .style('left', (d3.event.pageX) + 'px')
+        .style('top', (d3.event.pageY) + 'px')
+      tempColor = this.style.fill;
+      d3.select(this)
+        .style('fill', 'yellow');
+    })
+    .on('mouseout', function(d) {
+        tooltip.html('');
+        d3.select(this)
+          .style('fill', tempColor);
     });
 
     // Rhyme color
