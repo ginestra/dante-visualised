@@ -55,6 +55,7 @@ $(document).ready(function() {
               '<div class="tooltip">' +
               '<strong>line: </strong>' + d.line_number + 
               '<br><strong>text: </strong>' + d.text +
+              '<br><strong>compound: </strong>' + d.compound +
               '</div>'
             )
               .style('left', (d3.event.pageX) + 'px')
@@ -125,6 +126,7 @@ $(document).ready(function() {
               '<div class="tooltip">' +
               '<strong>line: </strong>' + d.line_number + 
               '<br><strong>text: </strong>' + d.text +
+              '<br><strong>compound: </strong>' + d.compound +
               '</div>'
             )
               .style('left', (d3.event.pageX) + 'px')
@@ -195,6 +197,7 @@ $(document).ready(function() {
               '<div class="tooltip">' +
               '<strong>line: </strong>' + d.line_number + 
               '<br><strong>text: </strong>' + d.text +
+              '<br><strong>compound: </strong>' + d.compound +
               '</div>'
             )
               .style('left', (d3.event.pageX) + 'px')
@@ -267,6 +270,7 @@ $(document).ready(function() {
               '<div class="tooltip">' +
               '<strong>line: </strong>' + d.line_number + 
               '<br><strong>text: </strong>' + d.text +
+              '<br><strong>compound: </strong>' + d.compound +
               '</div>'
             )
               .style('left', (d3.event.pageX) + 'px')
@@ -339,6 +343,7 @@ $(document).ready(function() {
               '<div class="tooltip">' +
               '<strong>line: </strong>' + d.line_number + 
               '<br><strong>text: </strong>' + d.text +
+              '<br><strong>compound: </strong>' + d.compound +
               '</div>'
             )
               .style('left', (d3.event.pageX) + 'px')
@@ -411,6 +416,7 @@ $(document).ready(function() {
               '<div class="tooltip">' +
               '<strong>line: </strong>' + d.line_number + 
               '<br><strong>text: </strong>' + d.text +
+              '<br><strong>compound: </strong>' + d.compound +
               '</div>'
             )
               .style('left', (d3.event.pageX) + 'px')

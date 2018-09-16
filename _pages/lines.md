@@ -4,13 +4,8 @@ title: Lines
 permalink: /lines/
 ---
 
-Please be patient, the visualisation takes few seconds to render.
-
-<div class="metadata"></div>
-
-<div class="loading"></div>
-
-<h2 class="collapser">Inferno</h2>
-<div id="viz" class="collapsible">
-  <label><input type="checkbox"> Sort values</label>
-</div>
+<ul>
+  <li><a href="inferno/">Inferno</a></li>
+  <li><a href="purgatorio/">Purgatorio</a></li>
+  <li><a href="paradiso/">Paradiso</a></li>
+</ul>

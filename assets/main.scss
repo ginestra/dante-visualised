@@ -35,9 +35,12 @@ html {
 }
 
 .collapser {
-    border-bottom: 1px solid #d8d8d8;
     cursor: pointer;
     display: block;
+}
+
+h2, h3 {
+    border-bottom: 1px solid #d8d8d8;
 }
 
 .hide {
