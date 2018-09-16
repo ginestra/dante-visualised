@@ -6,6 +6,8 @@ permalink: /sentiment-pattern/
 
 Please be patient, the visualisation takes few seconds to render.
 
+Hover over the squares to find out more information.
+
 <div class="clearfix">
   <div class="loading"></div>
   <div id="inferno">
@@ -17,7 +19,7 @@ Please be patient, the visualisation takes few seconds to render.
   </div>
 
   <div id="paradiso">
-    <h2>Paradiso</h2>
+    <h2 class="collapser">Paradiso</h2>
   </div>
 </div>
 

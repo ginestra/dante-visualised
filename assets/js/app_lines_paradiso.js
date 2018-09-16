@@ -31,7 +31,6 @@ $(document).ready(function() {
     $.each(d.cantica, function(k, v) {
       $.each(v.canto, function(k, v) {
         cantos.push(v.title);
-        // console.log(v.title);
         $.each(v.lines, function(k, v) {
           char_lines.push(v.chars);
           text_lines.push(v.text);
@@ -50,8 +49,6 @@ $(document).ready(function() {
       total_lines +
       '<br><strong>Number of cantos: </strong>' +
       cantos.length +
-      // '<br><strong>Number of tercets: </strong>' +
-      // (total_lines - cantos.length) / 3 +
       '<br><strong>Longest line: </strong>' +
       longest_line_char + " chars" +
       '</p>'

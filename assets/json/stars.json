@@ -1,0 +1,243 @@
+{
+  "cantica": [
+    {
+      "title": "Inferno",
+      "canto": [
+        {
+          "number": "I",
+          "line": [
+            {
+              "line_num": 38,
+              "text": "e \u2019l sol montava \u2019n s\u00f9 con quelle stelle"
+            }
+          ]
+        },
+        {
+          "number": "III",
+          "line": [
+            {
+              "line_num": 23,
+              "text": "risonavan per l\u2019aere sanza stelle,"
+            }
+          ]
+        },
+        {
+          "number": "XVI",
+          "line": [
+            {
+              "line_num": 83,
+              "text": "e torni a riveder le belle stelle,"
+            }
+          ]
+        },
+        {
+          "number": "XX",
+          "line": [
+            {
+              "line_num": 50,
+              "text": "per sua dimora; onde a guardar le stelle"
+            }
+          ]
+        },
+        {
+          "number": "XXVI",
+          "line": [
+            {
+              "line_num": 127,
+              "text": "Tutte le stelle gi\u00e0 de l\u2019altro polo"
+            }
+          ]
+        },
+        {
+          "number": "XXXIV",
+          "line": [
+            {
+              "line_num": 139,
+              "text": "E quindi uscimmo a riveder le stelle."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Purgatorio",
+      "canto": [
+        {
+          "number": "I",
+          "line": [
+            {
+              "line_num": 23,
+              "text": "a l\u2019altro polo, e vidi quattro stelle"
+            }
+          ]
+        },
+        {
+          "number": "VI",
+          "line": [
+            {
+              "line_num": 100,
+              "text": "giusto giudicio da le stelle caggia"
+            }
+          ]
+        },
+        {
+          "number": "VIII",
+          "line": [
+            {
+              "line_num": 86,
+              "text": "pur l\u00e0 dove le stelle son pi\u00f9 tarde,"
+            },
+            {
+              "line_num": 91,
+              "text": "Ond\u2019 elli a me: \u00abLe quattro chiare stelle"
+            }
+          ]
+        },
+        {
+          "number": "XVII",
+          "line": [
+            {
+              "line_num": 72,
+              "text": "che le stelle apparivan da pipi\u00f9 lati."
+            }
+          ]
+        },
+        {
+          "number": "XVIII",
+          "line": [
+            {
+              "line_num": 77,
+              "text": "facea le stelle a noi parer pipi\u00f9 rade,"
+            }
+          ]
+        },
+        {
+          "number": "XXVII",
+          "line": [
+            {
+              "line_num": 89,
+              "text": "ma, per quel poco, vedea io le stelle"
+            }
+          ]
+        },
+        {
+          "number": "XXX",
+          "line": [
+            {
+              "line_num": 111,
+              "text": "secondo che le stelle son compagne,"
+            }
+          ]
+        },
+        {
+          "number": "XXXI",
+          "line": [
+            {
+              "line_num": 106,
+              "text": "\u00abNoi siam qui ninfe e nel ciel siamo stelle;"
+            }
+          ]
+        },
+        {
+          "number": "XXXIII",
+          "line": [
+            {
+              "line_num": 41,
+              "text": "a darne tempo gi\u00e0 stelle propinque,"
+            },
+            {
+              "line_num": 145,
+              "text": "puro e disposto a salire a le stelle."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Paradiso",
+      "canto": [
+        {
+          "number": "II",
+          "line": [
+            {
+              "line_num": 137,
+              "text": "multiplicata per le stelle spiega,"
+            }
+          ]
+        },
+        {
+          "number": "IV",
+          "line": [
+            {
+              "line_num": 23,
+              "text": "parer tornarsi l\u2019anime a le stelle,"
+            }
+          ]
+        },
+        {
+          "number": "VII",
+          "line": [
+            {
+              "line_num": 138,
+              "text": "in queste stelle che \u2019ntorno a lor vanno."
+            }
+          ]
+        },
+        {
+          "number": "VIII",
+          "line": [
+            {
+              "line_num": 110,
+              "text": "che muovon queste stelle non son manchi,"
+            }
+          ]
+        },
+        {
+          "number": "X",
+          "line": [
+            {
+              "line_num": 78,
+              "text": "come stelle vicine a\u2019 fermi poli,"
+            }
+          ]
+        },
+        {
+          "number": "XIII",
+          "line": [
+            {
+              "line_num": 4,
+              "text": "quindici stelle che \u2019n diverse plage"
+            }
+          ]
+        },
+        {
+          "number": "XXII",
+          "line": [
+            {
+              "line_num": 112,
+              "text": "O glor\u00efose stelle, o lume pregno"
+            }
+          ]
+        },
+        {
+          "number": "XXV",
+          "line": [
+            {
+              "line_num": 70,
+              "text": "Da molte stelle mi vien questa luce;"
+            }
+          ]
+        },
+        {
+          "number": "XXIII",
+          "line": [
+            {
+              "line_num": 145,
+              "text": "l\u2019amor che move il sole e l\u2019altre stelle."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

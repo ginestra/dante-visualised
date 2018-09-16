@@ -12,6 +12,8 @@ permalink: /rhymes/inferno/
 
 Please be patient, the visualisation takes few seconds to render.
 
+Hover over the bars to find out more information.
+
 <div class="loading"></div>
 
 <div class="collapsible">

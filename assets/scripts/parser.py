@@ -5,15 +5,18 @@ from nltk import RegexpTokenizer
 title = "La Divina Commedia"
 author = "Dante Alighieri"
 year = "1308-1320"
-lang = "it"
-cantica = "Inferno"
-
+lang = "en"
+cantica = "Purgatorio" # Optional. It can be empty ""
 pathToFile = "texts/" + lang + "/" + cantica + "/"
+
 tercet_number = 1
 last_word_odd = ""
 last_word_even = ""
 rhyme_length = 0
 canto_num = 0
+
+last_line = ""
+print(last_line)
 
 # Helper to remove punctuation
 tokenizer = RegexpTokenizer(r'\w+')
@@ -34,6 +37,10 @@ for root, dirs, files in os.walk(pathToFile):
         if file.endswith(".txt"):
 
             with open(pathToFile + file) as canto:
+                
+                last_line = canto.readlines()[-1]
+
+            with open(pathToFile + file) as canto:
                 lines = []
 
                 for line in canto:
@@ -43,6 +50,13 @@ for root, dirs, files in os.walk(pathToFile):
                     '''
                     if line.strip():
                         line_number += 1
+                        
+                        '''
+                        Determine whether it's a tercet or not
+                        If tercet_number == 0, it's the last line of a canto
+                        '''
+                        if line == last_line:
+                            tercet_number = 0
 
                         '''
                         Split words and store the last one with no punctuation
@@ -79,6 +93,42 @@ for root, dirs, files in os.walk(pathToFile):
                             # stored yet
                             else:
                                 last_word_odd = last_word
+                            
+                            '''
+                            Create the rhyme color based on the char value of
+                            the last three letters
+                            '''
+                            rgb = []
+
+                            if (len(last_word) >= 3):
+                                for ch in last_word[-3:]:
+                                    if (ord(ch) < 100 and ord(ch) > 30):
+                                        ch = ord(ch) - 30
+                                    elif (ord(ch) > 100 and ord(ch) < 255):
+                                        ch = ord(ch) + 30
+                                    rgb.append(ch)
+                            elif (len(last_word) == 2):
+                                for ch in last_word:
+                                    if (ord(ch) < 100 and ord(ch) > 30):
+                                        ch = ord(ch) - 30
+                                    elif (ord(ch) > 100 and ord(ch) < 255):
+                                        ch = ord(ch) + 30
+                                    rgb.append(ch)
+                                    rgb.append(0)
+                            else:
+                                for ch in last_word:
+                                    if (ord(ch) < 100 and ord(ch) > 30):
+                                        ch = ord(ch) - 30
+                                    elif (ord(ch) > 100 and ord(ch) < 255):
+                                        ch = ord(ch) + 30
+                                    rgb.append(ch)
+                                    rgb.append(0)
+                                    rgb.append(0)
+                            
+                            if rgb:
+                                color = "({0}, {1}, {2}, 1)".format(rgb[0], rgb[1], rgb[2])
+                            else:
+                                color ="(102, 102, 102, 1)"
 
                             current_line = {
                                 "tercet_number": tercet_number,
@@ -95,7 +145,7 @@ for root, dirs, files in os.walk(pathToFile):
                                 # Last letter for           R
                                 # Second to last letter for G
                                 # Third to last letter for  B
-                                "color": "rgba(162, 63, 234, 1)"
+                                "color": color
                             }
 
                         # Even lines now
@@ -121,6 +171,43 @@ for root, dirs, files in os.walk(pathToFile):
                             # stored yet
                             else:
                                 last_word_even = last_word
+                            
+                            '''
+                            Create the rhyme color based on the char value of
+                            the last three letters
+                            '''
+                            rgb = []
+
+                            if (len(last_word) >= 3):
+                                for ch in last_word[-3:]:
+                                    if (ord(ch) < 100 and ord(ch) > 30):
+                                        ch = ord(ch) - 30
+                                    elif (ord(ch) > 100 and ord(ch) < 255):
+                                        ch = ord(ch) + 30
+                                    rgb.append(ch)
+                            elif (len(last_word) == 2):
+                                for ch in last_word:
+                                    if (ord(ch) < 100 and ord(ch) > 30):
+                                        ch = ord(ch) - 30
+                                    elif (ord(ch) > 100 and ord(ch) < 255):
+                                        ch = ord(ch) + 30
+                                    rgb.append(ch)
+                                    rgb.append(0)
+                            else:
+                                for ch in last_word:
+                                    if (ord(ch) < 100 and ord(ch) > 30):
+                                        ch = ord(ch) - 30
+                                    elif (ord(ch) > 100 and ord(ch) < 255):
+                                        ch = ord(ch) + 30
+                                    rgb.append(ch)
+                                    rgb.append(0)
+                                    rgb.append(0)
+
+                            if rgb:
+                                color = "({0}, {1}, {2}, 1)".format(rgb[0], rgb[1], rgb[2])
+                            else:
+                                color ="(102, 102, 102, 1)"
+
 
                             current_line = {
                                 "tercet_number": tercet_number,
@@ -137,7 +224,7 @@ for root, dirs, files in os.walk(pathToFile):
                                 # Last letter for           R
                                 # Second to last letter for G
                                 # Third to last letter for  B
-                                "color": "rgba(162, 63, 234, 1)"
+                                "color": color
                             }
 
                         lines.append(current_line)
@@ -155,7 +242,7 @@ for root, dirs, files in os.walk(pathToFile):
 
                 cantos.append(current_canto)
 
-        # Array for cantos
+        # Array for cantos number
         canto_num += 1
 
 
@@ -174,6 +261,6 @@ json_obj = {
 }
 
 # Generate JSON file
-with open("json_" + cantica.lower() + "_/" +
+with open("json_" + cantica.lower() + "_" +
           lang + ".json", "w") as json_cantica:
     json.dump(json_obj, json_cantica, indent=4)
