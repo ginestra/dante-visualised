@@ -7,12 +7,13 @@ permalink: /sentiment-pattern/
 Please be patient, the visualisation takes few seconds to render.
 
 <div class="clearfix">
+  <div class="loading"></div>
   <div id="inferno">
-    <h2>Inferno</h2>
+    <h2 class="collapser">Inferno</h2>
   </div>
 
   <div id="purgatorio">
-    <h2>Purgatorio</h2>
+    <h2 class="collapser">Purgatorio</h2>
   </div>
 
   <div id="paradiso">
@@ -26,14 +27,14 @@ Please be patient, the visualisation takes few seconds to render.
 
 <div class="clearfix">
   <div id="inferno2">
-    <h2>Inferno</h2>
+    <h2 class="collapser">Inferno</h2>
   </div>
 
   <div id="purgatorio2">
-    <h2>Purgatorio</h2>
+    <h2 class="collapser">Purgatorio</h2>
   </div>
 
   <div id="paradiso2">
-    <h2>Paradiso</h2>
+    <h2 class="collapser">Purgatorio</h2>
   </div>
 </div>

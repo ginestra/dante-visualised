@@ -42,6 +42,21 @@ $(document).ready(function() {
       });     
     });
 
+    var longest_line_char = Math.max(...char_lines);
+
+    $('.metadata').append(
+      '<h3>Metadata</h3>' + 
+      '<p><strong>Number of lines: </strong>' +
+      total_lines +
+      '<br><strong>Number of cantos: </strong>' +
+      cantos.length +
+      // '<br><strong>Number of tercets: </strong>' +
+      // (total_lines - cantos.length) / 3 +
+      '<br><strong>Longest line: </strong>' +
+      longest_line_char + " chars" +
+      '</p>'
+    );
+
     console.log(total_lines);
 
     yScale = d3.scaleLinear()
@@ -68,7 +83,7 @@ $(document).ready(function() {
 
     colors = d3.scaleLinear()
         .domain([0, d3.max(char_lines)/2, d3.max(char_lines)])
-        .range(['#fff', '#2D8BCF', '#ffbb00']);
+        .range(['#fff', '#2d8bcf', '#ffbb00']);
 
     tooltip = d3.select('body')
         .append('div')
@@ -85,9 +100,12 @@ $(document).ready(function() {
         .selectAll('rect').data(char_lines)
         .enter().append('rect')
           .attr('fill', colors)
-          // .attr('width', function(d, i) {
-          //   return xScale(i);
-          // })
+          .attr('stroke', function(d, i) {
+            if (line_numbers[i] % 3 === 0) {
+              return "#000";
+            }
+            return "";
+          })
           .attr('width', 0)
           .attr('height', '10px')
           .attr('y', function(d, i) {
@@ -99,7 +117,6 @@ $(document).ready(function() {
               .style('opacity', .9)
             tooltip.html(
               '<div class="tooltip">' +
-              // '<strong>Canto: </strong>' + d3.data(cantos).title +
               '<br><strong>chars: </strong>' + d +
               '<br><strong>line: </strong>' + line_numbers[i] + 
               '<br><strong>text: </strong>' + text_lines[i] + 
@@ -138,4 +155,11 @@ $(document).ready(function() {
         .duration(1000)
         .ease(d3.easeBounceOut);
   }); // json import
+});
+
+// Remove the loading spinner once the page has completed loading
+$(window).on('load', function() {
+  setTimeout(function(){
+    $('.loading').addClass('hide');
+  }, 10000);
 });

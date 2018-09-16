@@ -426,3 +426,10 @@ $(document).ready(function() {
           });
   });
 });
+
+// Remove the loading spinner once the page has completed loading
+$(window).on('load', function() {
+  setTimeout(function(){
+    $('.loading').addClass('hide');
+  }, 10000);
+});

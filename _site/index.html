@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>How it works | Dante Visualised</title>
+<title>MSc Computer Science - Final project 2018 | Dante Visualised</title>
 <meta name="generator" content="Jekyll v3.7.3" />
-<meta property="og:title" content="How it works" />
+<meta property="og:title" content="MSc Computer Science - Final project 2018" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Visualising Dante’s Divine Comedy" />
 <meta property="og:description" content="Visualising Dante’s Divine Comedy" />
@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="Dante Visualised" />
 <script type="application/ld+json">
-{"name":"Dante Visualised","description":"Visualising Dante’s Divine Comedy","@type":"WebSite","url":"http://localhost:4000/","headline":"How it works","@context":"http://schema.org"}</script>
+{"name":"Dante Visualised","description":"Visualising Dante’s Divine Comedy","@type":"WebSite","url":"http://localhost:4000/","headline":"MSc Computer Science - Final project 2018","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href='/assets/main.css'><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Dante Visualised" /><!-- FontAwesome js to svg -->
   <script defer src="/assets/vendor/fontawesome/js/all.min.js"></script>
@@ -52,41 +52,65 @@
       <div class="wrapper">
         <div class="home">
 
-  <h1 id="how-it-works">How it works</h1>
+  <h1 id="msc-computer-science---final-project-2018">MSc Computer Science - Final project 2018</h1>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="clearfix">
+  <h2>Abstract</h2>
+  The project is quite literally a journey from Hell to Heaven, investigating the computational opportunities of automating text analysis and producing data visualisations.
+  From the structure of the writing to the sentiment of Dante Alighieri’s most famous work, the Divine Comedy, this project looks for rules to build components and create an application that offer insights and produces outputs in a format other than text.
+</div>
 
-<form action=".">
-  <p>
-    <label for="body_of_text">Body of text</label><br />
-    <select id="body_of_text">
-      <option value="convivio" disabled="">Dante Alighieri - Convivio</option>
-      <option value="divina_commedia" selected="">Dante Alighieri - Divina Commedia</option>
-      <option value="decamerone" disabled="">Giovanni Boccaccio - Il Decamerone</option>
-      <option value="orlando_furioso" disabled="">Ludovico Ariosto - Orlando Furioso</option>
-    </select>
-  </p>
+<div class="screenshots clearfix">
+  <div class="block">
+    <a href="/sentiment-pattern/">
+      <img src="/assets/images/screenshots/viz_screenshot_01.jpg" />
+    </a>
+  </div>
+  <div class="block">
+    <a href="/rhymes/">
+      <img src="/assets/images/screenshots/viz_screenshot_02.jpg" />
+    </a>
+  </div>
+  <div class="block">
+    <a href="/lines/">
+      <img src="/assets/images/screenshots/viz_screenshot_03.jpg" />
+    </a>
+  </div>
+</div>
 
-  <p>
-    <label for="rima">Select the rhyme structure</label><br />
-    <select id="rima">
-      <option value="ballade" disabled="">Ballade</option>
-      <option value="rondeau" disabled="">Rondeau</option>
-      <option value="terza_rima" selected="">Terza rima</option>
-      <option value="virelai" disabled="">Virelai</option>
-    </select>
-  </p>
+<div class="clearfix">
+  <form action=".">
+    <p>
+      <label for="body_of_text">Body of text</label><br />
+      <select id="body_of_text">
+        <option value="convivio" disabled="">Dante Alighieri - Convivio</option>
+        <option value="divina_commedia" selected="">Dante Alighieri - Divina Commedia</option>
+        <option value="decamerone" disabled="">Giovanni Boccaccio - Il Decamerone</option>
+        <option value="orlando_furioso" disabled="">Ludovico Ariosto - Orlando Furioso</option>
+      </select>
+    </p>
 
-  <p>
-    <label for="viz_type">Visualisation type</label><br />
-    <select id="viz_type">
-      <option value="barchart" selected="">Barchart</option>
-      <option value="calendar">Calendar</option>
-    </select>
-  </p>
+    <p>
+      <label for="rima">Select the rhyme structure</label><br />
+      <select id="rima">
+        <option value="ballade" disabled="">Ballade</option>
+        <option value="rondeau" disabled="">Rondeau</option>
+        <option value="terza_rima" selected="">Terza rima</option>
+        <option value="virelai" disabled="">Virelai</option>
+      </select>
+    </p>
 
-  <button type="submit">Apply</button>
-</form>
+    <p>
+      <label for="viz_type">Visualisation type</label><br />
+      <select id="viz_type">
+        <option value="barchart" selected="">Barchart</option>
+        <option value="calendar">Calendar</option>
+      </select>
+    </p>
+
+    <button type="submit">Apply</button>
+  </form>
+</div>
 
 
 </div>
@@ -127,10 +151,9 @@
     <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
     <!-- D3JS Library -->
     <script src="/assets/vendor/d3/d3.min.js"></script>
+    <!-- Custom JS for the whole app -->
+    <script src="/assets/js/app.js"></script>
 
     
-      <script src="/assets/js/app.js"></script>
-    
-
   </body>
 </html>

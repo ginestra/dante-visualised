@@ -5,38 +5,62 @@
 layout: home
 ---
 
-# How it works
+# MSc Computer Science - Final project 2018
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<div class="clearfix">
+  <h2>Abstract</h2>
+  The project is quite literally a journey from Hell to Heaven, investigating the computational opportunities of automating text analysis and producing data visualisations.
+  From the structure of the writing to the sentiment of Dante Alighieri’s most famous work, the Divine Comedy, this project looks for rules to build components and create an application that offer insights and produces outputs in a format other than text.
+</div>
 
-<form action=".">
-  <p>
-    <label for="body_of_text">Body of text</label><br>
-    <select id="body_of_text">
-      <option value="convivio" disabled>Dante Alighieri - Convivio</option>
-      <option value="divina_commedia" selected>Dante Alighieri - Divina Commedia</option>
-      <option value="decamerone" disabled>Giovanni Boccaccio - Il Decamerone</option>
-      <option value="orlando_furioso" disabled>Ludovico Ariosto - Orlando Furioso</option>
-    </select>
-  </p>
+<div class="screenshots clearfix">
+  <div class="block">
+    <a href="/sentiment-pattern/">
+      <img src="/assets/images/screenshots/viz_screenshot_01.jpg">
+    </a>
+  </div>
+  <div class="block">
+    <a href="/rhymes/">
+      <img src="/assets/images/screenshots/viz_screenshot_02.jpg">
+    </a>
+  </div>
+  <div class="block">
+    <a href="/lines/">
+      <img src="/assets/images/screenshots/viz_screenshot_03.jpg">
+    </a>
+  </div>
+</div>
 
-  <p>
-    <label for="rima">Select the rhyme structure</label><br>
-    <select id="rima">
-      <option value="ballade" disabled>Ballade</option>
-      <option value="rondeau" disabled>Rondeau</option>
-      <option value="terza_rima" selected>Terza rima</option>
-      <option value="virelai" disabled>Virelai</option>
-    </select>
-  </p>
+<div class="clearfix">
+  <form action=".">
+    <p>
+      <label for="body_of_text">Body of text</label><br>
+      <select id="body_of_text">
+        <option value="convivio" disabled>Dante Alighieri - Convivio</option>
+        <option value="divina_commedia" selected>Dante Alighieri - Divina Commedia</option>
+        <option value="decamerone" disabled>Giovanni Boccaccio - Il Decamerone</option>
+        <option value="orlando_furioso" disabled>Ludovico Ariosto - Orlando Furioso</option>
+      </select>
+    </p>
 
-  <p>
-    <label for="viz_type">Visualisation type</label><br>
-    <select id="viz_type">
-      <option value="barchart" selected>Barchart</option>
-      <option value="calendar">Calendar</option>
-    </select>
-  </p>
+    <p>
+      <label for="rima">Select the rhyme structure</label><br>
+      <select id="rima">
+        <option value="ballade" disabled>Ballade</option>
+        <option value="rondeau" disabled>Rondeau</option>
+        <option value="terza_rima" selected>Terza rima</option>
+        <option value="virelai" disabled>Virelai</option>
+      </select>
+    </p>
 
-  <button type="submit">Apply</button>
-</form>
+    <p>
+      <label for="viz_type">Visualisation type</label><br>
+      <select id="viz_type">
+        <option value="barchart" selected>Barchart</option>
+        <option value="calendar">Calendar</option>
+      </select>
+    </p>
+
+    <button type="submit">Apply</button>
+  </form>
+</div>

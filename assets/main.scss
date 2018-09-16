@@ -21,12 +21,27 @@ html {
     box-sizing: inherit;
 }
 
+.active {
+    font-weight: 700;
+}
+
 .clearfix,
 .clearfix::after,
 .clearfix::before {
     clear: both;
     display: block;
+    float: none;
     width: 100%;
+}
+
+.collapser {
+    border-bottom: 1px solid #d8d8d8;
+    cursor: pointer;
+    display: block;
+}
+
+.hide {
+    display: none;
 }
 
 .text-center {
@@ -104,11 +119,46 @@ select {
     width: 24px;
 }
 
+/* Main */
+
+.screenshots {
+    .block {
+        border: 1px solid #d8d8d8;
+        float: left;
+        margin: 1.5%;
+        width: 30%;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+/* Navigation */
+
+.submenu {
+    li {
+        display: inline-block;
+        &:after {
+            content: "/";
+            margin: 0 10px;
+        }
+
+        &:first-child {
+            &:before {
+                content: "/";
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
 /* Visualisation */
 
 .visualisation {
     clear: both;
     display: block;
+    position: relative;
     width: 100%;
 }
 
@@ -125,7 +175,6 @@ select {
 
 #viz {
     display: block;
-    // height: 8000px;
     height: 100%;
     width: 600px;
 
@@ -141,9 +190,24 @@ select {
     padding: 10px;
 }
 
-// svg {
-//     transform: rotate(90deg);
-// }
+// Loading spinner
+
+.loading {
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+    height: 20px; 
+    margin: 0 auto;
+    position: relative;
+    width: 20px;
+
+    &:before {
+        color: black;
+        content: "\f110";
+        font-family: "FontAwesome";
+        position: absolute;
+        top: 0;
+    }
+}
 
 /* Media queries */
 
