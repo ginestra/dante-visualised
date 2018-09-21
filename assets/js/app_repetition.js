@@ -20,19 +20,19 @@ $(document).ready(function() {
         total_lines = 0;
 
     $.each(d.cantica, function(k, v) {
-      var attr = {};
-      attr["title"] = v.title;
+      title = v.title;
       $.each(v.canto, function(k, v) {
-        attr["number"] = v.number;
+        canto = v.number;
         $.each(v.line, function(k, v) {
+          var attr = {};
+          attr["title"] = title;
+          attr["number"] = canto;
           attr["line_num"] = v.line_num;
           attr["text"] = v.text;
           data.push(attr);
         });
       });
     });
-
-    console.log(data);
 
     tooltip = d3.select('body')
         .append('div')
@@ -76,7 +76,8 @@ $(document).ready(function() {
               .style('opacity', .9)
             tooltip.html(
               '<div class="tooltip">' +
-              '<strong>canto: </strong>' + d.title + 
+              '<strong>cantica: </strong>' + d.title + 
+              '<br><strong>canto: </strong>' + d.number + 
               '<br><strong>line number: </strong>' + d.line_num + 
               '<br><strong>text: </strong>' + d.text +
               '</div>'
@@ -115,19 +116,19 @@ $(document).ready(function() {
         total_lines = 0;
 
     $.each(d.cantica, function(k, v) {
-      var attr = {};
-      attr["title"] = v.title;
+      title = v.title;
       $.each(v.canto, function(k, v) {
-        attr["number"] = v.number;
+        canto = v.number;
         $.each(v.line, function(k, v) {
+          var attr = {};
+          attr["title"] = title;
+          attr["number"] = canto;
           attr["line_num"] = v.line_num;
           attr["text"] = v.text;
           data.push(attr);
         });
       });
     });
-
-    console.log(data);
 
     tooltip = d3.select('body')
         .append('div')
@@ -171,7 +172,8 @@ $(document).ready(function() {
               .style('opacity', .9)
             tooltip.html(
               '<div class="tooltip">' +
-              '<strong>canto: </strong>' + d.title + 
+              '<strong>cantica: </strong>' + d.title + 
+              '<br><strong>canto: </strong>' + d.number + 
               '<br><strong>line number: </strong>' + d.line_num + 
               '<br><strong>text: </strong>' + d.text +
               '</div>'
