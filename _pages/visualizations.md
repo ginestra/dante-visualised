@@ -6,9 +6,9 @@ permalink: /visualizations/
 
 ## List of visualisations produced
 
-* <a href="/sentiment-pattern/">Sentiment pattern</a>
-* <a href="/rhymes/">Rhymes</a>
-* <a href="/lines/">Lines</a>
-* <a href="/repetitions-pattern/">Repetitions pattern</a>
+* <a href="{{ site.baseurl }}/sentiment-pattern/">Sentiment pattern</a>
+* <a href="{{ site.baseurl }}/rhymes/">Rhymes</a>
+* <a href="{{ site.baseurl }}/lines/">Lines</a>
+* <a href="{{ site.baseurl }}/repetitions-pattern/">Repetitions pattern</a>
 
 
