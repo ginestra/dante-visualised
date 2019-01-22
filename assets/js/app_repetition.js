@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // Calendar/Pattern view - Repetition stars
-  d3.json('/assets/json/stars.json').then(function(d) {
+  d3.json('/dante-visualised/assets/json/stars.json').then(function(d) {
 
     var margin = { top: 20, right: 0, bottom: 0, left: 0 }
         height = 150 - margin.top - margin.bottom,
@@ -96,7 +96,7 @@ $(document).ready(function() {
   }); // json import
 
   // Calendar/Pattern view - Repetition stars
-  d3.json('/assets/json/christ.json').then(function(d) {
+  d3.json('/dante-visualised/assets/json/christ.json').then(function(d) {
 
     var margin = { top: 20, right: 0, bottom: 0, left: 0 }
         height = 150 - margin.top - margin.bottom,
