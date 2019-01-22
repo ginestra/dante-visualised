@@ -1,4 +1,4 @@
-# baseurl: /dante-visualised
+baseurl: /dante-visualised
 
 exclude: ['*.log', Gemfile*, README.md, bundle]
 
@@ -23,4 +23,4 @@ markdown: kramdown
 plugins: [jekyll-minifier]
 theme: minima
 
-# url: https://thatsmood.github.io
+url: https://ginestra.github.io
