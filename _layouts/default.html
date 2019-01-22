@@ -17,21 +17,27 @@
     <!-- Custom JS for the whole app -->
     <script src="{{ site.baseurl }}/assets/js/app.js"></script>
 
-    {% if page.url == "{{ site.baseurl }}/rhymes/inferno/" %}
+    <script>
+      console.log('site.baseurl {{site.baseurl}}');
+      console.log('site.url {{site.url}}');
+      console.log('page.url {{page.url}}');
+    </script>
+
+    {% if page.url == "/rhymes/inferno/" %}
       <script src="{{ site.baseurl }}/assets/js/app_rhymes_inferno.js"></script>
-    {% elsif page.url == "{{ site.baseurl }}/rhymes/purgatorio/" %}
+    {% elsif page.url == "/rhymes/purgatorio/" %}
       <script src="{{ site.baseurl }}/assets/js/app_rhymes_purgatorio.js"></script>
-    {% elsif page.url == "{{ site.baseurl }}/rhymes/paradiso/" %}
+    {% elsif page.url == "/rhymes/paradiso/" %}
       <script src="{{ site.baseurl }}/assets/js/app_rhymes_paradiso.js"></script>
-    {% elsif page.url == "{{ site.baseurl }}/sentiment-pattern/" %}
+    {% elsif page.url == "/sentiment-pattern/" %}
       <script src="{{ site.baseurl }}/assets/js/app_pattern.js"></script>
-    {% elsif page.url == "{{ site.baseurl }}/repetitions-pattern/" %}
+    {% elsif page.url == "/repetitions-pattern/" %}
       <script src="{{ site.baseurl }}/assets/js/app_repetition.js"></script>
-    {% elsif page.url == "{{ site.baseurl }}/lines/inferno/" %}
+    {% elsif page.url == "/lines/inferno/" %}
       <script src="{{ site.baseurl }}/assets/js/app_lines_inferno.js"></script>
-    {% elsif page.url == "{{ site.baseurl }}/lines/purgatorio/" %}
+    {% elsif page.url == "/lines/purgatorio/" %}
       <script src="{{ site.baseurl }}/assets/js/app_lines_purgatorio.js"></script>
-    {% elsif page.url == "{{ site.baseurl }}/lines/paradiso/" %}
+    {% elsif page.url == "/lines/paradiso/" %}
       <script src="{{ site.baseurl }}/assets/js/app_lines_paradiso.js"></script>
     {% endif %}
   </body>
