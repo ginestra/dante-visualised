@@ -17,12 +17,6 @@
     <!-- Custom JS for the whole app -->
     <script src="{{ site.baseurl }}/assets/js/app.js"></script>
 
-    <script>
-      console.log('site.baseurl {{site.baseurl}}');
-      console.log('site.url {{site.url}}');
-      console.log('page.url {{page.url}}');
-    </script>
-
     {% if page.url == "/rhymes/inferno/" %}
       <script src="{{ site.baseurl }}/assets/js/app_rhymes_inferno.js"></script>
     {% elsif page.url == "/rhymes/purgatorio/" %}
