@@ -1,7 +1,7 @@
 /* Using D3JS to render the data I saved in json format */
 
 $(document).ready(function() {
-  d3.json('/assets/json/json_inferno_it.json').then(function(d) {
+  d3.json('/dante-visualised/assets/json/json_inferno_it.json').then(function(d) {
 
     var cantos = [],
         lines = [],

@@ -11,7 +11,7 @@ $(document).ready(function() {
             margin.top + ")");
 
 
-    d3.json('/assets/json/json_inferno_it.json').then(function(d) {
+    d3.json('/dante-visualised/assets/json/json_inferno_it.json').then(function(d) {
 
       var keys = ["chars", "rhyme_length"],
           newdata = [],
