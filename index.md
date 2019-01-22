@@ -13,20 +13,22 @@ layout: home
   From the structure of the writing to the sentiment of Dante Alighieri’s most famous work, the Divine Comedy, this project looks for rules to build components and create an application that offer insights and produces outputs in a format other than text.
 </div>
 
+<p> This is baseurl {{ baseurl }}</p>
+
 <div class="screenshots clearfix">
   <div class="block">
-    <a href="/sentiment-pattern/">
-      <img src="/assets/images/screenshots/viz_screenshot_01.jpg">
+    <a href="{{ baseurl }}/sentiment-pattern/">
+      <img src="{{ baseurl }}/assets/images/screenshots/viz_screenshot_01.jpg">
     </a>
   </div>
   <div class="block">
     <a href="/rhymes/">
-      <img src="/assets/images/screenshots/viz_screenshot_02.jpg">
+      <img src="{{ baseurl }}/assets/images/screenshots/viz_screenshot_02.jpg">
     </a>
   </div>
   <div class="block">
     <a href="/lines/">
-      <img src="/assets/images/screenshots/viz_screenshot_03.jpg">
+      <img src="{{ baseurl }}/assets/images/screenshots/viz_screenshot_03.jpg">
     </a>
   </div>
 </div>
@@ -54,7 +56,6 @@ layout: home
         <option value="orlando_furioso" disabled>Ludovico Ariosto - Orlando Furioso</option>
       </select>
     </p>
-
     <p>
       <label for="rima">Select the rhyme structure</label><br>
       <select id="rima">
@@ -64,7 +65,6 @@ layout: home
         <option value="virelai" disabled>Virelai</option>
       </select>
     </p>
-
     <p>
       <label for="viz_type">Visualisation type</label><br>
       <select id="viz_type">
@@ -72,7 +72,6 @@ layout: home
         <option value="calendar">Calendar</option>
       </select>
     </p>
-
     <button type="submit">Apply</button>
   </form>
 </div>
