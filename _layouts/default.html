@@ -11,28 +11,28 @@
     {%- include footer.html -%}
 
     <!-- jQuery -->
-    <script src="{{ baseurl }}/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/vendor/jquery/dist/jquery.min.js"></script>
     <!-- D3JS Library -->
-    <script src="{{ baseurl }}/assets/vendor/d3/d3.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/vendor/d3/d3.min.js"></script>
     <!-- Custom JS for the whole app -->
-    <script src="{{ baseurl }}/assets/js/app.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/app.js"></script>
 
-    {% if page.url == "{{ baseurl }}/rhymes/inferno/" %}
-      <script src="{{ baseurl }}/assets/js/app_rhymes_inferno.js"></script>
-    {% elsif page.url == "{{ baseurl }}/rhymes/purgatorio/" %}
-      <script src="{{ baseurl }}/assets/js/app_rhymes_purgatorio.js"></script>
-    {% elsif page.url == "{{ baseurl }}/rhymes/paradiso/" %}
-      <script src="{{ baseurl }}/assets/js/app_rhymes_paradiso.js"></script>
-    {% elsif page.url == "{{ baseurl }}/sentiment-pattern/" %}
-      <script src="{{ baseurl }}/assets/js/app_pattern.js"></script>
-    {% elsif page.url == "{{ baseurl }}/repetitions-pattern/" %}
-      <script src="{{ baseurl }}/assets/js/app_repetition.js"></script>
-    {% elsif page.url == "{{ baseurl }}/lines/inferno/" %}
-      <script src="{{ baseurl }}/assets/js/app_lines_inferno.js"></script>
-    {% elsif page.url == "{{ baseurl }}/lines/purgatorio/" %}
-      <script src="{{ baseurl }}/assets/js/app_lines_purgatorio.js"></script>
-    {% elsif page.url == "{{ baseurl }}/lines/paradiso/" %}
-      <script src="{{ baseurl }}/assets/js/app_lines_paradiso.js"></script>
+    {% if page.url == "{{ site.baseurl }}/rhymes/inferno/" %}
+      <script src="{{ site.baseurl }}/assets/js/app_rhymes_inferno.js"></script>
+    {% elsif page.url == "{{ site.baseurl }}/rhymes/purgatorio/" %}
+      <script src="{{ site.baseurl }}/assets/js/app_rhymes_purgatorio.js"></script>
+    {% elsif page.url == "{{ site.baseurl }}/rhymes/paradiso/" %}
+      <script src="{{ site.baseurl }}/assets/js/app_rhymes_paradiso.js"></script>
+    {% elsif page.url == "{{ site.baseurl }}/sentiment-pattern/" %}
+      <script src="{{ site.baseurl }}/assets/js/app_pattern.js"></script>
+    {% elsif page.url == "{{ site.baseurl }}/repetitions-pattern/" %}
+      <script src="{{ site.baseurl }}/assets/js/app_repetition.js"></script>
+    {% elsif page.url == "{{ site.baseurl }}/lines/inferno/" %}
+      <script src="{{ site.baseurl }}/assets/js/app_lines_inferno.js"></script>
+    {% elsif page.url == "{{ site.baseurl }}/lines/purgatorio/" %}
+      <script src="{{ site.baseurl }}/assets/js/app_lines_purgatorio.js"></script>
+    {% elsif page.url == "{{ site.baseurl }}/lines/paradiso/" %}
+      <script src="{{ site.baseurl }}/assets/js/app_lines_paradiso.js"></script>
     {% endif %}
   </body>
 </html>
