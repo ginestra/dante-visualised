@@ -9,7 +9,7 @@ Please be patient, the visualisation takes few seconds to render.
 Hover over the squares to find out more information.
 
 <div class="clearfix">
-  <div class="loading"></div>
+  {%- include spinner.html -%}
   <div id="inferno">
     <h2 class="collapser">Inferno</h2>
   </div>
