@@ -1,0 +1,90 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "/divine_comedy/schema_sentiment.json", 
+  "type": "object", 
+  "title": "The Divine Comedy Sentiment Schema",
+  "required": [
+    "cantica",
+    "lang",
+    "lines"
+  ],
+  "properties": {
+    "cantica": {
+      "$id": "#/properties/cantica",
+      "type": "string",
+      "title": "The Cantica Schema",
+      "default": "",
+      "examples": [
+        "Inferno"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "lang": {
+      "$id": "#/properties/lang",
+      "type": "string",
+      "title": "The Lang Schema",
+      "default": "",
+      "examples": [
+        "en"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "lines": {
+      "$id": "#/properties/lines",
+      "type": "array",
+      "title": "The Lines Schema",
+      "items": {
+        "$id": "#/properties/lines/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "line_number",
+          "text",
+          "compound",
+          "color"
+        ],
+        "properties": {
+          "line_number": {
+            "$id": "#/properties/lines/items/properties/line_number",
+            "type": "integer",
+            "title": "The Line_number Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "text": {
+            "$id": "#/properties/lines/items/properties/text",
+            "type": "string",
+            "title": "The Text Schema",
+            "default": "",
+            "examples": [
+              "When I had journeyed half of our life’s way,\n"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "compound": {
+            "$id": "#/properties/lines/items/properties/compound",
+            "type": "integer",
+            "title": "The Compound Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "color": {
+            "$id": "#/properties/lines/items/properties/color",
+            "type": "string",
+            "title": "The Color Schema",
+            "default": "",
+            "examples": [
+              "yellow"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>MSc Computer Science - Final project 2018 | Dante Visualised</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="MSc Computer Science - Final project 2018" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Visualising Dante’s Divine Comedy" />
+<meta property="og:description" content="Visualising Dante’s Divine Comedy" />
+<link rel="canonical" href="http://localhost:4000/dante-visualised/" />
+<meta property="og:url" content="http://localhost:4000/dante-visualised/" />
+<meta property="og:site_name" content="Dante Visualised" />
+<script type="application/ld+json">
+{"name":"Dante Visualised","description":"Visualising Dante’s Divine Comedy","@type":"WebSite","url":"http://localhost:4000/dante-visualised/","headline":"MSc Computer Science - Final project 2018","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" href='/dante-visualised/assets/main.css'> -->
+  <link rel="stylesheet" href="/dante-visualised/assets/main.css">
+
+  <!-- FontAwesome js to svg -->
+  <script defer src="/dante-visualised/assets/vendor/fontawesome/js/all.min.js"></script>
+  <link rel="stylesheet" href="/dante-visualised/assets/vendor/fontawesome/css/all.min.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/dante-visualised/feed.xml" title="Dante Visualised" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/dante-visualised/">
+      Dante Visualised<br>
+      <small>Visualising Dante&#39;s Divine Comedy</small>
+    </a>
+
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            <a class="page-link" href="/dante-visualised/">Home</a>
+          
+            <a class="page-link" href="/dante-visualised/about/">About</a>
+          
+            <a class="page-link" href="/dante-visualised/visualizations/">Visualizations</a>
+          
+        </div>
+      </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
+  <h1 id="msc-computer-science---final-project-2018">MSc Computer Science - Final project 2018</h1>
+
+<div class="clearfix">
+  <h2>Abstract</h2>
+  The project is quite literally a journey from Hell to Heaven, investigating the computational opportunities of automating text analysis and producing data visualisations.
+  From the structure of the writing to the sentiment of Dante Alighieri’s most famous work, the Divine Comedy, this project looks for rules to build components and create an application that offer insights and produces outputs in a format other than text.
+</div>
+
+<p>This is baseurl /dante-visualised/</p>
+
+<div class="screenshots clearfix">
+  <div class="block">
+    <a href="/dante-visualised//sentiment-pattern/">
+      <img src="/dante-visualised//assets/images/screenshots/viz_screenshot_01.jpg" />
+    </a>
+  </div>
+  <div class="block">
+    <a href="/rhymes/">
+      <img src="/dante-visualised//assets/images/screenshots/viz_screenshot_02.jpg" />
+    </a>
+  </div>
+  <div class="block">
+    <a href="/lines/">
+      <img src="/dante-visualised//assets/images/screenshots/viz_screenshot_03.jpg" />
+    </a>
+  </div>
+</div>
+
+<div class="clearfix">
+  <h2>How it works (for the time being)</h2>
+  <p>All visualisations are generated on the fly with Javascript accessing JSON files that are the product of the server side process.</p>
+  <p>The interaction is limited to finding out what the element of the visualisations are.</p> 
+</div>
+
+<div class="clearfix">
+  <h2>How it will work (plans for the future)</h2>
+  <p>Users will be able to select (or even upload) a body of text, fill in the form (see example below) to indicate the text characteristics and hit 'Apply'.</p>
+  <p>The form submission will trigger the server side process (now accessible with Jupiter), run the program, receive the output (JSON files) and see them visualised under the 'Visualisations' sections.</p> 
+</div>
+
+<div class="clearfix">
+  <form action=".">
+    <p>
+      <label for="body_of_text">Body of text</label><br />
+      <select id="body_of_text">
+        <option value="convivio" disabled="">Dante Alighieri - Convivio</option>
+        <option value="divina_commedia" selected="">Dante Alighieri - Divina Commedia</option>
+        <option value="decamerone" disabled="">Giovanni Boccaccio - Il Decamerone</option>
+        <option value="orlando_furioso" disabled="">Ludovico Ariosto - Orlando Furioso</option>
+      </select>
+    </p>
+    <p>
+      <label for="rima">Select the rhyme structure</label><br />
+      <select id="rima">
+        <option value="ballade" disabled="">Ballade</option>
+        <option value="rondeau" disabled="">Rondeau</option>
+        <option value="terza_rima" selected="">Terza rima</option>
+        <option value="virelai" disabled="">Virelai</option>
+      </select>
+    </p>
+    <p>
+      <label for="viz_type">Visualisation type</label><br />
+      <select id="viz_type">
+        <option value="barchart" selected="">Barchart</option>
+        <option value="calendar">Calendar</option>
+      </select>
+    </p>
+    <button type="submit">Apply</button>
+  </form>
+</div>
+
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/dante-visualised/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Dante Visualised</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Visualising Dante&#39;s Divine Comedy</li><li>
+            <p><i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i> 2019<br>
+              Birkbeck University, London<br>
+              MSc Computer Science</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+      </div>
+
+      <div class="footer-col footer-col-3 float-right">
+        <p class="text-right">Ginestra Ferraro</p>
+        <span class="text-right"><ul class="social-media-list"><li><a href="https://github.com/ginestra"><svg class="svg-icon"><use xlink:href="/dante-visualised/assets/minima-social-icons.svg#github"></use></svg> <span class="username">ginestra</span></a></li><li><a href="https://www.twitter.com/ginez_17"><svg class="svg-icon"><use xlink:href="/dante-visualised/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">ginez_17</span></a></li></ul>
+</span>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+<!-- jQuery -->
+    <script src="/dante-visualised/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <!-- D3JS Library -->
+    <script src="/dante-visualised/assets/vendor/d3/d3.min.js"></script>
+    <!-- Custom JS for the whole app -->
+    <script src="/dante-visualised/assets/js/app.js"></script>
+
+    
+  </body>
+</html>

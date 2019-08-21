@@ -1,0 +1,26 @@
+baseurl: /dante-visualised/
+
+exclude: ['*.log', Gemfile*, README.md, bundle]
+
+include: [_pages]
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+title: Dante Visualised
+description: Visualising Dante's Divine Comedy
+
+author_name: Ginestra Ferraro
+github_username: ginestra
+twitter_username: ginez_17
+
+# google_analytics: 
+
+jekyll-minifier: {exclude: humans.txt}
+kramdown: {hard_wrap: true}
+markdown: kramdown
+plugins: [jekyll-minifier]
+theme: minima
+
+url: https://ginestra.github.io

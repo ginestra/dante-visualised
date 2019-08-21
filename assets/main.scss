@@ -1,0 +1,241 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+@import "fonts";
+
+/* variables */
+// $device: 1920px;
+
+/* Globals */
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+.active {
+    font-weight: 700;
+}
+
+.clearfix,
+.clearfix::after,
+.clearfix::before {
+    clear: both;
+    display: block;
+    float: none;
+    width: 100%;
+}
+
+.collapser {
+    cursor: pointer;
+    display: block;
+}
+
+h2, h3 {
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.hide {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+// Forms
+
+button {
+    &:hover {
+        background: $grey-color;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+input,
+textarea,
+select,
+button {
+    background: white;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 10px;
+    width: 250px;
+
+    -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+    -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+    box-sizing: border-box;
+}
+
+input[type=text] {
+    border-radius: 0;
+
+    -webkit-appearance: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: white;
+    border: none;
+    padding: 8px;
+
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+/* Header */
+.site-title {
+    line-height: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: .75rem;
+    small {
+        color: $grey-color;
+        font-size: .75em;
+        font-style: italic;
+    }
+}
+
+/* Icon */
+
+.svg-icon {
+    width: 24px;
+}
+
+/* Main */
+
+.screenshots {
+    .block {
+        border: 1px solid #d8d8d8;
+        float: left;
+        margin: 1.5%;
+        width: 30%;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+/* Navigation */
+
+.submenu {
+    li {
+        display: inline-block;
+        &:after {
+            content: "/";
+            margin: 0 10px;
+        }
+
+        &:first-child {
+            &:before {
+                content: "/";
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+/* Visualisation */
+
+.visualisation {
+    clear: both;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+#inferno,
+#purgatorio,
+#paradiso,
+#inferno2,
+#purgatorio2,
+#paradiso2 {
+    display: inline-block;
+    float: left;
+    margin: 20px;
+}
+
+#viz {
+    display: block;
+    height: 100%;
+    width: 600px;
+
+    rect {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.tooltip {
+    border: 5px solid lighten($grey-color, 50%);
+    padding: 10px;
+}
+
+// Key colours
+
+.inf {
+    color: #6b0504;
+    fill: #6b0504;
+}
+
+.pur {
+    color: #c2b8b2;
+    fill: #c2b8b2;
+}
+
+.par {
+    color: #5e5c6c;
+    fill: #5e5c6c;
+}
+
+// Loading spinner
+
+.loading {
+    text-align: center;
+}
+
+/* Media queries */
+
+@include media-query($on-laptop) {
+    .float-left {
+        float: left;
+    }
+
+    .float-right {
+        float: right;
+    }
+}
+
+@include media-query($on-palm) {
+
+    .float-left,
+    .float-right {
+        float: none;
+
+        .text-right {
+            text-align: left;
+        }
+    }
+}
