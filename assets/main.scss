@@ -213,20 +213,7 @@ select {
 // Loading spinner
 
 .loading {
-    -webkit-animation: fa-spin 2s infinite linear;
-    animation: fa-spin 2s infinite linear;
-    height: 20px; 
-    margin: 0 auto;
-    position: relative;
-    width: 20px;
-
-    &:before {
-        color: black;
-        content: "\f110";
-        font-family: "FontAwesome";
-        position: absolute;
-        top: 0;
-    }
+    text-align: center;
 }
 
 /* Media queries */

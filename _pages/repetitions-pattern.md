@@ -19,11 +19,11 @@ Hover over the squares to find out more information.
 
 <div class="clearfix">
   <h2>Number of times the word <strong><em>stelle</em></strong> is repeated in each cantica</h2>
-  <div class="loading"></div>
+  {%- include spinner.html -%}
   <div id="repetition_stars">
   </div>
   <h2>Number of times the word <strong><em>Cristo</em></strong> is repeated in each cantica</h2>
-  <div class="loading"></div>
+  {%- include spinner.html -%}
   <div id="repetition_christ">
   </div>
   <p>Notably, the word <em>Christ</em> is not present anywhere in the <em>Inferno</em>.</p>

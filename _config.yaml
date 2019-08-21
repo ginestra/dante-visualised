@@ -1,4 +1,4 @@
-baseurl: /dante-visualised
+baseurl: /dante-visualised/
 
 exclude: ['*.log', Gemfile*, README.md, bundle]
 

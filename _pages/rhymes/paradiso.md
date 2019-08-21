@@ -14,7 +14,7 @@ Please be patient, the visualisation takes few seconds to render.
 
 Hover over the bars to find out more information.
 
-<div class="loading"></div>
+{%- include spinner.html -%}
 
 <div class="collapsible">
   <svg width="1080" height="47300" id="stacked_par"></svg>
