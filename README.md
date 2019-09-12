@@ -10,7 +10,7 @@ Birkbeck University, London, UK
 ## About
 Taking into account the strict linguistic rules that Dante Alighieri adopted when writing his _Divine Comedy_ at the beginning of the XIII Century, this project will attempt at visualising the text structure, the unique rhyme scheme (_terza rima_) adopted by the Italian poet with the objective to highlight patterns and exceptions.
 
-**TODO:** Expand for sentiment and stylometric analysis. 
+**TODO:** Expand for stylometric analysis. 
 
 ## Requirements
 * [Ruby](https://www.ruby-lang.org/en/downloads/) version 2.2.5 or above, including all development headers
