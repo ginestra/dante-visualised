@@ -37,6 +37,6 @@ Hover over the squares to find out more information.
   </div>
 
   <div id="paradiso2">
-    <h2 class="collapser">Purgatorio</h2>
+    <h2 class="collapser">Paradiso</h2>
   </div>
 </div>
