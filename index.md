@@ -22,12 +22,12 @@ layout: home
     </a>
   </div>
   <div class="block">
-    <a href="/rhymes/">
+    <a href="{{ site.baseurl }}/rhymes/">
       <img src="{{ site.baseurl }}/assets/images/screenshots/viz_screenshot_02.jpg">
     </a>
   </div>
   <div class="block">
-    <a href="/lines/">
+    <a href="{{ site.baseurl }}/lines/">
       <img src="{{ site.baseurl }}/assets/images/screenshots/viz_screenshot_03.jpg">
     </a>
   </div>
