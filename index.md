@@ -13,22 +13,21 @@ layout: home
   From the structure of the writing to the sentiment of Dante Alighieri’s most famous work, the Divine Comedy, this project looks for rules to build components and create an application that offer insights and produces outputs in a format other than text.
 </div>
 
-<p>This is baseurl {{ site.baseurl }}</p>
 
 <div class="screenshots clearfix">
   <div class="block">
-    <a href="{{ site.baseurl }}/sentiment-pattern/">
-      <img src="{{ site.baseurl }}/assets/images/screenshots/viz_screenshot_01.jpg">
+    <a href="{{ site.baseurl }}sentiment-pattern/">
+      <img src="{{ site.baseurl }}assets/images/screenshots/viz_screenshot_01.jpg">
     </a>
   </div>
   <div class="block">
-    <a href="{{ site.baseurl }}/rhymes/">
-      <img src="{{ site.baseurl }}/assets/images/screenshots/viz_screenshot_02.jpg">
+    <a href="{{ site.baseurl }}rhymes/">
+      <img src="{{ site.baseurl }}assets/images/screenshots/viz_screenshot_02.jpg">
     </a>
   </div>
   <div class="block">
-    <a href="{{ site.baseurl }}/lines/">
-      <img src="{{ site.baseurl }}/assets/images/screenshots/viz_screenshot_03.jpg">
+    <a href="{{ site.baseurl }}lines/">
+      <img src="{{ site.baseurl }}assets/images/screenshots/viz_screenshot_03.jpg">
     </a>
   </div>
 </div>
