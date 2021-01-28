@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Changes in D3 5.0 | Dante Visualised</title>
-<meta name="generator" content="Jekyll v3.7.3" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Changes in D3 5.0" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Visualising Dante’s Divine Comedy" />
@@ -12,11 +12,14 @@
 <link rel="canonical" href="http://localhost:4000/dante-visualised/assets/vendor/d3/CHANGES.html" />
 <meta property="og:url" content="http://localhost:4000/dante-visualised/assets/vendor/d3/CHANGES.html" />
 <meta property="og:site_name" content="Dante Visualised" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Changes in D3 5.0" />
 <script type="application/ld+json">
-{"description":"Visualising Dante’s Divine Comedy","@type":"WebPage","url":"http://localhost:4000/dante-visualised/assets/vendor/d3/CHANGES.html","headline":"Changes in D3 5.0","@context":"http://schema.org"}</script>
+{"headline":"Changes in D3 5.0","description":"Visualising Dante’s Divine Comedy","url":"http://localhost:4000/dante-visualised/assets/vendor/d3/CHANGES.html","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <!-- <link rel="stylesheet" href='/dante-visualised/assets/main.css'> -->
   <link rel="stylesheet" href="/dante-visualised/assets/main.css">
+  <link rel="shortcut icon" href="/dante-visualised/favicon.png" type="image/x-icon">
 
   <!-- FontAwesome js to svg -->
   <script defer src="/dante-visualised/assets/vendor/fontawesome/js/all.min.js"></script>
@@ -30,7 +33,7 @@
     </a>
 
       <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
         <label for="nav-trigger">
           <span class="menu-icon">
             <svg viewBox="0 0 18 15" width="18px" height="15px">
@@ -68,7 +71,7 @@
 
 <p>D3 now uses <a href="https://developer.mozilla.org/docs/Web/JavaScript/Guide/Using_promises">Promises</a> instead of asynchronous callbacks to load data. Promises simplify the structure of asynchronous code, especially in modern browsers that support <a href="https://javascript.info/async-await">async and await</a>. (See this <a href="https://beta.observablehq.com/@mbostock/introduction-to-promises">introduction to promises</a> on <a href="https://beta.observablehq.com">Observable</a>.) For example, to load a CSV file in v4, you might say:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">csv</span><span class="p">(</span><span class="s2">"file.csv"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">csv</span><span class="p">(</span><span class="dl">"</span><span class="s2">file.csv</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
@@ -76,14 +79,14 @@
 
 <p>In v5, using promises:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">csv</span><span class="p">(</span><span class="s2">"file.csv"</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">csv</span><span class="p">(</span><span class="dl">"</span><span class="s2">file.csv</span><span class="dl">"</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
 <p>Note that you don’t need to rethrow the error—the promise will reject automatically, and you can <em>promise</em>.catch if desired. Using await, the code is even simpler:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">csv</span><span class="p">(</span><span class="s2">"file.csv"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">csv</span><span class="p">(</span><span class="dl">"</span><span class="s2">file.csv</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </code></pre></div></div>
 
@@ -115,7 +118,7 @@
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://d3js.org/d3-selection.v1.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre></div></div>
 
-<p>You can also <code class="highlighter-rouge">cat</code> D3 microlibraries into a custom bundle, or use tools such as <a href="https://webpack.github.io/">Webpack</a> and <a href="http://rollupjs.org/">Rollup</a> to create <a href="https://bl.ocks.org/mbostock/bb09af4c39c79cffcde4">optimized bundles</a>. Custom bundles are great for applications that use a subset of D3’s features; for example, a React chart library might use D3 for scales and shapes, and React to manipulate the DOM. The D3 microlibraries are written as <a href="http://www.2ality.com/2014/09/es6-modules-final.html">ES6 modules</a>, and Rollup lets you pick at the symbol level to produce smaller bundles.</p>
+<p>You can also <code class="language-plaintext highlighter-rouge">cat</code> D3 microlibraries into a custom bundle, or use tools such as <a href="https://webpack.github.io/">Webpack</a> and <a href="http://rollupjs.org/">Rollup</a> to create <a href="https://bl.ocks.org/mbostock/bb09af4c39c79cffcde4">optimized bundles</a>. Custom bundles are great for applications that use a subset of D3’s features; for example, a React chart library might use D3 for scales and shapes, and React to manipulate the DOM. The D3 microlibraries are written as <a href="http://www.2ality.com/2014/09/es6-modules-final.html">ES6 modules</a>, and Rollup lets you pick at the symbol level to produce smaller bundles.</p>
 
 <p>Small files are nice, but modularity is also about making D3 more <em>fun</em>. Microlibraries are easier to understand, develop and test. They make it easier for new people to get involved and contribute. They reduce the distinction between a “core module” and a “plugin”, and increase the pace of development in D3 features.</p>
 
@@ -123,7 +126,7 @@
 
 <h3 id="other-global-changes">Other Global Changes</h3>
 
-<p>The default <a href="https://github.com/umdjs/umd">UMD bundle</a> is now <a href="https://github.com/requirejs/requirejs/wiki/Updating-existing-libraries#register-as-an-anonymous-module-">anonymous</a>. No <code class="highlighter-rouge">d3</code> global is exported if AMD or CommonJS is detected. In a vanilla environment, the D3 microlibraries share the <code class="highlighter-rouge">d3</code> global, even if you load them independently; thus, code you write is the same whether or not you use the default bundle. (See <a href="https://bost.ocks.org/mike/d3-plugin/">Let’s Make a (D3) Plugin</a> for more.) The generated bundle is no longer stored in the Git repository; Bower has been repointed to <a href="https://github.com/mbostock-bower/d3-bower">d3-bower</a>, and you can find the generated files on <a href="https://unpkg.com/d3">npm</a> or attached to the <a href="https://github.com/d3/d3/releases/latest">latest release</a>. The non-minified default bundle is no longer mangled, making it more readable and preserving inline comments.</p>
+<p>The default <a href="https://github.com/umdjs/umd">UMD bundle</a> is now <a href="https://github.com/requirejs/requirejs/wiki/Updating-existing-libraries#register-as-an-anonymous-module-">anonymous</a>. No <code class="language-plaintext highlighter-rouge">d3</code> global is exported if AMD or CommonJS is detected. In a vanilla environment, the D3 microlibraries share the <code class="language-plaintext highlighter-rouge">d3</code> global, even if you load them independently; thus, code you write is the same whether or not you use the default bundle. (See <a href="https://bost.ocks.org/mike/d3-plugin/">Let’s Make a (D3) Plugin</a> for more.) The generated bundle is no longer stored in the Git repository; Bower has been repointed to <a href="https://github.com/mbostock-bower/d3-bower">d3-bower</a>, and you can find the generated files on <a href="https://unpkg.com/d3">npm</a> or attached to the <a href="https://github.com/d3/d3/releases/latest">latest release</a>. The non-minified default bundle is no longer mangled, making it more readable and preserving inline comments.</p>
 
 <p>To the consternation of some users, 3.x employed Unicode variable names such as λ, φ, τ and π for a concise representation of mathematical operations. A downside of this approach was that a SyntaxError would occur if you loaded the non-minified D3 using ISO-8859-1 instead of UTF-8. 3.x also used Unicode string literals, such as the SI-prefix µ for 1e-6. 4.0 uses only ASCII variable names and ASCII string literals (see <a href="https://github.com/mbostock/rollup-plugin-ascii">rollup-plugin-ascii</a>), avoiding encoding problems.</p>
 
@@ -168,10 +171,10 @@
 <p>The new <a href="https://github.com/d3/d3-array/blob/master/README.md#scan">d3.scan</a> method performs a linear scan of an array, returning the index of the least element according to the specified comparator. This is similar to <a href="https://github.com/d3/d3-array/blob/master/README.md#min">d3.min</a> and <a href="https://github.com/d3/d3-array/blob/master/README.md#max">d3.max</a>, except you can use it to find the position of an extreme element, rather than just calculate an extreme value.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Alice"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Bob"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Carol"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Dwayne"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+  <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Alice</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Bob</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Carol</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Dwayne</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 <span class="p">];</span>
 
 <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scan</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nx">value</span> <span class="o">-</span> <span class="nx">b</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span> <span class="p">});</span> <span class="c1">// 2</span>
@@ -211,10 +214,10 @@
 <span class="nt">&lt;/style&gt;</span>
 <span class="nt">&lt;script&gt;</span>
 
-<span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">".axis"</span><span class="p">)</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">.axis</span><span class="dl">"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">svg</span><span class="p">.</span><span class="nx">axis</span><span class="p">()</span>
         <span class="p">.</span><span class="nx">scale</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">orient</span><span class="p">(</span><span class="s2">"bottom"</span><span class="p">));</span>
+        <span class="p">.</span><span class="nx">orient</span><span class="p">(</span><span class="dl">"</span><span class="s2">bottom</span><span class="dl">"</span><span class="p">));</span>
 
 <span class="nt">&lt;/script&gt;</span>
 </code></pre></div></div>
@@ -227,7 +230,7 @@
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
 
-<span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">".axis"</span><span class="p">)</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">.axis</span><span class="dl">"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">axisBottom</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
 
 <span class="nt">&lt;/script&gt;</span>
@@ -278,13 +281,13 @@
 <p>The <a href="https://github.com/d3/d3-collection/blob/master/README.md#set">d3.set</a> constructor now accepts an existing set for making a copy. If you pass an array to d3.set, you can also pass a value accessor. This accessor takes the standard arguments: the current element (<em>d</em>), the index (<em>i</em>), and the array (<em>data</em>), with <em>this</em> undefined. For example:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">yields</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">22.13333</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="s2">"Manchuria"</span><span class="p">,</span>        <span class="na">year</span><span class="p">:</span> <span class="mi">1932</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="s2">"Grand Rapids"</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">26.76667</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="s2">"Peatland"</span><span class="p">,</span>         <span class="na">year</span><span class="p">:</span> <span class="mi">1932</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="s2">"Grand Rapids"</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">28.10000</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="s2">"No. 462"</span><span class="p">,</span>          <span class="na">year</span><span class="p">:</span> <span class="mi">1931</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="s2">"Duluth"</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">38.50000</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="s2">"Svansota"</span><span class="p">,</span>         <span class="na">year</span><span class="p">:</span> <span class="mi">1932</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="s2">"Waseca"</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">40.46667</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="s2">"Svansota"</span><span class="p">,</span>         <span class="na">year</span><span class="p">:</span> <span class="mi">1931</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="s2">"Crookston"</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">36.03333</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="s2">"Peatland"</span><span class="p">,</span>         <span class="na">year</span><span class="p">:</span> <span class="mi">1932</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="s2">"Waseca"</span><span class="p">},</span>
-  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">34.46667</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="s2">"Wisconsin No. 38"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1931</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="s2">"Grand Rapids"</span><span class="p">}</span>
+  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">22.13333</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Manchuria</span><span class="dl">"</span><span class="p">,</span>        <span class="na">year</span><span class="p">:</span> <span class="mi">1932</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Grand Rapids</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">26.76667</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Peatland</span><span class="dl">"</span><span class="p">,</span>         <span class="na">year</span><span class="p">:</span> <span class="mi">1932</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Grand Rapids</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">28.10000</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="dl">"</span><span class="s2">No. 462</span><span class="dl">"</span><span class="p">,</span>          <span class="na">year</span><span class="p">:</span> <span class="mi">1931</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Duluth</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">38.50000</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Svansota</span><span class="dl">"</span><span class="p">,</span>         <span class="na">year</span><span class="p">:</span> <span class="mi">1932</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Waseca</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">40.46667</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Svansota</span><span class="dl">"</span><span class="p">,</span>         <span class="na">year</span><span class="p">:</span> <span class="mi">1931</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Crookston</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">36.03333</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Peatland</span><span class="dl">"</span><span class="p">,</span>         <span class="na">year</span><span class="p">:</span> <span class="mi">1932</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Waseca</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">yield</span><span class="p">:</span> <span class="mf">34.46667</span><span class="p">,</span> <span class="na">variety</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Wisconsin No. 38</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1931</span><span class="p">,</span> <span class="na">site</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Grand Rapids</span><span class="dl">"</span><span class="p">}</span>
 <span class="p">];</span>
 
 <span class="kd">var</span> <span class="nx">sites</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">yields</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">site</span><span class="p">;</span> <span class="p">});</span> <span class="c1">// Grand Rapids, Duluth, Waseca, Crookston</span>
@@ -304,7 +307,7 @@
 
 <p>The new <a href="https://github.com/d3/d3-color/blob/master/README.md#color">d3.color</a> method is the primary method for parsing colors: it returns a d3.color instance in the appropriate color space, or null if the CSS color specifier is invalid. For example:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">red</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="s2">"hsl(0, 80%, 50%)"</span><span class="p">);</span> <span class="c1">// {h: 0, l: 0.5, s: 0.8, opacity: 1}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">red</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="dl">"</span><span class="s2">hsl(0, 80%, 50%)</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// {h: 0, l: 0.5, s: 0.8, opacity: 1}</span>
 </code></pre></div></div>
 
 <p>The parsing implementation is now more robust. For example, you can no longer mix integers and percentages in rgb(…), and it correctly handles whitespace, decimal points, number signs, and other edge cases. The color space constructors d3.rgb, d3.hsl, d3.lab, d3.hcl and d3.cubehelix now always return a copy of the input color, converted to the corresponding color space. While <a href="https://github.com/d3/d3-color/blob/master/README.md#color_rgb"><em>color</em>.rgb</a> remains, <em>rgb</em>.hsl has been removed; use d3.hsl to convert a color to the RGB color space.</p>
@@ -319,17 +322,17 @@
 
 <p>Rather than decorating the <em>dispatch</em> object with each event type, the dispatch object now exposes generic <a href="https://github.com/d3/d3-dispatch/blob/master/README.md#dispatch_call"><em>dispatch</em>.call</a> and <a href="https://github.com/d3/d3-dispatch/blob/master/README.md#dispatch_apply"><em>dispatch</em>.apply</a> methods which take the <em>type</em> string as the first argument. For example, in D3 3.x, you might say:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">dispatcher</span><span class="p">.</span><span class="nx">foo</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">that</span><span class="p">,</span> <span class="s2">"Hello, Foo!"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">dispatcher</span><span class="p">.</span><span class="nx">foo</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">that</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Hello, Foo!</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>To dispatch a <em>foo</em> event in D3 4.0, you’d say:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">dispatcher</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">,</span> <span class="nx">that</span><span class="p">,</span> <span class="s2">"Hello, Foo!"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">dispatcher</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span><span class="p">,</span> <span class="nx">that</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Hello, Foo!</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>The <a href="https://github.com/d3/d3-dispatch/blob/master/README.md#dispatch_on"><em>dispatch</em>.on</a> method now accepts multiple typenames, allowing you to add or remove listeners for multiple events simultaneously. For example, to send both <em>foo</em> and <em>bar</em> events to the same listener:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">dispatcher</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"foo bar"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">dispatcher</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">foo bar</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -367,7 +370,7 @@
 
 <p>The <a href="https://github.com/d3/d3-dsv/blob/master/README.md#dsv_parse"><em>dsv</em>.parse</a> method now exposes the column names and their input order as <em>data</em>.columns. For example:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">csv</span><span class="p">(</span><span class="s2">"cars.csv"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">csv</span><span class="p">(</span><span class="dl">"</span><span class="s2">cars.csv</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">columns</span><span class="p">);</span> <span class="c1">// ["Year", "Make", "Model", "Length"]</span>
 <span class="p">});</span>
@@ -375,7 +378,7 @@
 
 <p>You can likewise pass an optional array of column names to <a href="https://github.com/d3/d3-dsv/blob/master/README.md#dsv_format"><em>dsv</em>.format</a> to format only a subset of columns, or to specify the column order explicitly:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">string</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">csvFormat</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Year"</span><span class="p">,</span> <span class="s2">"Model"</span><span class="p">,</span> <span class="s2">"Length"</span><span class="p">]);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">string</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">csvFormat</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Year</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Model</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Length</span><span class="dl">"</span><span class="p">]);</span>
 </code></pre></div></div>
 
 <p>The parser is a bit faster and the formatter is a bit more robust: inputs are coerced to strings before formatting, fixing an obscure crash, and deprecated support for falling back to <a href="https://github.com/d3/d3-dsv/blob/master/README.md#dsv_formatRows"><em>dsv</em>.formatRows</a> when the input <em>data</em> is an array of arrays has been removed.</p>
@@ -435,7 +438,7 @@
 
 <p>Rather than pass optional arguments to d3.ease or <em>transition</em>.ease, parameterizable easing functions now have named parameters: <a href="https://github.com/d3/d3-ease/blob/master/README.md#poly_exponent"><em>poly</em>.exponent</a>, <a href="https://github.com/d3/d3-ease/blob/master/README.md#elastic_amplitude"><em>elastic</em>.amplitude</a>, <a href="https://github.com/d3/d3-ease/blob/master/README.md#elastic_period"><em>elastic</em>.period</a> and <a href="https://github.com/d3/d3-ease/blob/master/README.md#back_overshoot"><em>back</em>.overshoot</a>. For example, in D3 3.x you might say:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">ease</span><span class="p">(</span><span class="s2">"elastic-out-in"</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">ease</span><span class="p">(</span><span class="dl">"</span><span class="s2">elastic-out-in</span><span class="dl">"</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>The equivalent in D3 4.0 is:</p>
@@ -467,14 +470,14 @@
 
 <p>If a precision is not specified, the formatting behavior has changed: there is now a default precision of 6 for all directives except <em>none</em>, which defaults to 12. In 3.x, if you did not specify a precision, the number was formatted using its shortest unique representation (per <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString"><em>number</em>.toString</a>); this could lead to unexpected digits due to <a href="http://0.30000000000000004.com/">floating point math</a>. The new default precision in 4.0 produces more consistent results:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"e"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">e</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">f</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>        <span class="c1">// "4.200000e+1"</span>
 <span class="nx">f</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">);</span> <span class="c1">// "3.000000e-1"</span>
 </code></pre></div></div>
 
-<p>To trim insignificant trailing zeroes, use the <em>none</em> directive, which is similar <code class="highlighter-rouge">g</code>. For example:</p>
+<p>To trim insignificant trailing zeroes, use the <em>none</em> directive, which is similar <code class="language-plaintext highlighter-rouge">g</code>. For example:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">".3"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">.3</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">f</span><span class="p">(</span><span class="mf">0.12345</span><span class="p">);</span>   <span class="c1">// "0.123"</span>
 <span class="nx">f</span><span class="p">(</span><span class="mf">0.10000</span><span class="p">);</span>   <span class="c1">// "0.1"</span>
 <span class="nx">f</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">);</span> <span class="c1">// "0.3"</span>
@@ -484,51 +487,51 @@
 
 <p>The <a href="https://github.com/d3/d3-format/blob/master/README.md#formatPrefix">d3.formatPrefix</a> method has been changed. Rather than returning an SI-prefix string, it returns an SI-prefix format function for a given <em>specifier</em> and reference <em>value</em>. For example, to format thousands:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">formatPrefix</span><span class="p">(</span><span class="s2">",.0"</span><span class="p">,</span> <span class="mi">1</span><span class="nx">e3</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">formatPrefix</span><span class="p">(</span><span class="dl">"</span><span class="s2">,.0</span><span class="dl">"</span><span class="p">,</span> <span class="mi">1</span><span class="nx">e3</span><span class="p">);</span>
 <span class="nx">f</span><span class="p">(</span><span class="mi">1</span><span class="nx">e3</span><span class="p">);</span> <span class="c1">// "1k"</span>
 <span class="nx">f</span><span class="p">(</span><span class="mi">1</span><span class="nx">e4</span><span class="p">);</span> <span class="c1">// "10k"</span>
 <span class="nx">f</span><span class="p">(</span><span class="mi">1</span><span class="nx">e5</span><span class="p">);</span> <span class="c1">// "100k"</span>
 <span class="nx">f</span><span class="p">(</span><span class="mi">1</span><span class="nx">e6</span><span class="p">);</span> <span class="c1">// "1,000k"</span>
 </code></pre></div></div>
 
-<p>Unlike the <code class="highlighter-rouge">s</code> format directive, d3.formatPrefix always employs the same SI-prefix, producing consistent results:</p>
+<p>Unlike the <code class="language-plaintext highlighter-rouge">s</code> format directive, d3.formatPrefix always employs the same SI-prefix, producing consistent results:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">".0s"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">.0s</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">f</span><span class="p">(</span><span class="mi">1</span><span class="nx">e3</span><span class="p">);</span> <span class="c1">// "1k"</span>
 <span class="nx">f</span><span class="p">(</span><span class="mi">1</span><span class="nx">e4</span><span class="p">);</span> <span class="c1">// "10k"</span>
 <span class="nx">f</span><span class="p">(</span><span class="mi">1</span><span class="nx">e5</span><span class="p">);</span> <span class="c1">// "100k"</span>
 <span class="nx">f</span><span class="p">(</span><span class="mi">1</span><span class="nx">e6</span><span class="p">);</span> <span class="c1">// "1M"</span>
 </code></pre></div></div>
 
-<p>The new <code class="highlighter-rouge">(</code> sign option uses parentheses for negative values. This is particularly useful in conjunction with <code class="highlighter-rouge">$</code>. For example:</p>
+<p>The new <code class="language-plaintext highlighter-rouge">(</code> sign option uses parentheses for negative values. This is particularly useful in conjunction with <code class="language-plaintext highlighter-rouge">$</code>. For example:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"+.0f"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span>  <span class="c1">// "-42"</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"(.0f"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span>  <span class="c1">// "(42)"</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"+$.0f"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span> <span class="c1">// "-$42"</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"($.0f"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span> <span class="c1">// "($42)"</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">+.0f</span><span class="dl">"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span>  <span class="c1">// "-42"</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">(.0f</span><span class="dl">"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span>  <span class="c1">// "(42)"</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">+$.0f</span><span class="dl">"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span> <span class="c1">// "-$42"</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">($.0f</span><span class="dl">"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span> <span class="c1">// "($42)"</span>
 </code></pre></div></div>
 
-<p>The new <code class="highlighter-rouge">=</code> align option places any sign and symbol to the left of any padding:</p>
+<p>The new <code class="language-plaintext highlighter-rouge">=</code> align option places any sign and symbol to the left of any padding:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"&gt;6d"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span>  <span class="c1">// "   -42"</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"=6d"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span>  <span class="c1">// "-   42"</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"&gt;(6d"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span> <span class="c1">// "  (42)"</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"=(6d"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span> <span class="c1">// "(  42)"</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">&gt;6d</span><span class="dl">"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span>  <span class="c1">// "   -42"</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">=6d</span><span class="dl">"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span>  <span class="c1">// "-   42"</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">&gt;(6d</span><span class="dl">"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span> <span class="c1">// "  (42)"</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">=(6d</span><span class="dl">"</span><span class="p">)(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span> <span class="c1">// "(  42)"</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">b</code>, <code class="highlighter-rouge">o</code>, <code class="highlighter-rouge">d</code> and <code class="highlighter-rouge">x</code> directives now round to the nearest integer, rather than returning the empty string for non-integers:</p>
+<p>The <code class="language-plaintext highlighter-rouge">b</code>, <code class="language-plaintext highlighter-rouge">o</code>, <code class="language-plaintext highlighter-rouge">d</code> and <code class="language-plaintext highlighter-rouge">x</code> directives now round to the nearest integer, rather than returning the empty string for non-integers:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"b"</span><span class="p">)(</span><span class="mf">41.9</span><span class="p">);</span> <span class="c1">// "101010"</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"o"</span><span class="p">)(</span><span class="mf">41.9</span><span class="p">);</span> <span class="c1">// "52"</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"d"</span><span class="p">)(</span><span class="mf">41.9</span><span class="p">);</span> <span class="c1">// "42"</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"x"</span><span class="p">)(</span><span class="mf">41.9</span><span class="p">);</span> <span class="c1">// "2a"</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">)(</span><span class="mf">41.9</span><span class="p">);</span> <span class="c1">// "101010"</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">o</span><span class="dl">"</span><span class="p">)(</span><span class="mf">41.9</span><span class="p">);</span> <span class="c1">// "52"</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">)(</span><span class="mf">41.9</span><span class="p">);</span> <span class="c1">// "42"</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">x</span><span class="dl">"</span><span class="p">)(</span><span class="mf">41.9</span><span class="p">);</span> <span class="c1">// "2a"</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">c</code> directive is now for character data (<em>i.e.</em>, literal strings), not for character codes. The is useful if you just want to apply padding and alignment and don’t care about formatting numbers. For example, the infamous <a href="http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm">left-pad</a> (as well as center- and right-pad!) can be conveniently implemented as:</p>
+<p>The <code class="language-plaintext highlighter-rouge">c</code> directive is now for character data (<em>i.e.</em>, literal strings), not for character codes. The is useful if you just want to apply padding and alignment and don’t care about formatting numbers. For example, the infamous <a href="http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm">left-pad</a> (as well as center- and right-pad!) can be conveniently implemented as:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"&gt;10c"</span><span class="p">)(</span><span class="s2">"foo"</span><span class="p">);</span> <span class="c1">// "       foo"</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"^10c"</span><span class="p">)(</span><span class="s2">"foo"</span><span class="p">);</span> <span class="c1">// "   foo    "</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"&lt;10c"</span><span class="p">)(</span><span class="s2">"foo"</span><span class="p">);</span> <span class="c1">// "foo       "</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">&gt;10c</span><span class="dl">"</span><span class="p">)(</span><span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// "       foo"</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">^10c</span><span class="dl">"</span><span class="p">)(</span><span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// "   foo    "</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;10c</span><span class="dl">"</span><span class="p">)(</span><span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// "foo       "</span>
 </code></pre></div></div>
 
 <p>There are several new methods for computing suggested decimal precisions; these are used by <a href="#scales-d3-scale">d3-scale</a> for tick formatting, and are helpful for implementing custom number formats: <a href="https://github.com/d3/d3-format/blob/master/README.md#precisionFixed">d3.precisionFixed</a>, <a href="https://github.com/d3/d3-format/blob/master/README.md#precisionPrefix">d3.precisionPrefix</a> and <a href="https://github.com/d3/d3-format/blob/master/README.md#precisionRound">d3.precisionRound</a>. There’s also a new <a href="https://github.com/d3/d3-format/blob/master/README.md#formatSpecifier">d3.formatSpecifier</a> method for parsing, validating and debugging format specifiers; it’s also good for deriving related format specifiers, such as when you want to substitute the precision automatically.</p>
@@ -598,7 +601,7 @@
 
 <p>As an alternative to using JSON to represent hierarchical data (such as the “flare.json format” used by many D3 examples), the new <a href="https://github.com/d3/d3-hierarchy/blob/master/README.md#stratify">d3.stratify</a> operator simplifies the conversion of tabular data to hierarchical data! This is convenient if you already have data in a tabular format, such as the result of a SQL query or a CSV file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name,parent
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name,parent
 Eve,
 Cain,Eve
 Seth,Eve
@@ -645,7 +648,7 @@ Azura,Eve
 <p>The d3.rebind method has been removed. (See the <a href="https://github.com/d3/d3/blob/v3.5.17/src/core/rebind.js">3.x source</a>.) If you want to wrap a getter-setter method, the recommend pattern is to implement a wrapper method and check the return value. For example, given a <em>component</em> that uses an internal <a href="#dispatches-d3-dispatch"><em>dispatch</em></a>, <em>component</em>.on can rebind <em>dispatch</em>.on as follows:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">component</span><span class="p">.</span><span class="nx">on</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">dispatch</span><span class="p">.</span><span class="nx">on</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">dispatch</span><span class="p">,</span> <span class="kr">arguments</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">dispatch</span><span class="p">.</span><span class="nx">on</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">dispatch</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
   <span class="k">return</span> <span class="nx">value</span> <span class="o">===</span> <span class="nx">dispatch</span> <span class="p">?</span> <span class="nx">component</span> <span class="p">:</span> <span class="nx">value</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></div></div>
@@ -661,7 +664,7 @@ Azura,Eve
 
 <p>Given a value <em>x</em>, to promote <em>x</em> to a function if it is not already:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fx</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">x</span> <span class="o">===</span> <span class="s2">"function"</span> <span class="p">?</span> <span class="nx">x</span> <span class="p">:</span> <span class="nx">constant</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fx</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">x</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">function</span><span class="dl">"</span> <span class="p">?</span> <span class="nx">x</span> <span class="p">:</span> <span class="nx">constant</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
 </code></pre></div></div>
 
 <h2 id="interpolators-d3-interpolate"><a href="https://github.com/d3/d3-interpolate/blob/master/README.md">Interpolators (d3-interpolate)</a></h2>
@@ -688,7 +691,7 @@ Azura,Eve
 
 <p><a href="https://web.archive.org/web/20160112115812/http://www.4p8.com/eric.brasseur/gamma.html">Gamma-corrected color interpolation</a> is now supported for both RGB and Cubehelix color spaces as <a href="https://github.com/d3/d3-interpolate/blob/master/README.md#interpolate_gamma"><em>interpolate</em>.gamma</a>. For example, to interpolate from purple to orange with a gamma of 2.2 in RGB space:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">interpolate</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">interpolateRgb</span><span class="p">.</span><span class="nx">gamma</span><span class="p">(</span><span class="mf">2.2</span><span class="p">)(</span><span class="s2">"purple"</span><span class="p">,</span> <span class="s2">"orange"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">interpolate</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">interpolateRgb</span><span class="p">.</span><span class="nx">gamma</span><span class="p">(</span><span class="mf">2.2</span><span class="p">)(</span><span class="dl">"</span><span class="s2">purple</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">orange</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>There are new interpolators for uniform non-rational <a href="https://en.wikipedia.org/wiki/B-spline">B-splines</a>! These are useful for smoothly interpolating between an arbitrary sequence of values from <em>t</em> = 0 to <em>t</em> = 1, such as to generate a smooth color gradient from a discrete set of colors. The <a href="https://github.com/d3/d3-interpolate/blob/master/README.md#interpolateBasis">d3.interpolateBasis</a> and <a href="https://github.com/d3/d3-interpolate/blob/master/README.md#interpolateBasisClosed">d3.interpolateBasisClosed</a> interpolators generate one-dimensional B-splines, while <a href="https://github.com/d3/d3-interpolate/blob/master/README.md#interpolateRgbBasis">d3.interpolateRgbBasis</a> and <a href="https://github.com/d3/d3-interpolate/blob/master/README.md#interpolateRgbBasisClosed">d3.interpolateRgbBasisClosed</a> generate three-dimensional B-splines through RGB color space. These are used by <a href="https://github.com/d3/d3-scale-chromatic">d3-scale-chromatic</a> to generate continuous color scales from ColorBrewer’s discrete color schemes, such as <a href="https://bl.ocks.org/mbostock/048d21cf747371b11884f75ad896e5a5">PiYG</a>.</p>
@@ -709,7 +712,7 @@ Azura,Eve
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">path</span><span class="p">();</span>
 <span class="nx">drawCircle</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
-<span class="nx">pathElement</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">"d"</span><span class="p">,</span> <span class="nx">context</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+<span class="nx">pathElement</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="nx">context</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
 </code></pre></div></div>
 
 <p>The path serializer enables <a href="#shapes-d3-shape">d3-shape</a> to support both Canvas and SVG; see <a href="https://github.com/d3/d3-shape/blob/master/README.md#line_context"><em>line</em>.context</a> and <a href="https://github.com/d3/d3-shape/blob/master/README.md#area_context"><em>area</em>.context</a>, for example.</p>
@@ -780,7 +783,7 @@ Azura,Eve
 
 <p>The <a href="https://github.com/d3/d3-request/blob/master/README.md#request">d3.request</a>, <a href="https://github.com/d3/d3-request/blob/master/README.md#text">d3.text</a> and <a href="https://github.com/d3/d3-request/blob/master/README.md#xml">d3.xml</a> methods no longer take an optional mime type as the second argument; use <a href="https://github.com/d3/d3-request/blob/master/README.md#request_mimeType"><em>request</em>.mimeType</a> instead. For example:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">xml</span><span class="p">(</span><span class="s2">"file.svg"</span><span class="p">).</span><span class="nx">mimeType</span><span class="p">(</span><span class="s2">"image/svg+xml"</span><span class="p">).</span><span class="kd">get</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">svg</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">xml</span><span class="p">(</span><span class="dl">"</span><span class="s2">file.svg</span><span class="dl">"</span><span class="p">).</span><span class="nx">mimeType</span><span class="p">(</span><span class="dl">"</span><span class="s2">image/svg+xml</span><span class="dl">"</span><span class="p">).</span><span class="kd">get</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">svg</span><span class="p">)</span> <span class="p">{</span>
   <span class="err">…</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -816,7 +819,7 @@ Azura,Eve
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleOrdinal</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-    <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="s2">"red"</span><span class="p">,</span> <span class="s2">"green"</span><span class="p">,</span> <span class="s2">"blue"</span><span class="p">]);</span>
+    <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">green</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">]);</span>
 
 <span class="nx">x</span><span class="p">.</span><span class="nx">domain</span><span class="p">();</span> <span class="c1">// [0, 1]</span>
 <span class="nx">x</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// "blue"</span>
@@ -827,7 +830,7 @@ Azura,Eve
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleOrdinal</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-    <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="s2">"red"</span><span class="p">,</span> <span class="s2">"green"</span><span class="p">,</span> <span class="s2">"blue"</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">green</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">])</span>
     <span class="p">.</span><span class="nx">unknown</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
 
 <span class="nx">x</span><span class="p">.</span><span class="nx">domain</span><span class="p">();</span> <span class="c1">// [0, 1]</span>
@@ -838,14 +841,14 @@ Azura,Eve
 <p>The <em>ordinal</em>.rangeBands and <em>ordinal</em>.rangeRoundBands methods have been replaced with a new subclass of ordinal scale: <a href="https://github.com/d3/d3-scale/blob/master/README.md#band-scales">band scales</a>. The following code in 3.x:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">ordinal</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">])</span>
     <span class="p">.</span><span class="nx">rangeBands</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">]);</span>
 </code></pre></div></div>
 
 <p>Is equivalent to this in 4.0:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleBand</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">])</span>
     <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">]);</span>
 </code></pre></div></div>
 
@@ -854,14 +857,14 @@ Azura,Eve
 <p>Similarly, the <em>ordinal</em>.rangePoints and <em>ordinal</em>.rangeRoundPoints methods have been replaced with a new subclass of ordinal scale: <a href="https://github.com/d3/d3-scale/blob/master/README.md#point-scales">point scales</a>. The following code in 3.x:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">ordinal</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">])</span>
     <span class="p">.</span><span class="nx">rangePoints</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">]);</span>
 </code></pre></div></div>
 
 <p>Is equivalent to this in 4.0:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scalePoint</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">])</span>
     <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">]);</span>
 </code></pre></div></div>
 
@@ -910,29 +913,29 @@ Azura,Eve
 
 <p>Selections are now immutable: the elements and parents in a selection never change. (The elements’ attributes and content will of course still be modified!) The <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_sort"><em>selection</em>.sort</a> and <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_data"><em>selection</em>.data</a> methods now return new selections rather than modifying the selection in-place. In addition, <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_append"><em>selection</em>.append</a> no longer merges entering nodes into the update selection; use <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_merge"><em>selection</em>.merge</a> to combine enter and update after a data join. For example, the following <a href="https://bl.ocks.org/mbostock/a8a5baa4c4a470cda598">general update pattern</a> in 3.x:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">"circle"</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="c1">// UPDATE</span>
-    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"blue"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">circle</span><span class="dl">"</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="c1">// UPDATE</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">circle</span><span class="p">.</span><span class="nx">exit</span><span class="p">().</span><span class="nx">remove</span><span class="p">();</span> <span class="c1">// EXIT</span>
 
-<span class="nx">circle</span><span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">"circle"</span><span class="p">)</span> <span class="c1">// ENTER; modifies UPDATE! 🌶</span>
-    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"green"</span><span class="p">);</span>
+<span class="nx">circle</span><span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">circle</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// ENTER; modifies UPDATE! 🌶</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">green</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">circle</span> <span class="c1">// ENTER + UPDATE</span>
-    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"stroke"</span><span class="p">,</span> <span class="s2">"black"</span><span class="p">);</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">stroke</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">black</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Would be rewritten in 4.0 as:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">"circle"</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="c1">// UPDATE</span>
-    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"blue"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">circle</span><span class="dl">"</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="c1">// UPDATE</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">circle</span><span class="p">.</span><span class="nx">exit</span><span class="p">().</span><span class="nx">remove</span><span class="p">();</span> <span class="c1">// EXIT</span>
 
-<span class="nx">circle</span><span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">"circle"</span><span class="p">)</span> <span class="c1">// ENTER</span>
-    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"green"</span><span class="p">)</span>
+<span class="nx">circle</span><span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">circle</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// ENTER</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">green</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">circle</span><span class="p">)</span> <span class="c1">// ENTER + UPDATE</span>
-    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"stroke"</span><span class="p">,</span> <span class="s2">"black"</span><span class="p">);</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">stroke</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">black</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>This change is discussed further in <a href="https://medium.com/@mbostock/what-makes-software-good-943557f8a488">What Makes Software Good</a>.</p>
@@ -948,10 +951,10 @@ Azura,Eve
 
 <p>And the following code:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">"body"</span><span class="p">).</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">"div"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">data</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">,</span> <span class="s2">"e"</span><span class="p">,</span> <span class="s2">"f"</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">textContent</span><span class="p">;</span> <span class="p">});</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">).</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">data</span><span class="p">([</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">e</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">f</span><span class="dl">"</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">textContent</span><span class="p">;</span> <span class="p">});</span>
 
-<span class="nx">div</span><span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">"div"</span><span class="p">)</span>
+<span class="nx">div</span><span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span><span class="p">;</span> <span class="p">});</span>
 </code></pre></div></div>
 
@@ -973,9 +976,9 @@ Azura,Eve
 
 <p>Selections have several new methods! Use <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_raise"><em>selection</em>.raise</a> to move the selected elements to the front of their siblings, so that they are drawn on top; use <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_lower"><em>selection</em>.lower</a> to move them to the back. Use <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_dispatch"><em>selection</em>.dispatch</a> to dispatch a <a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent">custom event</a> to event listeners.</p>
 
-<p>When called in getter mode, <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_data"><em>selection</em>.data</a> now returns the data for all elements in the selection, rather than just the data for the first group of elements. The <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_call"><em>selection</em>.call</a> method no longer sets the <code class="highlighter-rouge">this</code> context when invoking the specified function; the <em>selection</em> is passed as the first argument to the function, so use that. The <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_on"><em>selection</em>.on</a> method now accepts multiple whitespace-separated typenames, so you can add or remove multiple listeners simultaneously. For example:</p>
+<p>When called in getter mode, <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_data"><em>selection</em>.data</a> now returns the data for all elements in the selection, rather than just the data for the first group of elements. The <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_call"><em>selection</em>.call</a> method no longer sets the <code class="language-plaintext highlighter-rouge">this</code> context when invoking the specified function; the <em>selection</em> is passed as the first argument to the function, so use that. The <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_on"><em>selection</em>.on</a> method now accepts multiple whitespace-separated typenames, so you can add or remove multiple listeners simultaneously. For example:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">selection</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"mousedown touchstart"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">selection</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">mousedown touchstart</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -1087,7 +1090,7 @@ Azura,Eve
 <p>To generate the stack layout, first define a stack generator, and then apply it to the data:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">stack</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">stack</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">keys</span><span class="p">([</span><span class="s2">"apples"</span><span class="p">,</span> <span class="s2">"bananas"</span><span class="p">,</span> <span class="s2">"cherries"</span><span class="p">,</span> <span class="s2">"dates"</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">keys</span><span class="p">([</span><span class="dl">"</span><span class="s2">apples</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">bananas</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">cherries</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">dates</span><span class="dl">"</span><span class="p">])</span>
     <span class="p">.</span><span class="nx">order</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">stackOrderNone</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">offset</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">stackOffsetNone</span><span class="p">);</span>
 
@@ -1120,22 +1123,22 @@ Azura,Eve
 
 <p>The <em>format</em>.parse method has also been removed in favor of separate <a href="https://github.com/d3/d3-time-format/blob/master/README.md#timeParse">d3.timeParse</a>, <a href="https://github.com/d3/d3-time-format/blob/master/README.md#utcParse">d3.utcParse</a> and <a href="https://github.com/d3/d3-time-format/blob/master/README.md#isoParse">d3.isoParse</a> parser constructors. Thus, this code in 3.x:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">parseTime</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">time</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"%c"</span><span class="p">).</span><span class="nx">parse</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">parseTime</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">time</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">%c</span><span class="dl">"</span><span class="p">).</span><span class="nx">parse</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>Can be rewritten in 4.0 as:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">parseTime</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">timeParse</span><span class="p">(</span><span class="s2">"%c"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">parseTime</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">timeParse</span><span class="p">(</span><span class="dl">"</span><span class="s2">%c</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>The multi-scale time format d3.time.format.multi has been replaced by <a href="https://github.com/d3/d3-scale/blob/master/README.md#scaleTime">d3.scaleTime</a>’s <a href="https://github.com/d3/d3-scale/blob/master/README.md#time_tickFormat">tick format</a>. Time formats now coerce inputs to dates, and time parsers coerce inputs to strings. The <code class="highlighter-rouge">%Z</code> directive now allows more flexible parsing of time zone offsets, such as <code class="highlighter-rouge">-0700</code>, <code class="highlighter-rouge">-07:00</code>, <code class="highlighter-rouge">-07</code>, and <code class="highlighter-rouge">Z</code>. The <code class="highlighter-rouge">%p</code> directive is now parsed correctly when the locale’s period name is longer than two characters (<em>e.g.</em>, “a.m.”).</p>
+<p>The multi-scale time format d3.time.format.multi has been replaced by <a href="https://github.com/d3/d3-scale/blob/master/README.md#scaleTime">d3.scaleTime</a>’s <a href="https://github.com/d3/d3-scale/blob/master/README.md#time_tickFormat">tick format</a>. Time formats now coerce inputs to dates, and time parsers coerce inputs to strings. The <code class="language-plaintext highlighter-rouge">%Z</code> directive now allows more flexible parsing of time zone offsets, such as <code class="language-plaintext highlighter-rouge">-0700</code>, <code class="language-plaintext highlighter-rouge">-07:00</code>, <code class="language-plaintext highlighter-rouge">-07</code>, and <code class="language-plaintext highlighter-rouge">Z</code>. The <code class="language-plaintext highlighter-rouge">%p</code> directive is now parsed correctly when the locale’s period name is longer than two characters (<em>e.g.</em>, “a.m.”).</p>
 
 <p>The default U.S. English locale now uses 12-hour time and a more concise representation of the date. This aligns with local convention and is consistent with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString"><em>date</em>.toLocaleString</a> in Chrome, Firefox and Node:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">;</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">timeFormat</span><span class="p">(</span><span class="s2">"%c"</span><span class="p">)(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">);</span> <span class="c1">// "6/23/2016, 2:01:33 PM"</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">timeFormat</span><span class="p">(</span><span class="s2">"%x"</span><span class="p">)(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">);</span> <span class="c1">// "6/23/2016"</span>
-<span class="nx">d3</span><span class="p">.</span><span class="nx">timeFormat</span><span class="p">(</span><span class="s2">"%X"</span><span class="p">)(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">);</span> <span class="c1">// "2:01:38 PM"</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">timeFormat</span><span class="p">(</span><span class="dl">"</span><span class="s2">%c</span><span class="dl">"</span><span class="p">)(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">);</span> <span class="c1">// "6/23/2016, 2:01:33 PM"</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">timeFormat</span><span class="p">(</span><span class="dl">"</span><span class="s2">%x</span><span class="dl">"</span><span class="p">)(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">);</span> <span class="c1">// "6/23/2016"</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">timeFormat</span><span class="p">(</span><span class="dl">"</span><span class="s2">%X</span><span class="dl">"</span><span class="p">)(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">);</span> <span class="c1">// "2:01:38 PM"</span>
 </code></pre></div></div>
 
 <p>You can now set the default locale using <a href="https://github.com/d3/d3-time-format/blob/master/README.md#timeFormatDefaultLocale">d3.timeFormatDefaultLocale</a>! The locales are published as <a href="https://github.com/d3/d3-request/blob/master/README.md#json">JSON</a> to <a href="https://unpkg.com/d3-time-format/locale/">npm</a>.</p>
@@ -1334,14 +1337,14 @@ Azura,Eve
 <p>Some usage patterns in D3 3.x could cause the browser to hang when a background page returned to the foreground. For example, the following code schedules a transition every second:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">d3</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">"div"</span><span class="p">).</span><span class="nx">transition</span><span class="p">().</span><span class="nx">call</span><span class="p">(</span><span class="nx">someAnimation</span><span class="p">);</span> <span class="c1">// BAD</span>
+  <span class="nx">d3</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">).</span><span class="nx">transition</span><span class="p">().</span><span class="nx">call</span><span class="p">(</span><span class="nx">someAnimation</span><span class="p">);</span> <span class="c1">// BAD</span>
 <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>If such code runs in the background for hours, thousands of queued transitions will try to run simultaneously when the page is foregrounded. D3 4.0 avoids this hang by freezing time in the background: when a page is in the background, time does not advance, and so no queue of timers accumulates to run when the page returns to the foreground. Use d3.timer instead of transitions to schedule a long-running animation, or use <a href="https://github.com/d3/d3-timer/blob/master/README.md#timeout">d3.timeout</a> and <a href="https://github.com/d3/d3-timer/blob/master/README.md#interval">d3.interval</a> in place of setTimeout and setInterval to prevent transitions from being queued in the background:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">d3</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">"div"</span><span class="p">).</span><span class="nx">transition</span><span class="p">().</span><span class="nx">call</span><span class="p">(</span><span class="nx">someAnimation</span><span class="p">);</span> <span class="c1">// GOOD</span>
+  <span class="nx">d3</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">).</span><span class="nx">transition</span><span class="p">().</span><span class="nx">call</span><span class="p">(</span><span class="nx">someAnimation</span><span class="p">);</span> <span class="c1">// GOOD</span>
 <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
 </code></pre></div></div>
 
@@ -1355,25 +1358,25 @@ Azura,Eve
     <span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mi">750</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">ease</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">easeLinear</span><span class="p">);</span>
 
-<span class="nx">d3</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">".apple"</span><span class="p">).</span><span class="nx">transition</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">);</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.apple</span><span class="dl">"</span><span class="p">).</span><span class="nx">transition</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="nx">d3</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">".orange"</span><span class="p">).</span><span class="nx">transition</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"orange"</span><span class="p">);</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.orange</span><span class="dl">"</span><span class="p">).</span><span class="nx">transition</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">orange</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Transitions created this way inherit timing from the closest ancestor element, and thus are synchronized even when the referenced <em>transition</em> has variable timing such as a staggered delay. This method replaces the deeply magical behavior of <em>transition</em>.each in 3.x; in 4.0, <a href="https://github.com/d3/d3-transition/blob/master/README.md#transition_each"><em>transition</em>.each</a> is identical to <a href="https://github.com/d3/d3-selection/blob/master/README.md#selection_each"><em>selection</em>.each</a>. Use the new <a href="https://github.com/d3/d3-transition/blob/master/README.md#transition_on"><em>transition</em>.on</a> method to listen to transition events.</p>
 
 <p>The meaning of <a href="https://github.com/d3/d3-transition/blob/master/README.md#transition_delay"><em>transition</em>.delay</a> has changed for chained transitions created by <a href="https://github.com/d3/d3-transition/blob/master/README.md#transition_transition"><em>transition</em>.transition</a>. The specified delay is now relative to the <em>previous</em> transition in the chain, rather than the <em>first</em> transition in the chain; this makes it easier to insert interstitial pauses. For example:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">".apple"</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.apple</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">transition</span><span class="p">()</span> <span class="c1">// First fade to green.</span>
-    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"green"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">green</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">transition</span><span class="p">()</span> <span class="c1">// Then red.</span>
-    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">transition</span><span class="p">()</span> <span class="c1">// Wait one second. Then brown, and remove.</span>
     <span class="p">.</span><span class="nx">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"brown"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">brown</span><span class="dl">"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
 </code></pre></div></div>
 
@@ -1383,15 +1386,15 @@ Azura,Eve
 
 <p>The new <a href="https://github.com/d3/d3-transition/blob/master/README.md#active">d3.active</a> method allows you to select the currently-active transition on a given <em>node</em>, if any. This is useful for modifying in-progress transitions and for scheduling infinitely-repeating transitions. For example, this transition continuously oscillates between red and blue:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">"circle"</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">circle</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">transition</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"start"</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">repeat</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">repeat</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">d3</span><span class="p">.</span><span class="nx">active</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">)</span>
           <span class="p">.</span><span class="nx">transition</span><span class="p">()</span>
-            <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"blue"</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="dl">"</span><span class="s2">fill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">)</span>
           <span class="p">.</span><span class="nx">transition</span><span class="p">()</span>
-            <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"start"</span><span class="p">,</span> <span class="nx">repeat</span><span class="p">);</span>
+            <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">,</span> <span class="nx">repeat</span><span class="p">);</span>
       <span class="p">});</span>
 </code></pre></div></div>
 
@@ -1441,7 +1444,7 @@ Azura,Eve
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li class="p-name">Visualising Dante&#39;s Divine Comedy</li><li>
-            <p><i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i> 2019<br>
+            <p><i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i> 2021<br>
               Birkbeck University, London<br>
               MSc Computer Science</p>
           </li>

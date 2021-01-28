@@ -12,6 +12,8 @@ gem "minima"
 
 gem "jekyll", ">= 3.7.4"
 
-gem "nokogiri", ">= 1.10.4"
+gem "nokogiri", ">= 1.11.0"
 
 gem "rubyzip", ">= 1.2.2"
+
+gem "webrick"

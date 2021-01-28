@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>D3: Data-Driven Documents | Dante Visualised</title>
-<meta name="generator" content="Jekyll v3.7.3" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="D3: Data-Driven Documents" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Visualising Dante’s Divine Comedy" />
@@ -12,11 +12,14 @@
 <link rel="canonical" href="http://localhost:4000/dante-visualised/assets/vendor/d3/" />
 <meta property="og:url" content="http://localhost:4000/dante-visualised/assets/vendor/d3/" />
 <meta property="og:site_name" content="Dante Visualised" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="D3: Data-Driven Documents" />
 <script type="application/ld+json">
-{"description":"Visualising Dante’s Divine Comedy","@type":"WebPage","url":"http://localhost:4000/dante-visualised/assets/vendor/d3/","headline":"D3: Data-Driven Documents","@context":"http://schema.org"}</script>
+{"headline":"D3: Data-Driven Documents","description":"Visualising Dante’s Divine Comedy","url":"http://localhost:4000/dante-visualised/assets/vendor/d3/","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <!-- <link rel="stylesheet" href='/dante-visualised/assets/main.css'> -->
   <link rel="stylesheet" href="/dante-visualised/assets/main.css">
+  <link rel="shortcut icon" href="/dante-visualised/favicon.png" type="image/x-icon">
 
   <!-- FontAwesome js to svg -->
   <script defer src="/dante-visualised/assets/vendor/fontawesome/js/all.min.js"></script>
@@ -30,7 +33,7 @@
     </a>
 
       <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
         <label for="nav-trigger">
           <span class="menu-icon">
             <svg viewBox="0 0 18 15" width="18px" height="15px">
@@ -78,7 +81,7 @@
 
 <h2 id="installing">Installing</h2>
 
-<p>If you use npm, <code class="highlighter-rouge">npm install d3</code>. Otherwise, download the <a href="https://github.com/d3/d3/releases/latest">latest release</a>. The released bundle supports anonymous AMD, CommonJS, and vanilla environments. You can load directly from <a href="https://d3js.org">d3js.org</a>, <a href="https://cdnjs.com/libraries/d3">CDNJS</a>, or <a href="https://unpkg.com/d3/">unpkg</a>. For example:</p>
+<p>If you use npm, <code class="language-plaintext highlighter-rouge">npm install d3</code>. Otherwise, download the <a href="https://github.com/d3/d3/releases/latest">latest release</a>. The released bundle supports anonymous AMD, CommonJS, and vanilla environments. You can load directly from <a href="https://d3js.org">d3js.org</a>, <a href="https://cdnjs.com/libraries/d3">CDNJS</a>, or <a href="https://unpkg.com/d3/">unpkg</a>. For example:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://d3js.org/d3.v5.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre></div></div>
@@ -95,22 +98,22 @@
 
 <p>D3 is written using <a href="http://www.2ality.com/2014/09/es6-modules-final.html">ES2015 modules</a>. Create a <a href="https://bl.ocks.org/mbostock/bb09af4c39c79cffcde4">custom bundle using Rollup</a>, Webpack, or your preferred bundler. To import D3 into an ES2015 application, either import specific symbols from specific D3 modules:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">scaleLinear</span><span class="p">}</span> <span class="k">from</span> <span class="s2">"d3-scale"</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">scaleLinear</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">d3-scale</span><span class="dl">"</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>Or import everything into a namespace (here, <code class="highlighter-rouge">d3</code>):</p>
+<p>Or import everything into a namespace (here, <code class="language-plaintext highlighter-rouge">d3</code>):</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">d3</span> <span class="k">from</span> <span class="s2">"d3"</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">d3</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">d3</span><span class="dl">"</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>In Node:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">d3</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"d3"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">d3</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">d3</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>You can also require individual modules and combine them into a <code class="highlighter-rouge">d3</code> object using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Object.assign</a>:</p>
+<p>You can also require individual modules and combine them into a <code class="language-plaintext highlighter-rouge">d3</code> object using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Object.assign</a>:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">d3</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"d3-format"</span><span class="p">),</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"d3-geo"</span><span class="p">),</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"d3-geo-projection"</span><span class="p">));</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">d3</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">d3-format</span><span class="dl">"</span><span class="p">),</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">d3-geo</span><span class="dl">"</span><span class="p">),</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">d3-geo-projection</span><span class="dl">"</span><span class="p">));</span>
 </code></pre></div></div>
 
   </div>
@@ -129,7 +132,7 @@
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li class="p-name">Visualising Dante&#39;s Divine Comedy</li><li>
-            <p><i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i> 2019<br>
+            <p><i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i> 2021<br>
               Birkbeck University, London<br>
               MSc Computer Science</p>
           </li>

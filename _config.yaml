@@ -1,6 +1,16 @@
-baseurl: /dante-visualised/
+baseurl: /dante-visualised
 
-exclude: ['*.log', Gemfile*, README.md, bundle]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - '*.log'
+  - README.md
+  - bundle # any user-specific listing goes at the end
 
 include: [_pages]
 
