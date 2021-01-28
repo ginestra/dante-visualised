@@ -10,9 +10,9 @@ permalink: /rhymes/paradiso/
   <li><a href="#" class="active">Paradiso</a></li>
 </ul>
 
-Please be patient, the visualisation takes few seconds to render.
+<p>Please be patient, the visualisation takes few seconds to render.</p>
 
-Hover over the bars to find out more information.
+<p>Hover over the bars to find out more information.</p>
 
 {%- include spinner.html -%}
 

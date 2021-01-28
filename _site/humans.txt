@@ -10,7 +10,7 @@ UI/UX Developer: Ginestra Ferraro
 Site: https://thatsmood.com
 
 /* SITE */
-Last update: 2019-08-21 16:38:47 +0200
+Last update: 2021-01-28 12:17:11 +0100
 Standards: HTML5, CSS3
 Components: HTML5, SASS, JS, Jekyll, jQuery, D3JS, Python, SVG, JSON
 Software: Sublime Text, Jupyter
