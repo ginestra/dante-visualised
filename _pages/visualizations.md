@@ -9,6 +9,6 @@ permalink: /visualizations/
 * <a href="{{ site.baseurl }}sentiment-pattern/">Sentiment pattern</a>
 * <a href="{{ site.baseurl }}rhymes/">Rhymes</a>
 * <a href="{{ site.baseurl }}lines/">Lines</a>
-* <a href="{{ site.baseurl }}repetitions-pattern/">Repetitions pattern</a>
+* <a href="{{ site.baseurl }}repetition-patterns/">Repetition patterns</a>
 
 

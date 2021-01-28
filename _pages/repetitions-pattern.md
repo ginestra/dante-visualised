@@ -1,7 +1,7 @@
 ---
 layout: visualizations
-title: Repetitions pattern
-permalink: /repetitions-pattern/
+title: Repetition patterns
+permalink: /repetition-patterns/
 ---
 
 Please be patient, the visualisation takes few seconds to render.
