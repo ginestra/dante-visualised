@@ -17,3 +17,5 @@ gem "nokogiri", ">= 1.13.10"
 gem "rubyzip", ">= 1.2.2"
 
 gem "webrick"
+
+gem "commonmarker", ">= 0.23.7"
